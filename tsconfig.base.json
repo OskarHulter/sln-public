@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@sln/content-shared": ["packages/content-shared/src/index.ts"],
+      "@sln/data-access-shared": ["packages/data-access-shared/src/index.ts"],
       "@sln/ui-shared": ["packages/ui-shared/src/index.ts"]
     }
   },

@@ -1,0 +1,55 @@
+{
+  "name": "personal-web",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/personal-web",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/personal-web",
+        "outputPath": "dist/apps/personal-web"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/personal-web"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "personal-web:build",
+        "dev": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "personal-web:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "personal-web:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "personal-web:build:production"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/personal-web/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  },
+  "tags": ["scope:shared type:app"]
+}

@@ -1,0 +1,7 @@
+export * from './colors'
+export * from './styles/global/globalStyles'
+export * from './styles/global/globalMinimal'
+export * from './styles/themes'
+export * from './assets/fonts'
+export * from './assets/icons/components'
+export * from './assets/icons/types'

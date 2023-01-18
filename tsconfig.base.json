@@ -10,15 +10,27 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sln/content-shared": ["packages/content-shared/src/index.ts"],
-      "@sln/data-access-shared": ["packages/data-access-shared/src/index.ts"],
-      "@sln/ui-shared": ["packages/ui-shared/src/index.ts"]
+      "@sln/content-shared": [
+        "packages/content-shared/src/index.ts"
+      ],
+      "@sln/data-access-shared": [
+        "packages/data-access-shared/src/index.ts"
+      ],
+      "@sln/ui-shared": [
+        "packages/ui-shared/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

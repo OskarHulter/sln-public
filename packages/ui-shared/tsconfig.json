@@ -11,8 +11,15 @@
     ],
     "declaration": true
   },
-  "files": [],
-  "include": [],
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "packages/content-shared/src/index.ts",
+    "packages/data-access-shared/src/index.ts",
+    "packages/ui-shared/src/index.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.lib.json"

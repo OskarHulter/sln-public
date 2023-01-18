@@ -1,7 +1,7 @@
 import invariant from 'ts-invariant'
 import { z } from 'zod'
 import { getContent } from '@sln/content-shared'
-import { mailFormSchema } from '../schemas'
+import { mailFormSchema } from '../schemas/index.js'
 
 
 export const mockFetch = async () => getContent()

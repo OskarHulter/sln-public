@@ -1,4 +1,5 @@
 import { useTheme as useNextTheme } from 'next-themes'
+import React from 'react'
 import { Switch, useTheme } from '@nextui-org/react'
 import { MoonIcon, SunIcon } from '../../atoms/icons/Icons'
 import { useHasMounted } from '../../hooks/useHasMounted'
@@ -15,7 +16,7 @@ export function ThemeSwitch() {
       size='xl'
       iconOn={<SunIcon filled />}
       iconOff={<MoonIcon filled />}
-      onChange={(e) => console.log(e, 'toggling theme')}
+      onChange={() => console.log('toggling theme')}
     />
   }
   return (
@@ -26,7 +27,7 @@ export function ThemeSwitch() {
       iconOn={<SunIcon filled />}
       iconOff={<MoonIcon filled />}
 
-      onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTheme(e.target.checked ? 'dark' : 'light')}
     />
   )
 }

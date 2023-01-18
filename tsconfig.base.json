@@ -3,8 +3,8 @@
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
+    "declaration": true,
+    "moduleResolution": "NodeNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
@@ -19,10 +19,10 @@
     "baseUrl": ".",
     "paths": {
       "@sln/content-shared": [
-        "packages/content-shared/src/index.ts"
+        "packages/content/shared/src/index.ts"
       ],
       "@sln/data-access-shared": [
-        "packages/data-access-shared/src/index.ts"
+        "packages/data-access/shared/src/index.ts"
       ],
       "@sln/ui-shared": [
         "packages/ui-shared/src/index.ts"

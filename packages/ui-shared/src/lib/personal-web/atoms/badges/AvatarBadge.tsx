@@ -1,6 +1,5 @@
-import { Avatar, Grid, Tooltip } from '@nextui-org/react'
+import { Avatar, Grid } from '@nextui-org/react'
 import { LoadingSpinner } from '../../atoms/LoadingSpinner'
-import UserTwitterCard from '../../cards/UserTwitterCard'
 import { useContent } from '../../hooks/useContent'
 
 
@@ -12,16 +11,14 @@ export function AvatarBadge() {
 
   return (
     <Grid>
-      <Tooltip placement='top' content={<UserTwitterCard />}>
-        <Avatar
-          pointer
-          size='lg'
-          src={data?.constants.urls.profilePicUrl}
-          color='gradient'
-          bordered
-          squared
-        />
-      </Tooltip>
+      <Avatar
+        pointer
+        size='lg'
+        src={data?.constants.urls.profilePicUrl}
+        color='gradient'
+        bordered
+        squared
+      />
     </Grid>
   )
 }

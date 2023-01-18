@@ -1,4 +1,4 @@
-import createHttpError from 'http-errors'
+import * as createHttpError from 'http-errors'
 import { NextApiResponse } from 'next'
 import { ZodError } from 'zod'
 

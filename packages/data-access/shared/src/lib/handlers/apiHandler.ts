@@ -1,5 +1,5 @@
 import { Method } from 'axios'
-import createHttpError from 'http-errors'
+import * as createHttpError from 'http-errors'
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import { errorHandler, ErrorResponse } from './errorHandler'
 

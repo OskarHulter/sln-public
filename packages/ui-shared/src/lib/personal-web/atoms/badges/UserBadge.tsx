@@ -1,6 +1,6 @@
-import { Grid, Tooltip, User } from '@nextui-org/react'
+import { Grid, User } from '@nextui-org/react'
 import { LoadingSpinner } from '../../atoms/LoadingSpinner'
-import UserTwitterCard from '../../cards/UserTwitterCard'
+//import UserTwitterCard from '../../cards/UserTwitterCard'
 import { useContent } from '../../hooks/useContent'
 
 
@@ -9,20 +9,21 @@ export function UserBadge() {
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />
-
+  /*
+  <Tooltip placement='top' content={<UserTwitterCard />}>
+        </Tooltip>
+  */
   return (
     <Grid>
-      <Tooltip placement='top' content={<UserTwitterCard />}>
-        <User
-          pointer
-          size='400px'
-          color='gradient'
-          bordered
-          src={data?.constants.urls.profilePicUrl}
-          name='Fullstack Web Developer'
-          description='JS, TS & React'
-        />
-      </Tooltip>
+      <User
+        pointer
+        size='400px'
+        color='gradient'
+        bordered
+        src={data?.constants.urls.profilePicUrl}
+        name='Fullstack Web Developer'
+        description='JS, TS & React'
+      />
     </Grid>
   )
 }

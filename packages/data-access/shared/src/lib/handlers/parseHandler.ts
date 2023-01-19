@@ -3,7 +3,6 @@ import SuperJSON from 'superjson'
 import { z, ZodSchema } from 'zod'
 import { errorHandler } from './errorHandler'
 
-
 export type NextApiConfig = {
   req: NextApiRequest
   res: NextApiResponse
@@ -11,7 +10,7 @@ export type NextApiConfig = {
 
 export async function parseHandler(
   schema: ZodSchema,
-  { req, res }: NextApiConfig,
+  { req, res }: NextApiConfig
 ): Promise<NextApiResponse | z.infer<typeof schema>> {
   const body = SuperJSON.parse(req.body)
   try {

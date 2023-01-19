@@ -21,5 +21,3 @@ export const constants = {
   education,
   urls,
 }
-
-

@@ -3,12 +3,14 @@
   "compilerOptions": {
     "outDir": "../../../dist/out-tsc",
     "declaration": true,
+    "composite": true,
     "types": [
       "node"
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.d.ts"
   ],
   "exclude": [
     "vite.config.ts",

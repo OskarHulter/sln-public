@@ -4,12 +4,10 @@
     "outDir": "../../../dist/out-tsc",
     "types": [
       "node",
-      "vite"
     ]
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "jest.config.ts",

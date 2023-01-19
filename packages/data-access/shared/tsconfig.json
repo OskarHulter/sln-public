@@ -1,18 +1,17 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "declaration": true,
     "noFallthroughCasesInSwitch": true,
+    "traceResolution": true,
+    "declaration": true,
     "types": [
-      "vitest",
-      "node",
-      "http-errors",
-      "ts-invariant"
+      "vitest/globals",
+      "node"
     ]
   },
   "files": [],

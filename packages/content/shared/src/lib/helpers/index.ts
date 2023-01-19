@@ -1,5 +1,4 @@
-import { Content, content, ContentKeys, Topic, Topics } from '../content'
-
+import { Content, content, ContentKeys, Topic, Topics } from '../content/index.js'
 
 export const getContent = (): Content => content
 export const getContentByName = (name: ContentKeys) => content[name]

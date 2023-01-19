@@ -1,5 +1,4 @@
-import { constants } from '../constants'
-
+import { constants } from '../constants/index.js'
 
 export const images = [
   {
@@ -27,4 +26,3 @@ export const images = [
     height: '300',
   },
 ]
-

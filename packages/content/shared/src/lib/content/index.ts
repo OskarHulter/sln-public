@@ -1,7 +1,6 @@
-import { images } from '../assets'
-import { constants } from '../constants'
-import { jobs, projects, technologies } from '../domain'
-
+import { images } from '../assets/index.js'
+import { constants } from '../constants/index.js'
+import { jobs, projects, technologies } from '../domain/index.js'
 
 const topTraits = [
   'learner',
@@ -100,5 +99,3 @@ export type ConstantsWebType = keyof ConstantsWeb
 export type Topic = typeof topics[number]['name']
 export type Topics = typeof topics
 export type About = typeof about
-
-

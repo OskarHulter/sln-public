@@ -2,7 +2,6 @@ import * as createHttpError from 'http-errors'
 import { NextApiResponse } from 'next'
 import { ZodError } from 'zod'
 
-
 // Shape of the response when an error is thrown
 export interface ErrorResponse {
   error: {

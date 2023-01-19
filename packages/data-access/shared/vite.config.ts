@@ -1,17 +1,16 @@
 /// <reference types="vitest" />
+import { resolve } from 'path' //join
 import { defineConfig } from 'vite'
-
+// import dts from 'vite-plugin-dts'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
-import dts from 'vite-plugin-dts'
-import { join } from 'path'
 
 export default defineConfig({
   plugins: [
-    dts({
-      tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
-      // Faster builds by skipping tests. Set this to false to enable type checking.
-      skipDiagnostics: true,
-    }),
+    // dts({
+    //   tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
+    //   // Faster builds by skipping tests. Set this to false to enable type checking.
+    //   skipDiagnostics: false,
+    // }),
 
     viteTsConfigPaths({
       root: '../../../',
@@ -32,7 +31,7 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: 'src/index.ts',
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'data-access-shared',
       fileName: 'index',
       // Change this to the formats you want to support.
@@ -41,7 +40,7 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: [],
+      external: ['z', 'next', 'zod', 'react', 'superjson'],
     },
   },
 

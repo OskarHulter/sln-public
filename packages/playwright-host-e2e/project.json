@@ -1,0 +1,49 @@
+{
+  "name": "playwright-host-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/playwright-host-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@mands/nx-playwright:playwright-executor",
+      "options": {
+        "e2eFolder": "packages/playwright-host-e2e",
+        "devServerTarget": "playwright-host:serve",
+        "packageRunner": "pnpm"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "playwright-host:serve:production"
+        }
+      }
+    },
+    "ts-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tsc --build --force --verbose apps/playwright-host-e2e/tsconfig.json"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/playwright-host-e2e/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "scope:shared",
+    "type:util"
+  ],
+  "implicitDependencies": [
+    "personal-web"
+  ]
+}

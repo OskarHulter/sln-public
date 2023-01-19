@@ -1,16 +1,15 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
-
-import viteTsConfigPaths from 'vite-tsconfig-paths'
-import dts from 'vite-plugin-dts'
 import { join } from 'path'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
+import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   plugins: [
     dts({
       tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
       // Faster builds by skipping tests. Set this to false to enable type checking.
-      skipDiagnostics: true,
+      skipDiagnostics: false,
     }),
 
     viteTsConfigPaths({

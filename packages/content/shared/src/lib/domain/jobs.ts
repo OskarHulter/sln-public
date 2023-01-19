@@ -1,5 +1,4 @@
-import { images } from '../assets'
-
+import { images } from '../assets/index.js'
 
 export const jobs = [
   {

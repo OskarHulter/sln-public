@@ -1,6 +1,5 @@
 import { MailFormSchema } from '../schemas'
 
-
 export const getMailMessage = (data: MailFormSchema) => `
     name:${data.name}\r\n
     mail:${data.mail}\r\n

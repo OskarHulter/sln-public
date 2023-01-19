@@ -1,6 +1,6 @@
 import { Button, Grid, Link } from '@nextui-org/react'
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../../atoms/icons/Icons'
-import { SocialButton, SocialProps } from './SocialButton'
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../../atoms/icons/Icons.js'
+import { SocialButton, SocialProps } from './SocialButton.js'
 
 
 export function Socials(props: SocialProps[]) {

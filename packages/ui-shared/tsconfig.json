@@ -1,24 +1,35 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
-    "types": [
-      "vite/client",
-      "vitest"
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "composite": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "explainFiles": true,
+    "traceResolution": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "declaration": true
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
   "include": [
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "packages/content-shared/src/index.ts",
-    "packages/data-access-shared/src/index.ts",
-    "packages/ui-shared/src/index.ts"
+    "src"
   ],
   "references": [
     {

@@ -11,18 +11,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "module": "esnext"
+    "module": "ESNext"
   },
   "include": [
+    "next-env.d.ts",
+    "index.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next-env.d.ts"
+    "next.config.cjs"
   ],
   "exclude": [
     "node_modules",
-    "jest.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
   ]

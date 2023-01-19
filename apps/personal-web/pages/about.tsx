@@ -1,9 +1,8 @@
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'
 import React from 'react'
-import { Container, Spacer } from '@nextui-org/react'
 import { fetchContent } from '@sln/data-access-shared'
-import { Hero, JobList, Layout, MailForm, Projects, SkillList } from '@sln/ui-shared'
+import { Hero, Layout, Projects, SkillList } from '@sln/ui-shared'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 
 
@@ -21,25 +20,17 @@ export async function getStaticProps() {
     },
   }
 }
-const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const About: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   return (
     <Layout>
-      <Container justify='center' css={{ width: 'full' }} as='main'>
+      <div>
         <Hero />
-        <Spacer y={2} />
-        <TopTechList />
-        <Spacer y={2} />
         <SkillList />
-        <Spacer y={2} />
-        <JobList />
-        <Spacer y={2} />
         <Projects />
-        <Spacer y={2} />
-        <MailForm />
-      </Container>
+      </div >
     </Layout>
   )
 }
 
-export default Home
+export default About

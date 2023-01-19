@@ -1,14 +1,16 @@
+import dts from 'vite-plugin-dts'
 import { defineConfig } from 'vite'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import react from '@vitejs/plugin-react'
+import { join } from 'path'
 
 export default defineConfig({
   plugins: [
-    // dts({
-    //   tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
-    //   // Faster builds by skipping tests. Set this to false to enable type checking.
-    //   skipDiagnostics: true,
-    // }),
+    dts({
+      tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
+      // Faster builds by skipping tests. Set this to false to enable type checking.
+      skipDiagnostics: false,
+    }),
     react(),
     viteTsConfigPaths({
       root: '../../',
@@ -34,11 +36,12 @@ export default defineConfig({
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forgot to update your package.json as well.
-      formats: ['es', 'cjs'],
+      formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'zod', 'superjson', 'axios', 'next', '@nextui-org/react'],
+
     },
   },
 

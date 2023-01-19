@@ -41,6 +41,7 @@ Thumbs.db
 
 # Next.js
 .next
+/apps/personal-web/next-env.d.ts
 
 # Playwright
 **/test-results

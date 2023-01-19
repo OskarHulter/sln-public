@@ -2,15 +2,18 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../../dist/out-tsc",
+    "declaration": true,
+    "composite": true,
     "types": [
       "node",
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.d.ts"
   ],
   "exclude": [
-    "jest.config.ts",
+    "vite.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
   ]

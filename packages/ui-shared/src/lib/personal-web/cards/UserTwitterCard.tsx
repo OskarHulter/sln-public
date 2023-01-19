@@ -1,18 +1,25 @@
 //'use client'
-import React from 'react'
 import {
-  Avatar, AvatarProps, Button, Col, CSS, Grid, GridItemProps, Row, Spacer, Text,
+  Avatar,
+  AvatarProps,
+  Button,
+  Col,
+  CSS,
+  Grid,
+  GridItemProps,
+  Row,
+  Spacer,
+  Text,
 } from '@nextui-org/react'
+import React from 'react'
 import { LoadingSpinner } from '../atoms/LoadingSpinner'
 import { useContent } from '../hooks/useContent'
-
 
 export type UserTwitterCardProps = {
   avatarUrl: string
   avatarProps?: AvatarProps
   css?: CSS
   onClick?: string
-
 } & Partial<GridItemProps>
 
 export function UserTwitterCard({
@@ -22,12 +29,10 @@ export function UserTwitterCard({
   onClick,
   ...props
 }: Partial<UserTwitterCardProps>) {
-
   const [following, setFollowing] = React.useState(false)
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />
-
 
   return (
     <Grid.Container
@@ -41,7 +46,10 @@ export function UserTwitterCard({
       onClick={onClick}
       {...props}
     >
-      <Row justify='space-between' align='center'>
+      <Row
+        justify='space-between'
+        align='center'
+      >
         <Col span={3}>
           <Avatar
             size='lg'
@@ -54,8 +62,15 @@ export function UserTwitterCard({
         </Col>
         <Col span={9}>
           <Row>
-            <Grid xs={12} direction='column'>
-              <Text className='user-twitter-card__text' b size={15}>
+            <Grid
+              xs={12}
+              direction='column'
+            >
+              <Text
+                className='user-twitter-card__text'
+                b
+                size={15}
+              >
                 Oskar Hulter
               </Text>
               <Text
@@ -94,7 +109,13 @@ export function UserTwitterCard({
             css={{ mt: '$1' }}
             color='#888888'
           >
-            Full-stack developer, @getnextui lover he/him <span role='img' aria-label='celebration emoji'>🎉</span>
+            Full-stack developer, @getnextui lover he/him{' '}
+            <span
+              role='img'
+              aria-label='celebration emoji'
+            >
+              🎉
+            </span>
           </Text>
         </Grid>
       </Grid.Container>
@@ -104,7 +125,11 @@ export function UserTwitterCard({
         justify='flex-start'
         alignContent='center'
       >
-        <Text className='user-twitter-card__text' size={14} color='#888888'>
+        <Text
+          className='user-twitter-card__text'
+          size={14}
+          color='#888888'
+        >
           <Text
             b
             color='foreground'
@@ -116,8 +141,15 @@ export function UserTwitterCard({
           </Text>
           Following
         </Text>
-        <Spacer inline x={0.5} />
-        <Text className='user-twitter-card__text' size={14} color='#888888'>
+        <Spacer
+          inline
+          x={0.5}
+        />
+        <Text
+          className='user-twitter-card__text'
+          size={14}
+          color='#888888'
+        >
           <Text
             b
             color='foreground'

@@ -1,7 +1,7 @@
+/// <reference types="react-scripts" />
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module '*.svg' {
   const content: any
   export const ReactComponent: any
   export default content
 }
-/// <reference types="react-scripts" />

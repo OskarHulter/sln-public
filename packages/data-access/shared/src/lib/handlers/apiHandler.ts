@@ -1,3 +1,5 @@
+/* eslint-disable functional/no-throw-statement */
+/* eslint-disable functional/no-try-statement */
 import { Method } from 'axios'
 import * as createHttpError from 'http-errors'
 import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'

@@ -1,6 +1,6 @@
 
 import { Button, Col, Grid, Row, Text } from '@nextui-org/react'
-import AvatarBadge from '../atoms/badges/AvatarBadge'
+import AvatarBadge from '../atoms/badges/AvatarBadge.js'
 
 
 export function Hero() {

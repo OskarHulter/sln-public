@@ -1,6 +1,5 @@
 import { z } from 'zod'
 
-
 export const mailFormSchema = z.object({
   name: z.string().min(2).describe('Name // Please enter your name'),
   mail: z.string().email().min(2).describe('Mail // Please enter your mail'),
@@ -9,5 +8,3 @@ export const mailFormSchema = z.object({
 })
 
 export type MailFormSchema = z.infer<typeof mailFormSchema>
-
-

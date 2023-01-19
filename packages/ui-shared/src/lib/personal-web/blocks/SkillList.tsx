@@ -1,7 +1,7 @@
 
 import { Text } from '@nextui-org/react'
-import { LoadingSpinner } from '../atoms/LoadingSpinner'
-import { useContent } from '../hooks/useContent'
+import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import { useContent } from '../hooks/useContent.js'
 
 
 export function SkillList() {
@@ -11,7 +11,7 @@ export function SkillList() {
   return (
     <section>
       <ul>
-        {Object.entries(data?.about.topTraits).map((item, index) => (
+        {Object.entries(data?.about.topTraits).map((item: string, index: number) => (
           <li key={index}>
             <div>
               <span>{index + 1}. </span>

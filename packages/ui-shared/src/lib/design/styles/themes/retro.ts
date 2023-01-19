@@ -1,5 +1,5 @@
 import { createTheme } from '@nextui-org/react'
-import { sharedTheme } from './shared'
+import sharedTheme from './shared.js'
 
 
 export const lightRetroTheme = createTheme({
@@ -27,3 +27,5 @@ export const darkRetroTheme = createTheme({
     },
   },
 })
+
+export default { lightRetroTheme, darkRetroTheme }

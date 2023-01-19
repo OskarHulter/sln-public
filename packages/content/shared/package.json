@@ -1,5 +1,13 @@
 {
   "name": "@sln/content-shared",
   "version": "0.0.1",
-  "type": "module"
+  "type": "module",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  }
 }

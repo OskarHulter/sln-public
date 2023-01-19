@@ -13,5 +13,5 @@ const nextConfig = {
     svgr: false,
   },
 }
-
+// eslint-disable-next-line
 module.exports = withNx(nextConfig)

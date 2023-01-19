@@ -1,5 +1,5 @@
 import { createTheme } from '@nextui-org/react'
-import { sharedTheme } from './shared'
+import sharedTheme from './shared.js'
 
 
 /*
@@ -31,8 +31,3 @@ export const darkTheme = createTheme({
   ...sharedTheme,
   type: 'dark',
 })
-
-
-
-
-

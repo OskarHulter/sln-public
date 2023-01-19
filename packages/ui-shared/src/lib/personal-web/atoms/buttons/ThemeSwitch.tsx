@@ -1,8 +1,8 @@
 import { useTheme as useNextTheme } from 'next-themes'
 import React from 'react'
 import { Switch, useTheme } from '@nextui-org/react'
-import { MoonIcon, SunIcon } from '../../atoms/icons/Icons'
-import { useHasMounted } from '../../hooks/useHasMounted'
+import { MoonIcon, SunIcon } from '../../atoms/icons/Icons.js'
+import { useHasMounted } from '../../hooks/useHasMounted.js'
 
 
 export function ThemeSwitch() {

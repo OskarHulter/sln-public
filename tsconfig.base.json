@@ -8,7 +8,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es6",
     "module": "NodeNext",
     "lib": [
       "es2017",
@@ -19,13 +19,13 @@
     "baseUrl": ".",
     "paths": {
       "@sln/content-shared": [
-        "packages/content/shared/src/index.ts"
+        "packages/content/shared/src/index.js"
       ],
       "@sln/data-access-shared": [
-        "packages/data-access/shared/src/index.ts"
+        "packages/data-access/shared/src/index.js"
       ],
       "@sln/ui-shared": [
-        "packages/ui-shared/src/index.ts"
+        "packages/ui-shared/src/index.js"
       ]
     }
   },

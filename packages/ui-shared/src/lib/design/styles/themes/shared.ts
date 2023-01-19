@@ -1,11 +1,13 @@
 import { Theme } from '@nextui-org/react'
-import { fonts } from '../../assets/fonts'
-import { colors } from '../../colors'
+import { fonts } from '../../assets/fonts/index.js'
+import { colors } from '../../colors/index.js'
 
 
-export const sharedTheme: Theme = {
+const sharedTheme: Theme = {
   theme: {
     colors,
     fonts,
   },
 }
+
+export default sharedTheme

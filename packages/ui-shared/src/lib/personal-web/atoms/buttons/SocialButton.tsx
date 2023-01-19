@@ -1,5 +1,5 @@
 import { Button, Link } from '@nextui-org/react'
-import { Icon } from '../../../types'
+import { Icon } from '../../../types.js'
 
 
 export type SocialProps = {

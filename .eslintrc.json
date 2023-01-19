@@ -13,7 +13,7 @@
     "prettier"
   ],
   "extends": [
-    "plugin:import/recommended",
+    "plugin:@nrwl/nx/react",
     "plugin:import/typescript",
     "plugin:functional/recommended",
     "plugin:prettier/recommended"
@@ -111,13 +111,19 @@
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
+        "import/no-unresolved": 0,
         "functional/prefer-readonly-type": "off",
         "functional/no-conditional-statement": "off",
         "functional/functional-parameters": "off",
         "functional/no-expression-statement": "off",
         "functional/no-return-void": "off",
         "functional/no-loop-statement": "off",
-        "prettier/prettier": "error",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ],
         "arrow-body-style": "off",
         "prefer-arrow-callback": "off"
       }

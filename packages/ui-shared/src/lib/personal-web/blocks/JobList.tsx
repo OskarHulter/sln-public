@@ -1,7 +1,7 @@
 import { Grid } from '@nextui-org/react'
-import { LoadingSpinner } from '../atoms/LoadingSpinner'
-import JobCard from '../cards/JobCard'
-import { useContent } from '../hooks/useContent'
+import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import JobCard from '../cards/JobCard.js'
+import { useContent } from '../hooks/useContent.js'
 
 
 export function JobList() {
@@ -10,7 +10,7 @@ export function JobList() {
   if (!data) return <LoadingSpinner />
 
   return <Grid.Container gap={2}>
-    {data?.jobs.map((item, key) => <JobCard key={key} {...item} />)}
+    {data?.jobs.map((item: Record<string, unknown>, key: number) => <JobCard key={key} {...item} />)}
   </Grid.Container>
 }
 

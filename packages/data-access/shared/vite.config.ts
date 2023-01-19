@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
-import { resolve } from 'path' //join
+//import { join } from 'path'
 import { defineConfig } from 'vite'
-// import dts from 'vite-plugin-dts'
+//import dts from 'vite-plugin-dts'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
@@ -31,16 +31,16 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: 'src/index.ts',
       name: 'data-access-shared',
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forgot to update your package.json as well.
-      formats: ['es', 'cjs'],
+      formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['z', 'next', 'zod', 'react', 'superjson'],
+      external: ['react', 'react-dom', 'zod', 'superjson', 'axios', 'next', '@sln/content-shared'],
     },
   },
 

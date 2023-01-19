@@ -1,19 +1,15 @@
+import { getContent } from '@sln/content-shared'
 import invariant from 'ts-invariant'
 import { z } from 'zod'
-import { getContent } from '@sln/content-shared'
-import { mailFormSchema } from '../schemas/index.js'
-
+import { mailFormSchema } from '../schemas'
 
 export const mockFetch = async () => getContent()
 
-
-export const fetchContent = async (
-): Promise<ReturnType<typeof getContent>> => {
+export const fetchContent = async (): Promise<ReturnType<typeof getContent>> => {
   const res = await mockFetch()
   invariant(res, 'Expected value to be a person')
   return res
 }
-
 
 export const postContact = async (data: z.infer<typeof mailFormSchema>) => {
   // Send the data to the server in JSON format.
@@ -36,7 +32,6 @@ export const postContact = async (data: z.infer<typeof mailFormSchema>) => {
   alert(`Is this your full name: ${result.data}`)
 }
 
-
 export const postMail = async (data: z.infer<typeof mailFormSchema>) => {
   const JSONdata = JSON.stringify(data)
 
@@ -55,4 +50,3 @@ export const postMail = async (data: z.infer<typeof mailFormSchema>) => {
   const result = await response.json()
   return result
 }
-

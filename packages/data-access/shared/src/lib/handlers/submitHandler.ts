@@ -8,7 +8,6 @@ export interface ContactFormElement extends HTMLFormElement {
   readonly elements: FormElements
 }
 
-
 export const handleEmailSubmit = async (event: React.FormEvent<ContactFormElement>) => {
   // Stop the form from submitting and refreshing the page.
   event.preventDefault()

@@ -1,5 +1,5 @@
 import { globalCss } from '@nextui-org/react'
-import { inter } from '../../assets/fonts'
+import { inter } from '../../assets/fonts/index.js'
 
 
 export const globalStyles = globalCss({

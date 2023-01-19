@@ -1,4 +1,4 @@
-import { IconProps } from '../types'
+import { IconProps } from '../types.js'
 
 
 const SvgDb = (props: IconProps) => (

@@ -1,6 +1,6 @@
-import { images } from '../assets/index.js'
+import images from '../images/index'
 
-export const projects = [
+const projects = [
   {
     name: 'personal website',
     description:
@@ -23,3 +23,5 @@ export const projects = [
 
 export type Project = (typeof projects)[number]
 export type Projects = typeof projects
+
+export default projects

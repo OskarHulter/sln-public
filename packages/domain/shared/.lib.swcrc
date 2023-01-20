@@ -1,6 +1,6 @@
 {
   "jsc": {
-    "target": "es2017",
+    "target": "esnext",
     "parser": {
       "syntax": "typescript",
       "decorators": true,
@@ -15,17 +15,17 @@
     "loose": true
   },
   "module": {
-    "type": "NodeNext",
+    "type": "esnext",
     "strict": true,
     "noInterop": true
   },
   "sourceMaps": true,
   "exclude": [
-    "jest.config.ts",
+    "vite.config.ts",
     ".*\\.spec.tsx?$",
     ".*\\.test.tsx?$",
-    "./src/jest-setup.ts$",
-    "./**/jest-setup.ts$",
+    "./src/vite-setup.ts$",
+    "./**/vite-setup.ts$",
     ".*.js$"
   ]
 }

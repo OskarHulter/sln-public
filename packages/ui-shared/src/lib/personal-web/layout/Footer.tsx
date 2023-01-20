@@ -1,7 +1,7 @@
 import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons'
-import { LoadingSpinner } from '../atoms/LoadingSpinner'
-import { useContent } from '../hooks/useContent'
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons.js'
+import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import { useContent } from '../features/content/useContent.js'
 
 const MockItem = ({ text }: { text: string }) => {
   return (
@@ -114,7 +114,7 @@ export function Footer() {
           p: 0,
         }}
       >
-        {data.technologies.techNames?.map((text, key) => (
+        {data.technologies.techNames?.map((text: string, key: number) => (
           <Grid
             xs
             key={key}

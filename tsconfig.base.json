@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2017",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "rootDir": ".",
@@ -60,12 +60,16 @@
     "next",
     "ts-invariant",
     "@nextui-org/react",
-    "@hookform/resolvers",
+    "@hookform/resolvers/zod",
     "vite/client",
     "vitest/globals",
     "@testing-library/react",
     "@testing-library/jest-dom",
-    "@testing-library/user-event"
+    "@testing-library/user-event",
+    "@trpc/client",
+    "@trpc/server",
+    "@trpc/react-query",
+    "@trpc/next"
   ],
   "exclude": [
     "node_modules",

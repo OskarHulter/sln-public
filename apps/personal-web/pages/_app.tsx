@@ -1,13 +1,15 @@
 import { SSRProvider } from '@react-aria/ssr'
-import { globalMinimal, SharedUiProvider } from '@sln/ui-shared'
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { AppProps } from 'next/app.js'
-import { Head } from 'next/document.js'
+import { AppProps } from 'next/app'
+import Head from 'next/head'
 import React from 'react'
+import trpc from '../utils/trpc'
+
+const { globalMinimal, SharedUiProvider } = await import('@sln/ui-shared')
 
 globalMinimal()
-export default function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient())
   return (
     <SSRProvider>
@@ -39,3 +41,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </SSRProvider>
   )
 }
+
+export default trpc.withTRPC(MyApp)

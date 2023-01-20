@@ -9,6 +9,9 @@
     "src/**/*.ts",
     "src/**/*.d.ts"
   ],
+  "files": [
+    "../../content/shared/src/index.ts"
+  ],
   "exclude": [
     "vite.config.ts",
     "test/*",

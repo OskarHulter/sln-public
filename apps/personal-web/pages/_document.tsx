@@ -9,8 +9,9 @@ import Document, {
 } from 'next/document'
 import React from 'react'
 
+// eslint-disable-next-line functional/no-class
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static override async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
 
     return {
@@ -19,7 +20,7 @@ class MyDocument extends Document {
     }
   }
 
-  render() {
+  override render() {
     return (
       <Html lang='en'>
         <Head>

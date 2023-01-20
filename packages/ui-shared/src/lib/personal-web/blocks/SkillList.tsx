@@ -1,6 +1,6 @@
 import { Text } from '@nextui-org/react'
 import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
-import { useContent } from '../hooks/useContent.js'
+import { useContent } from '../features/content/useContent.js'
 
 export function SkillList() {
   const { data } = useContent()

@@ -1,14 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "moduleResolution": "node",
-  },
   "include": [
     "src",
-    "test"
+    "test",
   ],
+  "compilerOptions": {
+    "types": [
+      "@hookform/resolvers/zod"
+    ],
+  },
   "references": [
     {
       "path": "./tsconfig.lib.json"

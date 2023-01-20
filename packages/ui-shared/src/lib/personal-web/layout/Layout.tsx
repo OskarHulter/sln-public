@@ -1,8 +1,8 @@
 import { Container } from '@nextui-org/react'
-import { fonts } from '../../design/index.js'
-import { BaseProps } from '../../types'
-import { Footer } from './Footer'
-import { Header } from './Header'
+import fonts from '../../design/assets/fonts/fonts.js'
+import { BaseProps } from '../../types.js'
+import { Footer } from './Footer.js'
+import Header from './Header.js'
 
 export function Layout({ children }: BaseProps) {
   return (

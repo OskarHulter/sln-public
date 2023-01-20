@@ -1,3 +1,4 @@
+/// <reference>
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
@@ -14,7 +15,8 @@
     "composite": true
   },
   "include": [
-    "test/*",
+    "test/setup.ts",
+    "test/test-utils.tsx",
     "vite.config.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.ts",

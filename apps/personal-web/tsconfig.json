@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "esnext",
     "jsx": "preserve",
     "allowJs": true,
     "esModuleInterop": true,
@@ -11,7 +12,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "module": "ESNext"
+    "module": "ESNext",
+    "moduleResolution": "nodenext"
   },
   "include": [
     "next-env.d.ts",
@@ -20,11 +22,22 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next.config.cjs"
+    "next.config.cjs",
   ],
   "exclude": [
     "node_modules",
     "src/**/*.spec.ts",
     "src/**/*.test.ts"
-  ]
+  ],
+  "paths": {
+    "@sln/content-shared": [
+      "../../dist/packages/content/shared/index.cjs"
+    ],
+    "@sln/data-access-shared": [
+      "../../dist/packages/data-access-shared/index.cjs"
+    ],
+    "@sln/ui-shared": [
+      "../../dist/packages/ui-shared/index.cjs"
+    ]
+  },
 }

@@ -2,7 +2,7 @@ import { Switch, useTheme } from '@nextui-org/react'
 import { useTheme as useNextTheme } from 'next-themes'
 import React from 'react'
 import { MoonIcon, SunIcon } from '../../atoms/icons/Icons.js'
-import { useHasMounted } from '../../hooks/useHasMounted.js'
+import { useHasMounted } from '../../features/hasMounted/useHasMounted.js'
 
 export function ThemeSwitch() {
   const { setTheme } = useNextTheme()

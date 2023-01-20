@@ -1,6 +1,6 @@
-import { images } from '../assets/index.js'
+import images from '../images/index.js'
 
-export const jobs = [
+const jobs = [
   {
     name: 'sigmaIt',
     title: 'MyTeam',
@@ -44,3 +44,4 @@ export const jobs = [
 
 export type Job = (typeof jobs)[number]
 export type Jobs = typeof jobs
+export default jobs

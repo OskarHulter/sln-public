@@ -10,6 +10,10 @@
     "src/**/*.tsx",
     "src/**/*.d.ts"
   ],
+  "files": [
+    "../../content/shared/src/index.js",
+    "../../data-access/shared/src/index.js"
+  ],
   "exclude": [
     "vite.config.ts",
     "test/*",

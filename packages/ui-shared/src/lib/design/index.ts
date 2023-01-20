@@ -1,7 +1,0 @@
-export { default as fonts } from './assets/fonts/index.js'
-export * from './assets/icons/components/index.js'
-export * from './assets/icons/types.js'
-export * from './colors/index.js'
-export { default as globalMinimal } from './styles/global/globalMinimal.js'
-export * from './styles/global/globalStyles.js'
-export * from './styles/themes/index.js'

@@ -17,10 +17,12 @@ const education = {
   endYear: '2018',
 }
 
-export const constants = {
+const constants = {
   creatorName: 'Oskar Hulter',
   currentRole: 'Fullstack Developer',
   email: 'oskarhulter@gmail.com',
   education,
   urls,
 }
+
+export default constants

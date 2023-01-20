@@ -7,6 +7,9 @@ const { withNx } = require('@nrwl/next/plugins/with-nx')
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
+  experimental: {
+    esmExternals: 'loose',
+  },
   nx: {
     // Set this to true if you would like to to use SVGR
     // See: https://github.com/gregberge/svgr
@@ -14,4 +17,13 @@ const nextConfig = {
   },
 }
 // eslint-disable-next-line
-module.exports = withNx(nextConfig)
+module.exports = withNx({
+  ...nextConfig,
+  webpack: function (config, options) {
+    // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
+    config.experiments = {
+      topLevelAwait: true,
+    }
+    return config
+  },
+})

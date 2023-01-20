@@ -1,7 +1,7 @@
 import { Grid } from '@nextui-org/react'
 import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
 import JobCard from '../cards/JobCard.js'
-import { useContent } from '../hooks/useContent.js'
+import { useContent } from '../features/content/useContent.js'
 
 export function JobList() {
   const { data } = useContent()

@@ -1,7 +1,7 @@
 import { Grid, User } from '@nextui-org/react'
 import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
 //import UserTwitterCard from '../../cards/UserTwitterCard'
-import { useContent } from '../../hooks/useContent.js'
+import { useContent } from '../../features/content/useContent.js'
 
 export function UserBadge() {
   const { data } = useContent()

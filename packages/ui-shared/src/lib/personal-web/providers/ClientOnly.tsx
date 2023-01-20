@@ -1,7 +1,6 @@
 import React from 'react'
 import { BaseProps } from '../../types'
 
-
 export function ClientOnly({ children, ...delegated }: BaseProps) {
   const [hasMounted, setHasMounted] = React.useState(false)
 
@@ -13,9 +12,5 @@ export function ClientOnly({ children, ...delegated }: BaseProps) {
     return null
   }
 
-  return (
-    <div {...delegated}>
-      {children}
-    </div>
-  )
+  return <div {...delegated}>{children}</div>
 }

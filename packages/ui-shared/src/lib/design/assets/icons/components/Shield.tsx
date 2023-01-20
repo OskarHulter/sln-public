@@ -1,6 +1,5 @@
 import { IconProps } from '../types.js'
 
-
 const SvgShield = (props: IconProps) => (
   <svg
     xmlns='http://www.w3.org/2000/svg'

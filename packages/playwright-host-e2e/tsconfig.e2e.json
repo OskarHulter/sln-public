@@ -3,6 +3,7 @@
   "compilerOptions": {
     "sourceMap": false,
     "outDir": "../../dist/out-tsc",
+    "composite": true,
     "allowJs": true,
     "types": [
       "vitest",

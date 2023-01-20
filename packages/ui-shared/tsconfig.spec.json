@@ -6,11 +6,15 @@
       "vitest/globals",
       "node",
       "vitest",
-      "@testing-library/react"
+      "@testing-library/react",
+      "@testing-library/jest-dom",
+      "@testing-library/user-event"
     ],
+    "noEmit": false,
     "composite": true
   },
   "include": [
+    "test/*",
     "vite.config.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.ts",

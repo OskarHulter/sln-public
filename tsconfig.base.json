@@ -1,34 +1,69 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": true,
-    "moduleResolution": "NodeNext",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
     "target": "es6",
     "module": "NodeNext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
+    "moduleResolution": "NodeNext",
+    "rootDir": ".",
     "baseUrl": ".",
     "paths": {
       "@sln/content-shared": [
-        "packages/content/shared/src/index.js"
+        "packages/content/shared/src/index.ts"
       ],
       "@sln/data-access-shared": [
-        "packages/data-access/shared/src/index.js"
+        "packages/data-access/shared/src/index.ts"
       ],
       "@sln/ui-shared": [
-        "packages/ui-shared/src/index.js"
+        "packages/ui-shared/src/index.ts"
       ]
-    }
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "strict": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "explainFiles": true,
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "traceResolution": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "noImplicitOverride": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
   },
+  "types": [
+    "node",
+    "immer",
+    "zustand",
+    "zod",
+    "@tanstack/react-query",
+    "@stitches/react",
+    "http-errors",
+    "ky",
+    "superjson",
+    "next-themes",
+    "next",
+    "ts-invariant",
+    "@nextui-org/react",
+    "@hookform/resolvers",
+    "vite/client",
+    "vitest/globals",
+    "@testing-library/react",
+    "@testing-library/jest-dom",
+    "@testing-library/user-event"
+  ],
   "exclude": [
     "node_modules",
     "tmp"

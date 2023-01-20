@@ -1,7 +1,6 @@
 import { globalCss } from '@nextui-org/react'
 import { inter } from '../../assets/fonts/index.js'
 
-
 export const globalStyles = globalCss({
   '@font-face': [
     {
@@ -27,7 +26,7 @@ export const globalStyles = globalCss({
     outlineOffset: '-2px',
   },
 
-  'html': {
+  html: {
     padding: 0,
     margin: 0,
     fontFamily: inter.variable,
@@ -39,7 +38,7 @@ export const globalStyles = globalCss({
     scrollBehavior: 'smooth',
   },
 
-  'body': {
+  body: {
     margin: 0,
     padding: 0,
     fontFamily: 'inherit',

@@ -3,19 +3,20 @@ import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
 import { LoadingSpinner } from '../atoms/LoadingSpinner'
 import { useContent } from '../hooks/useContent'
 
-
 // const ThemeSwitch = dynamic(() => import('../ThemeSwitch'), { loading: () => <Loading />, ssr: false })
 // const { pathname } = useRouter()
 // className={pathname === '/' ? 'is-active' : ''}
 
 export function Header() {
-
   const { data } = useContent()
   if (!data) return <LoadingSpinner />
   return (
-    <Navbar variant='sticky' css={{
-      width: '$full',
-    }}>
+    <Navbar
+      variant='sticky'
+      css={{
+        width: '$full',
+      }}
+    >
       <Navbar.Brand>
         <Text
           h1

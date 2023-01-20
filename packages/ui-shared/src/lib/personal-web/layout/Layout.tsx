@@ -1,15 +1,13 @@
 import { Container } from '@nextui-org/react'
-import { inter, sourceCodePro } from '../../design'
+import { fonts } from '../../design/index.js'
 import { BaseProps } from '../../types'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-
 export function Layout({ children }: BaseProps) {
-
   return (
     <Container
-      className={`container ${inter.variable} ${sourceCodePro.variable}`}
+      className={`container ${fonts.inter.variable} ${fonts.sourceCodePro.variable}`}
       css={{
         p: '0',
       }}

@@ -1,7 +1,6 @@
 import { createTheme } from '@nextui-org/react'
 import sharedTheme from './shared.js'
 
-
 /*
   ex: padding, margin, and top, left, right, bottom, width, height
   spacing: {

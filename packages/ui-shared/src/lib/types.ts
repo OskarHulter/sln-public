@@ -1,6 +1,5 @@
 import { SVGProps } from 'react'
 
-
 export type SafeNumber = number | `${number}`
 export type Icon = React.ReactElement<SVGProps<SVGSVGElement>>
 
@@ -28,6 +27,3 @@ export type BlockCardProps = {
   }
   image: MediaProps
 } & Partial<BaseProps>
-
-
-

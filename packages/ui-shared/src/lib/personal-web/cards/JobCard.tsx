@@ -1,20 +1,19 @@
 //'use client'
-import Image from 'next/image'
 import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
 import { Job } from '@sln/content-shared'
-
+import Image from 'next/image'
 
 export function JobCard(props: Job) {
-
   return (
     <Card css={{ p: '$6', mw: '400px' }}>
       <Card.Header>
-        <Image
-          {...props.image}
-        />
+        <Image {...props.image} />
         <Grid.Container css={{ pl: '$6' }}>
           <Grid xs={12}>
-            <Text h4 css={{ lineHeight: '$xs' }}>
+            <Text
+              h4
+              css={{ lineHeight: '$xs' }}
+            >
               {props.name}
             </Text>
           </Grid>
@@ -24,15 +23,13 @@ export function JobCard(props: Job) {
         </Grid.Container>
       </Card.Header>
       <Card.Body css={{ py: '$2' }}>
-        <Text>
-          {props.description}
-        </Text>
+        <Text>{props.description}</Text>
 
         <Row>
-          {props.technologies?.map((item, key) =>
-            <Text key={key}>{item}</Text>)}
+          {props.technologies?.map((item, key) => (
+            <Text key={key}>{item}</Text>
+          ))}
         </Row>
-
       </Card.Body>
       <Card.Footer>
         <Link
@@ -43,7 +40,7 @@ export function JobCard(props: Job) {
           External Link
         </Link>
       </Card.Footer>
-    </Card >
+    </Card>
   )
 }
 

@@ -2,9 +2,7 @@ import { Avatar, Grid } from '@nextui-org/react'
 import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
 import { useContent } from '../../hooks/useContent.js'
 
-
 export function AvatarBadge() {
-
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />

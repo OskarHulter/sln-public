@@ -1,15 +1,17 @@
 /// <reference types="vitest" />
-import { join } from 'path'
+import { dirname, join } from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [
     dts({
       tsConfigFilePath: join(__dirname, 'tsconfig.lib.json'),
       // Faster builds by skipping tests. Set this to false to enable type checking.
-      skipDiagnostics: false,
+      skipDiagnostics: true,
     }),
 
     viteTsConfigPaths({
@@ -36,7 +38,7 @@ export default defineConfig({
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forgot to update your package.json as well.
-      formats: ['es', 'umd', 'cjs'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.

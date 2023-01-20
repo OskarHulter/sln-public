@@ -1,7 +1,6 @@
 import { Checkbox, Input, Text, Textarea } from '@nextui-org/react'
 import { CheckboxInputField, InputProps } from '../../forms/types.js'
 
-
 export const InputField = ({ label, register, required, reset, errors }: InputProps) => (
   <Input
     bordered
@@ -32,7 +31,6 @@ export const TextareaField = ({ label, register, required, errors }: Omit<InputP
   />
 )
 
-
 export const CheckboxField = ({ label, register, errors, setValue }: CheckboxInputField) => {
   // const [checked, setChecked] = React.useState(false)
   // onChange={isSelected => {
@@ -50,7 +48,12 @@ export const CheckboxField = ({ label, register, errors, setValue }: CheckboxInp
       >
         {label}
       </Checkbox>
-      <Text id='terms' color='error'>{errors[label]?.message}</Text>
+      <Text
+        id='terms'
+        color='error'
+      >
+        {errors[label]?.message}
+      </Text>
     </>
   )
 }

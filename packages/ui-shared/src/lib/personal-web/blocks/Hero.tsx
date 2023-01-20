@@ -1,7 +1,5 @@
-
 import { Button, Col, Grid, Row, Text } from '@nextui-org/react'
 import AvatarBadge from '../atoms/badges/AvatarBadge.js'
-
 
 export function Hero() {
   return (
@@ -23,7 +21,13 @@ export function Hero() {
           </Text>
 
           <Row>
-            <Button rounded size='lg' auto color='gradient' css={{ m: '$5', height: 'fit-content' }}>
+            <Button
+              rounded
+              size='lg'
+              auto
+              color='gradient'
+              css={{ m: '$5', height: 'fit-content' }}
+            >
               <Text
                 color='$blue900'
                 size='$xl'
@@ -35,7 +39,6 @@ export function Hero() {
                 Contact
               </Text>
             </Button>
-
           </Row>
         </Col>
         <Col css={{ p: '$6' }}>

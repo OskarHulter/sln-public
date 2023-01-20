@@ -1,13 +1,10 @@
 import { Grid } from '@nextui-org/react'
 
-
 type CardsProps = {
   children: React.ReactElement[]
 }
 
-
 const CardGrid = ({ children }: CardsProps) => {
-
   return (
     <Grid.Container
       gap={2}
@@ -19,7 +16,14 @@ const CardGrid = ({ children }: CardsProps) => {
         gridAutoRows: '200px',
       }}
     >
-      {children.map(child => <Grid xs={12} sm={4}>{child}</Grid>)}
+      {children.map((child) => (
+        <Grid
+          xs={12}
+          sm={4}
+        >
+          {child}
+        </Grid>
+      ))}
     </Grid.Container>
   )
 }

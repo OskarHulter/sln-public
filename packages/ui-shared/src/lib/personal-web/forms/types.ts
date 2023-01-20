@@ -1,7 +1,10 @@
 import {
-  FormState, Path, UseFormRegister, UseFormResetField, UseFormSetValue,
+  FormState,
+  Path,
+  UseFormRegister,
+  UseFormResetField,
+  UseFormSetValue,
 } from 'react-hook-form'
-
 
 export interface IFormValues {
   name: string
@@ -18,4 +21,6 @@ export type InputProps = {
   required: boolean
 }
 
-export type CheckboxInputField = Pick<InputProps, 'label' | 'register' | 'errors'> & { setValue: UseFormSetValue<IFormValues> }
+export type CheckboxInputField = Pick<InputProps, 'label' | 'register' | 'errors'> & {
+  setValue: UseFormSetValue<IFormValues>
+}

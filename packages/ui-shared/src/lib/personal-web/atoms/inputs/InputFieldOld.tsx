@@ -1,7 +1,6 @@
-import React from 'react'
 import { Checkbox, Input, Textarea } from '@nextui-org/react'
+import React from 'react'
 import { InputProps } from '../../forms/types.js'
-
 
 export const InputField = ({ label, register, required }: InputProps) => (
   <>
@@ -30,7 +29,7 @@ export const BooleanField = ({ label, register, required }: InputProps) => {
       <label>{label}</label>
       <Checkbox
         {...register(label, { required })}
-        onChange={isSelected => {
+        onChange={(isSelected) => {
           setChecked(isSelected)
         }}
         value={checked ? 'true' : 'false'}

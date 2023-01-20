@@ -42,5 +42,5 @@ export const jobs = [
   },
 ]
 
-export type Job = typeof jobs[number]
+export type Job = (typeof jobs)[number]
 export type Jobs = typeof jobs

@@ -1,7 +1,6 @@
 import { globalCss } from '@nextui-org/react'
 import { inter } from '../../assets/fonts/index.js'
 
-
 // @media(max - width: 600px) {
 //   .container {
 //     /* overflow: auto; */
@@ -15,7 +14,6 @@ import { inter } from '../../assets/fonts/index.js'
 //     justify - content: space - around
 //   }
 // }
-
 
 export const globalMinimal = globalCss({
   '@font-face': [
@@ -53,7 +51,7 @@ export const globalMinimal = globalCss({
     outline: `2px solid $secondary`,
     outlineOffset: '-2px',
   },
-  'html': {
+  html: {
     padding: 0,
     margin: 0,
     fontFamily: inter.variable,
@@ -64,7 +62,7 @@ export const globalMinimal = globalCss({
     webkitTextSizeAdjust: '100%',
     scrollBehavior: 'smooth',
   },
-  'body': {
+  body: {
     margin: 0,
     padding: 0,
     fontFamily: 'inherit',

@@ -1,8 +1,7 @@
 //'use client'
-import Image from 'next/image'
 import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
 import { Project } from '@sln/content-shared'
-
+import Image from 'next/image'
 
 export function ProjectCard({
   name,
@@ -12,7 +11,6 @@ export function ProjectCard({
   githubUrl,
   technologies,
 }: Project) {
-
   return (
     <Card
       isPressable
@@ -20,12 +18,13 @@ export function ProjectCard({
       css={{ p: '$6', mw: '400px' }}
     >
       <Card.Header>
-        <Image
-          {...image}
-        />
+        <Image {...image} />
         <Grid.Container css={{ pl: '$6' }}>
           <Grid xs={12}>
-            <Text h4 css={{ lineHeight: '$xs' }}>
+            <Text
+              h4
+              css={{ lineHeight: '$xs' }}
+            >
               {name}
             </Text>
           </Grid>
@@ -35,12 +34,11 @@ export function ProjectCard({
         </Grid.Container>
       </Card.Header>
       <Card.Body css={{ py: '$2' }}>
-        <Text>
-          {description}
-        </Text>
+        <Text>{description}</Text>
         <Row>
-          {technologies?.map((item, key) =>
-            <Text key={key}>{item}</Text>)}
+          {technologies?.map((item, key) => (
+            <Text key={key}>{item}</Text>
+          ))}
         </Row>
       </Card.Body>
       <Card.Footer>

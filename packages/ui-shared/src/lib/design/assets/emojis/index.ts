@@ -1,6 +1,4 @@
-const emojis = new Map([
-  ['bomb', '&#x1F4A3;'],
-])
+const emojis = new Map([['bomb', '&#x1F4A3;']])
 
 // emojis.get(john)
 export default emojis

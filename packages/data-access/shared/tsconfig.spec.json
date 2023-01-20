@@ -3,12 +3,13 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "composite": true,
-    "types": [
-      "vitest/globals",
-      "node"
-    ]
+    "noEmit": false
   },
+  "types": [
+    "@testing-library/user-event"
+  ],
   "include": [
+    "test/*",
     "vite.config.ts",
     "src/**/*.test.ts",
     "src/**/*.spec.ts",

@@ -1,7 +1,7 @@
-/// <reference types="react-scripts" />
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/// <reference types="stitches" />
+
 declare module '*.svg' {
-  const content: any
-  export const ReactComponent: any
+  const content: unknown
+  export const ReactComponent: unknown
   export default content
 }

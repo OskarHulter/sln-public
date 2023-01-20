@@ -1,6 +1,5 @@
 import { SVGProps } from 'react'
 
-
 export type IconProps = {
   fill: string
   filled?: boolean

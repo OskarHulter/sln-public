@@ -1,12 +1,9 @@
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { NextUIProvider } from '@nextui-org/react'
+import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { darkTheme, lightTheme } from '../../design'
 import { BaseProps } from '../../types'
 
-
 export function SharedUiProvider({ children }: BaseProps) {
-
-
   return (
     <NextThemesProvider
       defaultTheme='system'
@@ -16,9 +13,7 @@ export function SharedUiProvider({ children }: BaseProps) {
         dark: lightTheme.className,
       }}
     >
-      <NextUIProvider>
-        {children}
-      </NextUIProvider>
+      <NextUIProvider>{children}</NextUIProvider>
     </NextThemesProvider>
   )
 }

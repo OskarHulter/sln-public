@@ -3,4 +3,4 @@ import { Content, content, ContentKeys, Topic, Topics } from '../content/index.j
 export const getContent = (): Content => content
 export const getContentByName = (name: ContentKeys) => content[name]
 
-export const findTopic = (name: Topic, list: Topics) => list.find(data => data.name === name)
+export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)

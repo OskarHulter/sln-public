@@ -45,7 +45,8 @@ export const jobs = [
 export const projects = [
   {
     name: 'personal website',
-    description: 'Built a responsive website using gatsby.Gatsby enables free and blazingly fast hosting directly on a CDN.Website template that will be used for my new site as well as the company of a relative.A flexible and reusable framework that captures my favorite patterns.',
+    description:
+      'Built a responsive website using gatsby.Gatsby enables free and blazingly fast hosting directly on a CDN.Website template that will be used for my new site as well as the company of a relative.A flexible and reusable framework that captures my favorite patterns.',
     siteUrl: 'www.oskarhulter.com',
     githubUrl: 'www.oskarhulter.com',
     technologies: ['ts', 'react', 'stitches', 'next', 'nextui'],
@@ -53,7 +54,8 @@ export const projects = [
   },
   {
     name: 'Timeseries analysis',
-    description: 'Comparison and evaluation of market decisions.To learn more about machine learning, dataviz and time - series analysis.',
+    description:
+      'Comparison and evaluation of market decisions.To learn more about machine learning, dataviz and time - series analysis.',
     siteUrl: 'www.oskarhulter.com',
     githubUrl: 'www.oskarhulter.com',
     technologies: ['python', 'pandas', 'pinescript', 'tradingview'],
@@ -62,9 +64,63 @@ export const projects = [
 ]
 
 const techNames = [
-  'html', 'Javascript', 'Typescript', 'node', 'react', 'next',
-  'react-query', 'redux', 'zustand', 'next', 'react-hook-form', 'gatsby',
-  'css', 'styled-components', 'Tailwind', 'stitches', 'css-in-js', 'C', 'C#', 'Python', 'Java', 'php', 'GraphQL', 'REST', 'zod', 'SQL', 'NOSQL', 'NEWSQL', 'postgres', 'MySQL', 'mongoDB', 'planetScale', 'jest', 'testing-library', 'cypress', 'playwright', 'webpack', 'nx', 'vite', 'babel', 'eslint', 'git', 'aws', 'wireshark', 'nmap', 'data-viz', 'design', 'agile', 'scrum', 'kanban', 'lean', 'Javascript', 'python', 'C', 'C#', 'php', 'Java',
+  'html',
+  'Javascript',
+  'Typescript',
+  'node',
+  'react',
+  'next',
+  'react-query',
+  'redux',
+  'zustand',
+  'next',
+  'react-hook-form',
+  'gatsby',
+  'css',
+  'styled-components',
+  'Tailwind',
+  'stitches',
+  'css-in-js',
+  'C',
+  'C#',
+  'Python',
+  'Java',
+  'php',
+  'GraphQL',
+  'REST',
+  'zod',
+  'SQL',
+  'NOSQL',
+  'NEWSQL',
+  'postgres',
+  'MySQL',
+  'mongoDB',
+  'planetScale',
+  'jest',
+  'testing-library',
+  'cypress',
+  'playwright',
+  'webpack',
+  'nx',
+  'vite',
+  'babel',
+  'eslint',
+  'git',
+  'aws',
+  'wireshark',
+  'nmap',
+  'data-viz',
+  'design',
+  'agile',
+  'scrum',
+  'kanban',
+  'lean',
+  'Javascript',
+  'python',
+  'C',
+  'C#',
+  'php',
+  'Java',
 ]
 
 const favoriteTools = [
@@ -90,9 +146,9 @@ export const technologies = {
   favoriteTools,
 }
 
-export type TechName = typeof technologies['techNames'][number]
+export type TechName = (typeof technologies)['techNames'][number]
 export type Technologies = typeof technologies
-export type Project = typeof projects[number]
+export type Project = (typeof projects)[number]
 export type Projects = typeof projects
-export type Job = typeof jobs[number]
+export type Job = (typeof jobs)[number]
 export type Jobs = typeof jobs

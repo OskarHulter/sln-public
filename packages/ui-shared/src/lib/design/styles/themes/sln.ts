@@ -1,7 +1,6 @@
 import { createTheme } from '@nextui-org/react'
 import sharedTheme from './shared.js'
 
-
 const buttonGradient = `316deg, $primary 3 %, $secondaryLight  100 %`
 
 const colors = {

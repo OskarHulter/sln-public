@@ -1,7 +1,6 @@
 import { createTheme } from '@nextui-org/react'
 import sharedTheme from './shared.js'
 
-
 export const lightModernTheme = createTheme({
   ...sharedTheme,
   type: 'light',

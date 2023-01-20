@@ -1,7 +1,6 @@
 import { createTheme } from '@nextui-org/react'
 import sharedTheme from './shared.js'
 
-
 const colors = {
   primary: '#27b3ff',
   primaryLight: '#ffc612',

@@ -1,13 +1,18 @@
-import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
 import { mailFormSchema, postMail } from '@sln/data-access-shared'
+import { useForm } from 'react-hook-form'
 import { CheckboxField, InputField, TextareaField } from '../atoms/inputs'
 import { IFormValues } from './types'
 
-
 export const MailForm = () => {
-  const { register, formState: { errors, isSubmitting, isSubmitSuccessful }, handleSubmit, resetField, setValue } = useForm<IFormValues>({
+  const {
+    register,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    handleSubmit,
+    resetField,
+    setValue,
+  } = useForm<IFormValues>({
     resolver: zodResolver(mailFormSchema),
   })
 
@@ -31,30 +36,70 @@ export const MailForm = () => {
   // }, [value]);
 
   return (
-    <Container justify='center' fluid>
-      {isSubmitSuccessful ?
+    <Container
+      justify='center'
+      fluid
+    >
+      {isSubmitSuccessful ? (
         <Text>Message sent successfully!</Text>
-        :
+      ) : (
         <form onSubmit={handleSubmit(async (data) => await postMail(data))}>
-
-          <Text h3 size='$5xl'>Contact</Text>
+          <Text
+            h3
+            size='$5xl'
+          >
+            Contact
+          </Text>
           <Spacer y={2} />
-          <InputField label='mail' register={register} errors={errors} reset={resetField} required />
+          <InputField
+            label='mail'
+            register={register}
+            errors={errors}
+            reset={resetField}
+            required
+          />
           <Spacer y={2} />
-          <InputField label='name' register={register} errors={errors} reset={resetField} required />
+          <InputField
+            label='name'
+            register={register}
+            errors={errors}
+            reset={resetField}
+            required
+          />
           <Spacer y={2} />
-          <TextareaField label='message' register={register} errors={errors} required />
+          <TextareaField
+            label='message'
+            register={register}
+            errors={errors}
+            required
+          />
           <Spacer y={1} />
-          <CheckboxField label='terms' register={register} errors={errors} setValue={setValue} />
+          <CheckboxField
+            label='terms'
+            register={register}
+            errors={errors}
+            setValue={setValue}
+          />
           <Spacer y={1} />
-          <Button type='submit' disabled={isSubmitting} color='primary' size='xl'>
-            {isSubmitting ?
-              <Loading type='points-opacity' color='currentColor' size='sm' /> : 'Send email'
-            }
+          <Button
+            type='submit'
+            disabled={isSubmitting}
+            color='primary'
+            size='xl'
+          >
+            {isSubmitting ? (
+              <Loading
+                type='points-opacity'
+                color='currentColor'
+                size='sm'
+              />
+            ) : (
+              'Send email'
+            )}
           </Button>
           <Spacer y={2} />
         </form>
-      }
+      )}
     </Container>
   )
 }

@@ -3,9 +3,7 @@ import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
 //import UserTwitterCard from '../../cards/UserTwitterCard'
 import { useContent } from '../../hooks/useContent.js'
 
-
 export function UserBadge() {
-
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />

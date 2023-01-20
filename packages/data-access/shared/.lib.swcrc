@@ -19,7 +19,6 @@
     "strict": true,
     "noInterop": true
   },
-  "sourceMaps": true,
   "exclude": [
     "vite.config.ts",
     ".*\\.spec.tsx?$",

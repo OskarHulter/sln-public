@@ -23,7 +23,6 @@ export type UserTwitterCardProps = {
 } & Partial<GridItemProps>
 
 export function UserTwitterCard({
-  avatarUrl,
   avatarProps,
   css,
   onClick,

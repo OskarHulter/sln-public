@@ -2,7 +2,7 @@
   "name": "@sln/ui-shared",
   "version": "0.0.1",
   "type": "module",
-  "main": "./index.cjs",
+  "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {

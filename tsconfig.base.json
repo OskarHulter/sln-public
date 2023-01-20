@@ -13,6 +13,9 @@
       "@sln/data-access-shared": [
         "packages/data-access/shared/src/index.ts"
       ],
+      "@sln/domain-shared": [
+        "packages/domain/shared/src/index.ts"
+      ],
       "@sln/ui-shared": [
         "packages/ui-shared/src/index.ts"
       ]

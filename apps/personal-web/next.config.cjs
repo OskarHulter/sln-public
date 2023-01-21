@@ -14,19 +14,19 @@ const nextConfig = {
   nx: {
     // Set this to true if you would like to to use SVGR
     // See: https://github.com/gregberge/svgr
-    svgr: false,
+    // svgr: false,
   },
 }
 
-module.exports = withAxiom({
-  // ... your existing config
-
-  // eslint-disable-next-line
-  module.exports = withNx(withAxiom({
+// eslint-disable-next-line
+module.exports = withAxiom(
+  withNx({
     ...nextConfig,
     webpack: function (config, options) {
       config.experiments = {
         topLevelAwait: true,
       }
       return config
-    }
+    },
+  })
+)

@@ -1,3 +1,4 @@
+import { MailFormSchema } from '@sln/features-mail'
 import {
   FormState,
   Path,
@@ -6,21 +7,14 @@ import {
   UseFormSetValue,
 } from 'react-hook-form'
 
-export interface IFormValues {
-  name: string
-  mail: string
-  message: string
-  terms: boolean
-}
-
 export type InputProps = {
-  label: Path<IFormValues>
-  register: UseFormRegister<IFormValues>
-  errors: FormState<IFormValues>['errors']
-  reset: UseFormResetField<IFormValues>
+  label: Path<MailFormSchema>
+  register: UseFormRegister<MailFormSchema>
+  errors: FormState<MailFormSchema>['errors']
+  reset: UseFormResetField<MailFormSchema>
   required: boolean
 }
 
 export type CheckboxInputField = Pick<InputProps, 'label' | 'register' | 'errors'> & {
-  setValue: UseFormSetValue<IFormValues>
+  setValue: UseFormSetValue<MailFormSchema>
 }

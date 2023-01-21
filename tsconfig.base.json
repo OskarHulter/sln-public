@@ -16,6 +16,9 @@
       "@sln/domain-shared": [
         "packages/domain/shared/src/index.ts"
       ],
+      "@sln/features-mail": [
+        "packages/features/mail/src/index.ts"
+      ],
       "@sln/ui-shared": [
         "packages/ui-shared/src/index.ts"
       ]
@@ -69,7 +72,10 @@
     "@trpc/client",
     "@trpc/server",
     "@trpc/react-query",
-    "@trpc/next"
+    "@trpc/next",
+    "vite/client",
+    "vitest",
+    "react-email"
   ],
   "exclude": [
     "node_modules",

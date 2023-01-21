@@ -6,6 +6,9 @@
   },
   "include": [
     "src",
+    "../../features/mail/src/lib/handlers/sendgrid.ts",
+    "../../features/mail/src/lib/handlers/sendMailExample.tsx",
+    "../../features/mail/src/lib/handlers/submitHandler.ts",
   ],
   "exclude": [
     "test"

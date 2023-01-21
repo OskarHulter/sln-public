@@ -1,7 +1,7 @@
 /* eslint-disable functional/no-try-statement */
 import { NextApiRequest, NextApiResponse } from 'next'
 import { parse } from 'superjson'
-import { z, ZodSchema } from 'zod'
+import { ZodSchema } from 'zod'
 import errorHandler from './errorHandler.js'
 
 export type NextApiConfig = {
@@ -9,10 +9,7 @@ export type NextApiConfig = {
   res: NextApiResponse
 }
 
-export default async function parseHandler(
-  schema: ZodSchema,
-  { req, res }: NextApiConfig
-): Promise<NextApiResponse | z.infer<typeof schema>> {
+export default async function parseHandler(schema: ZodSchema, { req, res }: NextApiConfig) {
   const body = parse(req.body)
   try {
     const result = await schema.parseAsync(body)

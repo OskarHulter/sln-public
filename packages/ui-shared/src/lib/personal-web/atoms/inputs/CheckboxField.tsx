@@ -14,12 +14,12 @@ export default function CheckboxField({ label, register, errors, setValue }: Che
         size='xl'
         color={errors[label]?.message ? 'error' : 'secondary'}
         {...register(label)}
-        onChange={(checked) => setValue('terms', checked)}
+        onChange={(checked) => setValue('emailUpdates', checked)}
       >
         {label}
       </Checkbox>
       <Text
-        id='terms'
+        id='emailUpdates'
         color='error'
       >
         {errors[label]?.message}

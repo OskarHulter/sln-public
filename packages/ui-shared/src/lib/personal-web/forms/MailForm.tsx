@@ -1,6 +1,6 @@
 // import zodResolver from '@hookform/resolvers/zod'
 import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
-import { mailFormSchema, mailSubmitHandler } from '@sln/data-access-shared'
+import { MailFormSchema, submitContactForm } from '@sln/features-mail'
 import { useForm } from 'react-hook-form'
 import CheckboxField from '../atoms/inputs/CheckboxField.js'
 import InputField from '../atoms/inputs/InputField.js'
@@ -14,7 +14,7 @@ export const MailForm = () => {
     handleSubmit,
     resetField,
     setValue,
-  } = useForm<typeof mailFormSchema>()
+  } = useForm<MailFormSchema>()
 
   //const { value, reset, bindings } = useInput("")
 
@@ -43,7 +43,7 @@ export const MailForm = () => {
       {isSubmitSuccessful ? (
         <Text>Message sent successfully!</Text>
       ) : (
-        <form onSubmit={handleSubmit(async (data) => await mailSubmitHandler(data))}>
+        <form onSubmit={handleSubmit(async (data) => await submitContactForm(data))}>
           <Text
             h3
             size='$5xl'
@@ -75,7 +75,7 @@ export const MailForm = () => {
           />
           <Spacer y={1} />
           <CheckboxField
-            label='terms'
+            label='emailUpdates'
             register={register}
             errors={errors}
             setValue={setValue}

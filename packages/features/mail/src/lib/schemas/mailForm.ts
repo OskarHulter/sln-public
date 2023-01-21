@@ -18,4 +18,3 @@ export interface ContactFormElement extends HTMLFormElement {
 }
 
 export default mailFormSchema
-// const getMailMessage = (data: z.infer<typeof mailFormSchema>) =>

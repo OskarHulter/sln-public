@@ -1,0 +1,8 @@
+export * from './lib/FeaturesMail.js'
+export { default as sendExternal } from './lib/handlers/sendExternal.js'
+export { default as sendInternal } from './lib/handlers/sendInternal.js'
+export { default as serializeMail } from './lib/handlers/serializeMail.js'
+export { default as submitContactForm } from './lib/handlers/submitContactForm.js'
+export { default as mailFormSchema } from './lib/schemas/mailForm.js'
+export { default as mailOptionsSchema } from './lib/schemas/mailOptions.js'
+export type { MailFormSchema, MailOptionsSchema, Sender } from './lib/schemas/types.js'

@@ -1,0 +1,33 @@
+{
+  "name": "@sln/features-mail",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "scripts": {
+    "dev": "email dev",
+    "export": "email export"
+  },
+  "dependencies": {
+    "@react-email/button": "*",
+    "@react-email/container": "*",
+    "@react-email/head": "*",
+    "@react-email/heading": "*",
+    "@react-email/hr": "*",
+    "@react-email/html": "*",
+    "@react-email/img": "*",
+    "@react-email/link": "*",
+    "@react-email/preview": "*",
+    "@react-email/render": "*",
+    "@react-email/section": "*",
+    "@react-email/text": "*",
+    "@sendgrid/mail": "*",
+    "react-email": "*"
+  }
+}

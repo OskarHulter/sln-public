@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { CssBaseline } from '@nextui-org/react'
 import Document, {
   DocumentContext,
@@ -9,9 +10,8 @@ import Document, {
 } from 'next/document'
 import React from 'react'
 
-// eslint-disable-next-line functional/no-class
 class MyDocument extends Document {
-  static override async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
 
     return {
@@ -19,8 +19,7 @@ class MyDocument extends Document {
       styles: [...React.Children.toArray(initialProps.styles)],
     }
   }
-
-  override render() {
+  render() {
     return (
       <Html lang='en'>
         <Head>

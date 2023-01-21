@@ -1,7 +1,5 @@
 export { default as fetchContent } from './lib/handlers/client/fetchContent.js'
-export { default as mailSubmitHandler } from './lib/handlers/client/mailSubmitHandler.js'
-export { default as submitHandler } from './lib/handlers/client/submitHandler.js'
-export { default as mailHandler } from './lib/handlers/server/mailHandler.js'
+export { default as sendHandler } from './lib/handlers/server/sendHandler.js'
 export { default as apiHandler } from './lib/handlers/shared/apiHandler.js'
 export { default as domainHandler } from './lib/handlers/shared/domainHandler.js'
 export { default as errorHandler } from './lib/handlers/shared/errorHandler.js'

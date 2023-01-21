@@ -80,8 +80,7 @@ const about = {
   topTraits,
   topics,
 }
-
-export const getContent: () =>  = () => content
+const get = () => content
 // export const getContentByName: (_: ContentKeys) => Partial<Content> = (name) => content[name]
 export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)
 
@@ -92,7 +91,7 @@ const content = {
   jobs,
   technologies,
   images,
-  getContent,
+  get,
   findTopic,
 }
 export type Content = typeof content

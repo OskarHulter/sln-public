@@ -1,11 +1,11 @@
-import { zodResolver } from '@hookform/resolvers/zod'
+// import zodResolver from '@hookform/resolvers/zod'
 import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
 import { mailFormSchema, mailSubmitHandler } from '@sln/data-access-shared'
 import { useForm } from 'react-hook-form'
 import CheckboxField from '../atoms/inputs/CheckboxField.js'
 import InputField from '../atoms/inputs/InputField.js'
 import TextareaField from '../atoms/inputs/TextareaField.js'
-import { IFormValues } from './types.js'
+//import { IFormValues } from './types.js'
 
 export const MailForm = () => {
   const {
@@ -14,9 +14,7 @@ export const MailForm = () => {
     handleSubmit,
     resetField,
     setValue,
-  } = useForm<IFormValues>({
-    resolver: zodResolver(mailFormSchema),
-  })
+  } = useForm<typeof mailFormSchema>()
 
   //const { value, reset, bindings } = useInput("")
 

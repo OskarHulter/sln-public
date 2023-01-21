@@ -3,6 +3,32 @@
   "ignorePatterns": [
     "**/*"
   ],
+  "settings": {
+    "import/extensions": [
+      ".js",
+      ".mjs",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ],
+    "import/parsers": {
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".json"
+        ]
+      }
+    }
+  },
   "plugins": [
     "@nrwl/nx",
     "unused-imports",
@@ -10,12 +36,14 @@
     "import",
     "functional",
     "deprecation",
+    "require-extensions",
     "prettier"
   ],
   "extends": [
     "plugin:@nrwl/nx/react",
+    "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:functional/recommended",
+    "plugin:require-extensions/recommended",
     "plugin:prettier/recommended"
   ],
   "overrides": [

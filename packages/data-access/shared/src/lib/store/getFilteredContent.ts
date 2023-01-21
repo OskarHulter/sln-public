@@ -1,4 +1,4 @@
-import { Content } from './store'
+import { Content } from './store.js'
 
 export default function getFilteredContent(content: Content) {
   return content

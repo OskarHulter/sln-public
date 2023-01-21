@@ -1,8 +1,8 @@
-import constants from '../constants/index'
-import jobs from '../domain/jobs'
-import projects from '../domain/projects'
-import technologies from '../domain/technologies'
-import images from '../images/index'
+import constants from '../constants/index.js'
+import jobs from '../domain/jobs.js'
+import projects from '../domain/projects.js'
+import technologies from '../domain/technologies.js'
+import images from '../images/index.js'
 
 const topTraits = ['learner', 'teacher', 'strategic']
 
@@ -95,7 +95,6 @@ const content = {
   getContent,
   findTopic,
 }
-
 
 export type ConstantsWeb = typeof constants
 export type ConstantsWebType = keyof ConstantsWeb

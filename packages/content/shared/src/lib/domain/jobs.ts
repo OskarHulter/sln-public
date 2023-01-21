@@ -1,4 +1,4 @@
-import images from '../images/index'
+import images from '../images/index.js'
 
 const jobs = [
   {

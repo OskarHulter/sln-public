@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { parse } from 'superjson'
 import { z, ZodSchema } from 'zod'
-import errorHandler from './errorHandler'
+import errorHandler from './errorHandler.js'
 
 export type NextApiConfig = {
   req: NextApiRequest

@@ -81,7 +81,7 @@ const about = {
   topics,
 }
 
-export const getContent: () => Content = () => content
+export const getContent: () =>  = () => content
 // export const getContentByName: (_: ContentKeys) => Partial<Content> = (name) => content[name]
 export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)
 
@@ -95,7 +95,7 @@ const content = {
   getContent,
   findTopic,
 }
-
+export type Content = typeof content
 export type ConstantsWeb = typeof constants
 export type ConstantsWebType = keyof ConstantsWeb
 export type Topic = (typeof topics)[number]['name']

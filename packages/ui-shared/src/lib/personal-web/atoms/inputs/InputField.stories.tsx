@@ -1,13 +1,15 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { InputField } from './InputField'
+import type { Story } from '@ladle/react'
+import { InputProps } from '../../forms/types.js'
+import InputField from './InputField.js'
 
-const Story: ComponentMeta<typeof InputField> = {
-  component: InputField,
-  title: 'InputField',
+export const InputFieldStory: Story<InputProps> = (args) => <InputField {...args} />
+
+InputFieldStory.argTypes = {
+  onClick: {
+    action: 'clicked!',
+  },
 }
-export default Story
 
-const Template: ComponentStory<typeof InputField> = (args) => <InputField {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}
+InputFieldStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
+}

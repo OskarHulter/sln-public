@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { TextareaField } from './TextareaField'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { TextareaField } from './TextareaField.js'
 
 const Story: ComponentMeta<typeof TextareaField> = {
   component: TextareaField,

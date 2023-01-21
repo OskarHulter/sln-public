@@ -1,13 +1,14 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { SocialButton } from './SocialButton'
+import type { Story } from '@ladle/react'
+import { SocialButton, SocialProps } from './SocialButton.js'
 
-const Story: ComponentMeta<typeof SocialButton> = {
-  component: SocialButton,
-  title: 'SocialButton',
+export const SocialButtonStory: Story<SocialProps> = (args) => <SocialButton {...args} />
+
+SocialButtonStory.argTypes = {
+  onClick: {
+    action: 'clicked!',
+  },
 }
-export default Story
 
-const Template: ComponentStory<typeof SocialButton> = (args) => <SocialButton {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}
+SocialButtonStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
+}

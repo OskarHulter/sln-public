@@ -1,16 +1,16 @@
+import { mailFormSchema } from '@sln/domain-shared'
 import ky from 'ky'
-import SuperJSON from 'superjson'
+import { stringify } from 'superjson'
 import { z } from 'zod'
-import mailFormSchema from '../../schemas/mailForm.js'
 
 const mailEndpoint = '/api/mail'
-
+// Get the response data from server as JSON.
+// If server returns the name submitted, that means the form works.
 export default async function mailSubmitHandler(data: z.infer<typeof mailFormSchema>) {
-  const json = SuperJSON.stringify(data)
+  const json = stringify(data)
+  const parsed = mailFormSchema.parse(json)
 
-  // Get the response data from server as JSON.
-  // If server returns the name submitted, that means the form works.
-  const result = await ky.post(mailEndpoint, { json }).json()
+  const result = await ky.post(mailEndpoint, { json: parsed }).json()
 
   return result
 }

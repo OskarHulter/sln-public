@@ -23,11 +23,9 @@ export async function getStaticProps() {
 const About: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
-      <div>
-        <Hero />
-        <SkillList />
-        <Projects />
-      </div>
+      <Hero />
+      <SkillList />
+      <Projects />
     </Layout>
   )
 }

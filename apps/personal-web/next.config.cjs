@@ -2,6 +2,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx')
+const { withAxiom } = require('next-axiom')
 
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
@@ -16,14 +17,16 @@ const nextConfig = {
     svgr: false,
   },
 }
-// eslint-disable-next-line
-module.exports = withNx({
-  ...nextConfig,
-  webpack: function (config, options) {
-    // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
-    config.experiments = {
-      topLevelAwait: true,
+
+module.exports = withAxiom({
+  // ... your existing config
+
+  // eslint-disable-next-line
+  module.exports = withNx(withAxiom({
+    ...nextConfig,
+    webpack: function (config, options) {
+      config.experiments = {
+        topLevelAwait: true,
+      }
+      return config
     }
-    return config
-  },
-})

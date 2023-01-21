@@ -70,6 +70,7 @@ specifiers:
   ky: ^0.33.2
   ky-universal: ^0.11.0
   next: 13.1.1
+  next-axiom: ^0.16.0
   next-superjson-plugin: ^0.5.4
   next-themes: ^0.2.1
   nextjs-http-supertest: ^1.0.3
@@ -122,6 +123,7 @@ dependencies:
   ky: 0.33.2
   ky-universal: 0.11.0_ky@0.33.2
   next: 13.1.1_pjwopsidmaokadturxaafygjp4
+  next-axiom: 0.16.0_next@13.1.1
   next-themes: 0.2.1_q76c2b4vyoegvsbrcwkfvimnai
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -11413,6 +11415,16 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: true
 
+  /next-axiom/0.16.0_next@13.1.1:
+    resolution: {integrity: sha512-WlmObMtra/OJPiJ6Gim4g8OTuLlJx9DVTeEaNmBIO3wEkR+Nt4932/xng2a9XofOVR7RgaNk1QIyPrqZW9P25w==}
+    engines: {node: '>=15'}
+    peerDependencies:
+      next: ^12.1.4 || ^13
+    dependencies:
+      next: 13.1.1_pjwopsidmaokadturxaafygjp4
+      whatwg-fetch: 3.6.2
+    dev: false
+
   /next-superjson-plugin/0.5.4_zf5w5sieiv77yd56j5ojtpjkty:
     resolution: {integrity: sha512-AUAqdL+yv/jqnkd583jffimRYbfbztkKkNf7qv0WhOVUGW0cIFYdtQHbOEseeCHK95hcPy7rDZY94nujjjRseQ==}
     peerDependencies:
@@ -15359,6 +15371,10 @@ packages:
     dependencies:
       iconv-lite: 0.6.3
     dev: true
+
+  /whatwg-fetch/3.6.2:
+    resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
+    dev: false
 
   /whatwg-mimetype/3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}

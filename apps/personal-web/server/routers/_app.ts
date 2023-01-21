@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { procedure, router } from '../trpc'
+import { procedure, router } from '../trpc.js'
 
 export const appRouter = router({
   hello: procedure

@@ -1,5 +1,5 @@
-import content from './content'
-import getDomain from './getDomain'
+import content from './content.js'
+import getDomain from './getDomain.js'
 
 describe('getDomain', () => {
   it('should work', () => {

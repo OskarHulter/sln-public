@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { UserBadge } from './UserBadge'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { UserBadge } from './UserBadge.js'
 
 const Story: ComponentMeta<typeof UserBadge> = {
   component: UserBadge,

@@ -1,4 +1,4 @@
-import content from './content.js'
+import content from './content/index.js'
 import getDomain from './getDomain.js'
 
 describe('getDomain', () => {

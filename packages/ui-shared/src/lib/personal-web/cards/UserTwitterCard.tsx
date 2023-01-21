@@ -12,8 +12,8 @@ import {
   Text,
 } from '@nextui-org/react'
 import React from 'react'
-import { LoadingSpinner } from '../atoms/LoadingSpinner'
-import { useContent } from '../hooks/useContent'
+import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import { useContent } from '../hooks/useContent.js'
 
 export type UserTwitterCardProps = {
   avatarUrl: string

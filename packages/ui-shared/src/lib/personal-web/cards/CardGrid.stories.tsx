@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { CardGrid } from './CardGrid'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { CardGrid } from './CardGrid.js'
 
 const Story: ComponentMeta<typeof CardGrid> = {
   component: CardGrid,

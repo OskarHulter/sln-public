@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { JobCard } from './JobCard'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { JobCard } from './JobCard.js'
 
 const Story: ComponentMeta<typeof JobCard> = {
   component: JobCard,

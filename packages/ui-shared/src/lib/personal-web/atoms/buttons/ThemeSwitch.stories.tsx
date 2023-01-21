@@ -1,13 +1,14 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ThemeSwitch } from './ThemeSwitch'
+import type { Story } from '@ladle/react'
+import { ThemeSwitch } from './ThemeSwitch.js'
 
-const Story: ComponentMeta<typeof ThemeSwitch> = {
-  component: ThemeSwitch,
-  title: 'ThemeSwitch',
+export const ThemeSwitchStory: Story = (args) => <ThemeSwitch {...args} />
+
+ThemeSwitchStory.argTypes = {
+  onClick: {
+    action: 'clicked!',
+  },
 }
-export default Story
 
-const Template: ComponentStory<typeof ThemeSwitch> = (args) => <ThemeSwitch {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}
+ThemeSwitchStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
+}

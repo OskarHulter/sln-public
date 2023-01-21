@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import UiShared from './UiShared'
+import UiShared from './UiShared.js'
 
 describe('UiShared', () => {
   it('should render successfully', () => {

@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { UserTwitterCard } from './UserTwitterCard'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { UserTwitterCard } from './UserTwitterCard.js'
 
 const Story: ComponentMeta<typeof UserTwitterCard> = {
   component: UserTwitterCard,

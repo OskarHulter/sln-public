@@ -4,7 +4,7 @@ import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'
 import React from 'react'
-import trpc from '../utils/trpc'
+import trpc from '../utils/trpc.js'
 
 const { fetchContent } = await import('@sln/data-access-shared')
 const { Hero, JobList, Layout, MailForm, Projects, SkillList } = await import('@sln/ui-shared')

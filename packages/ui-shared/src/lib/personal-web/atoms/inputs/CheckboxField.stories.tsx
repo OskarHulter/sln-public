@@ -1,13 +1,15 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { CheckboxField } from './CheckboxField'
+import type { Story } from '@ladle/react'
+import { CheckboxInputField } from '../../forms/types.js'
+import CheckboxField from './CheckboxField.js'
 
-const Story: ComponentMeta<typeof CheckboxField> = {
-  component: CheckboxField,
-  title: 'CheckboxField',
+export const CheckboxFieldStory: Story<CheckboxInputField> = (args) => <CheckboxField {...args} />
+
+CheckboxFieldStory.argTypes = {
+  onClick: {
+    action: 'clicked!',
+  },
 }
-export default Story
 
-const Template: ComponentStory<typeof CheckboxField> = (args) => <CheckboxField {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}
+CheckboxFieldStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
+}

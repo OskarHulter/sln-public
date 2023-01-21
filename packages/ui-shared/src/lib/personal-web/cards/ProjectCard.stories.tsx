@@ -1,5 +1,5 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ProjectCard } from './ProjectCard'
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+import { ProjectCard } from './ProjectCard.js'
 
 const Story: ComponentMeta<typeof ProjectCard> = {
   component: ProjectCard,

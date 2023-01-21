@@ -2,6 +2,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx')
+const { withContentlayer } = require('next-contentlayer')
 
 /**
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
@@ -15,4 +16,4 @@ const nextConfig = {
 }
 
 // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
-module.exports = withNx(nextConfig)
+module.exports = withContentlayer(withNx(nextConfig))

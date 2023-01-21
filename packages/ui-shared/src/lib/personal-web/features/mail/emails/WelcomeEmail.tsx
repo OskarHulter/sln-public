@@ -8,7 +8,7 @@ export default function Email() {
       <Button
         pX={20}
         pY={12}
-        href="https://example.com"
+        href='https://example.com'
         style={{ background: '#000', color: '#fff' }}
       >
         Click me

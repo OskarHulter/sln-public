@@ -1,18 +1,25 @@
-import { AppProps } from 'next/app'
+import '../styles/globals.css.js'
 import Head from 'next/head'
-import './styles.css'
+import { Header } from '../components/Header.js'
 
-function CustomApp({ Component, pageProps }: AppProps) {
+// This default export is required in a new `pages/_app.js` file.
+export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Welcome to dashboard!</title>
+        <title>Contentlayer Next.js Example</title>
+        <link
+          rel='icon'
+          type='image/x-icon'
+          href='/favicon.png'
+        />
       </Head>
-      <main className='app'>
+
+      <Header />
+
+      <div className='px-6'>
         <Component {...pageProps} />
-      </main>
+      </div>
     </>
   )
 }
-
-export default CustomApp

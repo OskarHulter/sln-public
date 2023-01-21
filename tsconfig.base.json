@@ -35,7 +35,6 @@
     "noEmit": true,
     "declaration": true,
     "declarationMap": true,
-    "traceResolution": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "importHelpers": true,

@@ -1,5 +1,5 @@
 import { Grid } from '@nextui-org/react'
-import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import LoadingSpinner from '../atoms/LoadingSpinner.js'
 import ProjectCard from '../cards/ProjectCard.js'
 import { useContent } from '../features/content/useContent.js'
 

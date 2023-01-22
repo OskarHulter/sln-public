@@ -13,7 +13,7 @@ import {
 } from '@nextui-org/react'
 import React from 'react'
 import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
-import { useContent } from '../hooks/useContent.js'
+import { useContent } from '../features/content/useContent.js'
 
 export type UserTwitterCardProps = {
   avatarUrl: string

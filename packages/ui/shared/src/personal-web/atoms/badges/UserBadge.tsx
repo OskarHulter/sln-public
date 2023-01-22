@@ -1,9 +1,9 @@
 import { Grid, User } from '@nextui-org/react'
-import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
 //import UserTwitterCard from '../../cards/UserTwitterCard'
 import { useContent } from '../../features/content/useContent.js'
+import LoadingSpinner from '../LoadingSpinner.js'
 
-export function UserBadge() {
+export default function UserBadge() {
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />
@@ -25,8 +25,6 @@ export function UserBadge() {
     </Grid>
   )
 }
-
-export default UserBadge
 
 export function UserAvatar() {
   return (

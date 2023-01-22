@@ -1,13 +1,9 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
-import { LoadingSpinner } from './LoadingSpinner.js'
+import type { Story } from '@ladle/react'
+import { InputProps } from '../forms/types.js'
+import LoadingSpinner from './LoadingSpinner.js'
 
-const Story: ComponentMeta<typeof LoadingSpinner> = {
-  component: LoadingSpinner,
-  title: 'LoadingSpinner',
+export const LoadingSpinnerStory: Story<InputProps> = () => <LoadingSpinner />
+
+LoadingSpinnerStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
 }
-export default Story
-
-const Template: ComponentStory<typeof LoadingSpinner> = (args) => <LoadingSpinner {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}

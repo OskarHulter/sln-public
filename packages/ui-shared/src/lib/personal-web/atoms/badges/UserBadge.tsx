@@ -1,5 +1,5 @@
 import { Grid, User } from '@nextui-org/react'
-import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
+import LoadingSpinner from '../../atoms/LoadingSpinner.js'
 //import UserTwitterCard from '../../cards/UserTwitterCard'
 import { useContent } from '../../features/content/useContent.js'
 

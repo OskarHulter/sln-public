@@ -1,4 +1,4 @@
-import { IconProps } from '../../../design/assets/icons/types.js'
+import { IconProps } from '../../../types.js'
 
 export const OrgLogo = () => (
   <svg

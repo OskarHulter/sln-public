@@ -1,6 +1,6 @@
 import { Grid } from '@nextui-org/react'
 import { Job } from '@sln/domain-shared'
-import { LoadingSpinner } from '../atoms/LoadingSpinner.js'
+import LoadingSpinner from '../atoms/LoadingSpinner.js'
 import JobCard from '../cards/JobCard.js'
 import { useContent } from '../features/content/useContent.js'
 

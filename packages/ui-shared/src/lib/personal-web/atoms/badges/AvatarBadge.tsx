@@ -1,5 +1,5 @@
 import { Avatar, Grid } from '@nextui-org/react'
-import { LoadingSpinner } from '../../atoms/LoadingSpinner.js'
+import LoadingSpinner from '../../atoms/LoadingSpinner.js'
 import { useContent } from '../../features/content/useContent.js'
 
 export function AvatarBadge() {

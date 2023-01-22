@@ -4,7 +4,7 @@ import React from 'react'
 import { MoonIcon, SunIcon } from '../../atoms/icons/Icons.js'
 import { useHasMounted } from '../../features/hasMounted/useHasMounted.js'
 
-export function ThemeSwitch() {
+export default function ThemeSwitch() {
   const { setTheme } = useNextTheme()
   const { isDark } = useTheme()
   const hasMounted = useHasMounted()
@@ -33,5 +33,3 @@ export function ThemeSwitch() {
     />
   )
 }
-
-export default ThemeSwitch

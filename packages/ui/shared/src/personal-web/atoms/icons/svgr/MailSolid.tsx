@@ -1,4 +1,4 @@
-import { IconProps } from '../types.js'
+import { IconProps } from '../../../../types.js'
 
 const SvgMailSolid = (props: IconProps) => (
   <svg

@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import { ThemeSwitch } from './ThemeSwitch.js'
+import ThemeSwitch from './ThemeSwitch.js'
 
 export const ThemeSwitchStory: Story = (args) => <ThemeSwitch {...args} />
 

@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react'
-import { LoadingSpinner } from './LoadingSpinner.js'
+import LoadingSpinner from './LoadingSpinner.js'
 
 const Story: ComponentMeta<typeof LoadingSpinner> = {
   component: LoadingSpinner,

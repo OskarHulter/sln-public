@@ -1,13 +1,15 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
-import { TextareaField } from './TextareaField.js'
+import type { Story } from '@ladle/react'
+import { InputProps } from '../../forms/types.js'
+import TextareaField from './TextareaField.js'
 
-const Story: ComponentMeta<typeof TextareaField> = {
-  component: TextareaField,
-  title: 'TextareaField',
+export const TextareaFieldStory: Story<InputProps> = (args) => <TextareaField {...args} />
+
+TextareaFieldStory.argTypes = {
+  onClick: {
+    action: 'clicked!',
+  },
 }
-export default Story
 
-const Template: ComponentStory<typeof TextareaField> = (args) => <TextareaField {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}
+TextareaFieldStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
+}

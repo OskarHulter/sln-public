@@ -1,4 +1,4 @@
-import images from '../images/index.js'
+import images from '../images.js'
 
 const projects = [
   {
@@ -20,8 +20,5 @@ const projects = [
     image: images[0],
   },
 ]
-
-export type Project = (typeof projects)[number]
-export type Projects = typeof projects
 
 export default projects

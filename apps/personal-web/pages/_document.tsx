@@ -11,7 +11,7 @@ import Document, {
 import React from 'react'
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+  static override async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
 
     return {
@@ -19,7 +19,7 @@ class MyDocument extends Document {
       styles: [...React.Children.toArray(initialProps.styles)],
     }
   }
-  render() {
+  override render() {
     return (
       <Html lang='en'>
         <Head>

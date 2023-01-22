@@ -1,10 +1,9 @@
+import { fetchContent } from '@sln/data-access-shared'
+import { Hero, Layout, Projects } from '@sln/ui-shared'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'
 import React from 'react'
-
-const { fetchContent } = await import('@sln/data-access-shared')
-const { Hero, Layout, Projects, SkillList } = await import('@sln/ui-shared')
 
 export async function getStaticProps() {
   const queryClient = new QueryClient()
@@ -24,7 +23,6 @@ const About: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) 
   return (
     <Layout>
       <Hero />
-      <SkillList />
       <Projects />
     </Layout>
   )

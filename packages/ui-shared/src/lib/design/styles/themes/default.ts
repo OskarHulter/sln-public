@@ -1,6 +1,7 @@
 import { createTheme } from '@nextui-org/react'
+// eslint-disable-next-line prettier/prettier
+import type { } from '@stitches/react'
 import sharedTheme from './shared.js'
-
 /*
   ex: padding, margin, and top, left, right, bottom, width, height
   spacing: {

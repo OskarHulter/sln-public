@@ -1,6 +1,6 @@
 /* eslint-disable functional/immutable-data */
 //import { Content, ContentKeys, content } from '@sln/content-shared'
-import { content } from '@sln/content-shared'
+import { content } from '@sln/domain-shared'
 import { create } from 'zustand'
 //import { immer } from 'zustand/middleware/immer'
 import { combine } from 'zustand/middleware'

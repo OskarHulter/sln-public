@@ -9,7 +9,8 @@
       "vitest",
       "@testing-library/react",
       "@testing-library/jest-dom",
-      "@testing-library/user-event"
+      "@testing-library/user-event",
+      "next"
     ],
     "noEmit": false,
     "composite": true
@@ -28,6 +29,7 @@
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "next-env.d.ts"
   ]
 }

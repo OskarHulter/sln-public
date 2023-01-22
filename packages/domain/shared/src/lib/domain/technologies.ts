@@ -1,4 +1,4 @@
-const techNames = [
+export const techNames = [
   'html',
   'Javascript',
   'Typescript',
@@ -58,7 +58,7 @@ const techNames = [
   'Java',
 ]
 
-const favoriteTools = [
+export const favoriteTools = [
   {
     name: 'zod',
     description: 'Runtime validation with perfect TS integration.',
@@ -76,11 +76,9 @@ const favoriteTools = [
   },
 ]
 
-const technologies = {
+export const technologies = {
   techNames,
   favoriteTools,
 }
 
-export type TechName = (typeof technologies)['techNames'][number]
-export type Technologies = typeof technologies
 export default technologies

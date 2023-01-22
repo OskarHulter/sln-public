@@ -3,7 +3,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { darkTheme, lightTheme } from '../../design/styles/themes/index.js'
 import { BaseProps } from '../../types.js'
 
-export function personalWebUiProvider({ children }: BaseProps) {
+export function PersonalWebUiProvider({ children }: BaseProps) {
   return (
     <NextThemesProvider
       defaultTheme='system'
@@ -18,4 +18,4 @@ export function personalWebUiProvider({ children }: BaseProps) {
   )
 }
 
-export default personalWebUiProvider
+export default PersonalWebUiProvider

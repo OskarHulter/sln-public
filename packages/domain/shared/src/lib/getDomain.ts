@@ -1,5 +1,5 @@
-import type { Content } from './content/index.js'
-import content from './content/index.js'
+import content from './content.js'
+import { Content } from './types.js'
 
 type Store = {
   content: Content

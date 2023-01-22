@@ -5,15 +5,16 @@
     "composite": true,
     "noEmit": false,
   },
+  "types": [
+    "next/types"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "next-env.d.ts"
   ],
-  "files": [
-    "../../content/shared/src/index.js",
-    "../../data-access/shared/src/index.js"
-  ],
+  "files": [],
   "exclude": [
     "vite.config.ts",
     "test/*",

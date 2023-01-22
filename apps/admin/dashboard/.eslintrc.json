@@ -1,53 +1,22 @@
 {
-  "extends": [
-    "plugin:@nrwl/nx/react-typescript",
-    "next",
-    "next/core-web-vitals",
-    "../../../.eslintrc.json"
-  ],
-  "ignorePatterns": [
-    "!**/*",
-    ".next/**/*"
-  ],
   "overrides": [
     {
-      "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
+      "extends": [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
+      "files": ["*.ts", "*.tsx"],
       "parserOptions": {
-        "project": [
-          "apps/admin/dashboard/tsconfig(.*)?.json"
-        ]
-      },
-      "rules": {
-        "@next/next/no-html-link-for-pages": [
-          "error",
-          "apps/admin/dashboard/pages"
-        ]
+        "project": "tsconfig.json"
       }
-    },
-    {
-      "files": [
-        "*.ts",
-        "*.tsx"
-      ],
-      "rules": {}
-    },
-    {
-      "files": [
-        "*.js",
-        "*.jsx"
-      ],
-      "rules": {}
     }
   ],
-  "rules": {
-    "@next/next/no-html-link-for-pages": "off"
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
   },
-  "env": {
-    "jest": true
+  "plugins": ["@typescript-eslint"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "warn"
   }
 }

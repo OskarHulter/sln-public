@@ -1,9 +1,8 @@
 //'use client'
-import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
-import { Job } from '@sln/content-shared'
-import Image from 'next/image'
+import { Card, Grid, Image, Link, Row, Text } from '@nextui-org/react'
+import { Job } from '@sln/domain-shared'
 
-export function JobCard(props: Job) {
+export function JobCard(props: Job & { key: number }) {
   return (
     <Card css={{ p: '$6', mw: '400px' }}>
       <Card.Header>

@@ -1,13 +1,10 @@
 import { Container, Spacer } from '@nextui-org/react'
-//import * as ui from '@sln/ui-shared'
+import { fetchContent } from '@sln/data-access-shared'
+import { Hero, JobList, Layout, MailForm, Projects } from '@sln/ui-shared'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'
 import React from 'react'
-import trpc from '../utils/trpc.js'
-
-const { fetchContent } = await import('@sln/data-access-shared')
-const { Hero, JobList, Layout, MailForm, Projects, SkillList } = await import('@sln/ui-shared')
 
 export async function getStaticProps() {
   const queryClient = new QueryClient()
@@ -24,10 +21,7 @@ export async function getStaticProps() {
   }
 }
 const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const hello = trpc.hello.useQuery({ text: 'client' })
-  if (!hello.data) {
-    return <div>Loading...</div>
-  }
+  console.log(props)
   return (
     <Layout>
       <Container
@@ -35,11 +29,7 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
         css={{ width: 'full' }}
         as='main'
       >
-        {hello.data.greeting}
         <Hero />
-        <Spacer y={2} />
-        <Spacer y={2} />
-        <SkillList />
         <Spacer y={2} />
         <JobList />
         <Spacer y={2} />

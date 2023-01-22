@@ -1,4 +1,4 @@
-import images from '../images/index.js'
+import images from '../images.js'
 
 const jobs = [
   {
@@ -42,6 +42,4 @@ const jobs = [
   },
 ]
 
-export type Job = (typeof jobs)[number]
-export type Jobs = typeof jobs
 export default jobs

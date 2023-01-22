@@ -7,10 +7,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.d.ts",
-    "../../features/mail/src/lib/handlers/sendgrid.ts",
-    "../../features/mail/src/lib/handlers/sendMailExample.tsx",
-    "../../features/mail/src/lib/handlers/submitHandler.ts"
+    "src/**/*.d.ts"
   ],
   "files": [
     "../../content/shared/src/index.ts"

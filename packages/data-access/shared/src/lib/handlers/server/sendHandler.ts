@@ -1,21 +1,10 @@
-import {
-  mailFormSchema,
-  mailOptionsSchema,
-  Sender,
-  sendExternal,
-  sendInternal,
-} from '@sln/features-mail'
+import { mailFormSchema, mailOptionsSchema, sendExternal, sendInternal } from '@sln/features-mail'
 import { NextApiRequest, NextApiResponse } from 'next'
 import errorHandler from '../shared/errorHandler.js'
 import parseHandler from '../shared/parseHandler.js'
 
-export default async function mailHandler(
-  req: NextApiRequest,
-  res: NextApiResponse,
-  sender: Sender
-) {
+export default async function sendHandler(req: NextApiRequest, res: NextApiResponse) {
   const parsedInternal = await parseHandler(mailFormSchema, { req, res })
-  console.log(sender)
   if (parsedInternal) {
     try {
       sendInternal(parsedInternal)

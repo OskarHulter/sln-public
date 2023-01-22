@@ -60,6 +60,9 @@
     "superjson",
     "next-themes",
     "next",
+    "next/image",
+    "next/head",
+    "next/document",
     "ts-invariant",
     "@nextui-org/react",
     "@hookform/resolvers/zod",
@@ -74,7 +77,8 @@
     "@trpc/next",
     "vite/client",
     "vitest",
-    "react-email"
+    "react-email",
+    "next/types"
   ],
   "exclude": [
     "node_modules",

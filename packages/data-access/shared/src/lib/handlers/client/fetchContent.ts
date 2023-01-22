@@ -1,4 +1,4 @@
-import { content } from '@sln/content-shared'
+import { content } from '@sln/domain-shared'
 import { invariant } from 'ts-invariant'
 
 export type Content = typeof content

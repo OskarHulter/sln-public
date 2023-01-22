@@ -3,12 +3,8 @@
   "include": [
     "src",
     "test",
+    "next-env.d.ts",
   ],
-  "compilerOptions": {
-    "types": [
-      "@hookform/resolvers/zod"
-    ],
-  },
   "references": [
     {
       "path": "./tsconfig.lib.json"

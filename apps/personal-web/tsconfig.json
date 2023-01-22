@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "incremental": true,
     "module": "ESNext",
-    "moduleResolution": "nodenext"
+    "moduleResolution": "node"
   },
   "include": [
     "next-env.d.ts",
@@ -22,7 +22,8 @@
     "**/*.tsx",
     "**/*.js",
     "**/*.jsx",
-    "next.config.cjs",
+    "**/*.mjs",
+    "**/*.cjs",
   ],
   "exclude": [
     "node_modules",

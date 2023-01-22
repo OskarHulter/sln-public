@@ -1,5 +1,7 @@
 import { httpBatchLink } from '@trpc/client'
 import { createTRPCNext } from '@trpc/next'
+// eslint-disable-next-line prettier/prettier
+import type { } from '@trpc/react-query'
 import superjson from 'superjson'
 import { AppRouter } from '../server/routers/_app.js'
 

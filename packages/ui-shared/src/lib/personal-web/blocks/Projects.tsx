@@ -9,7 +9,7 @@ export function Projects() {
   if (!data) return <LoadingSpinner />
   return (
     <Grid.Container gap={2}>
-      {data.projects.map((item: Record<string, unknown>, key: number) => (
+      {data.projects.map((item, key: number) => (
         <ProjectCard
           key={key}
           {...item}

@@ -1,4 +1,4 @@
-import { Switch, useTheme } from '@nextui-org/react'
+import { Switch, SwitchEvent, useTheme } from '@nextui-org/react'
 import { useTheme as useNextTheme } from 'next-themes'
 import React from 'react'
 import { MoonIcon, SunIcon } from '../../atoms/icons/Icons.js'
@@ -27,7 +27,7 @@ export function ThemeSwitch() {
       size='xl'
       iconOn={<SunIcon filled />}
       iconOff={<MoonIcon filled />}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+      onChange={(e: React.ChangeEvent<HTMLInputElement> | SwitchEvent) =>
         setTheme(e.target.checked ? 'dark' : 'light')
       }
     />

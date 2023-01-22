@@ -1,7 +1,6 @@
 //'use client'
-import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
-import { Project } from '@sln/content-shared'
-import Image from 'next/image'
+import { Card, Grid, Image, Link, Row, Text } from '@nextui-org/react'
+import type { Project } from '@sln/domain-shared'
 
 export function ProjectCard({
   name,

@@ -4,12 +4,14 @@
     "outDir": "../../../dist/out-tsc",
     "declaration": true,
     "noEmit": false,
+    "composite": true,
     "types": [
       "node"
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "src/**/*.js"
   ],
   "exclude": [
     "jest.config.ts",

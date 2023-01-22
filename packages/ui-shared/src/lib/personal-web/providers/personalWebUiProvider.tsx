@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { darkTheme, lightTheme } from '../../design/styles/themes/index.js'
+import theme from '../../design/styles/themes/default.js'
 import { BaseProps } from '../../types.js'
 
 export function PersonalWebUiProvider({ children }: BaseProps) {
@@ -9,8 +9,8 @@ export function PersonalWebUiProvider({ children }: BaseProps) {
       defaultTheme='system'
       attribute='class'
       value={{
-        light: darkTheme.className,
-        dark: lightTheme.className,
+        light: theme.dark.className,
+        dark: theme.light.className,
       }}
     >
       <NextUIProvider>{children}</NextUIProvider>

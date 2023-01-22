@@ -30,6 +30,7 @@
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
     "src/**/*.d.ts",
-    "next-env.d.ts"
+    "next-env.d.ts",
+    "src/lib/design/assets/icons/components/index.asdoaisodi"
   ]
 }

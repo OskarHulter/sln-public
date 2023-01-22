@@ -27,4 +27,4 @@ export const darkRetroTheme = createTheme({
   },
 })
 
-export default { lightRetroTheme, darkRetroTheme }
+export default { light: lightRetroTheme, dark: darkRetroTheme }

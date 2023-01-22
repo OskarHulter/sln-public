@@ -40,4 +40,4 @@ export const stresslessDarkTheme = createTheme({
   type: 'dark',
 })
 
-export default { stresslessLightTheme, stresslessDarkTheme }
+export default { light: stresslessLightTheme, dark: stresslessDarkTheme }

@@ -31,3 +31,8 @@ export const darkTheme = createTheme({
   ...sharedTheme,
   type: 'dark',
 })
+
+export default {
+  light: lightTheme,
+  dark: darkTheme,
+}

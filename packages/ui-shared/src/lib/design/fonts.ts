@@ -31,13 +31,14 @@ export const sourceCodePro = Source_Code_Pro({
   ],
 })
 
-// const fonts = {
-//   sans: `${inter.variable}`,
-//   mono: `${sourceCodePro.variable}`,
-//   system: `${inter.variable}`,
-// }
+const themeDefaults = {
+  sans: `${inter.variable}`,
+  mono: `${sourceCodePro.variable}`,
+  system: `${inter.variable}`,
+}
 
 export default {
   inter,
   sourceCodePro,
+  themeDefaults,
 }

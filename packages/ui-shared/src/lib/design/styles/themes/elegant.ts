@@ -32,3 +32,8 @@ export const darkElegantTheme = createTheme({
     },
   },
 })
+
+export default {
+  light: lightElegantTheme,
+  dark: darkElegantTheme,
+}

@@ -26,3 +26,7 @@ export const darkModernTheme = createTheme({
     },
   },
 })
+export default {
+  light: lightModernTheme,
+  dark: darkModernTheme,
+}

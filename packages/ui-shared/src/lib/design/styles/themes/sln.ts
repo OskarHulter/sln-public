@@ -28,4 +28,4 @@ export const darkSlnTheme = createTheme({
   },
 })
 
-export default { lightSlnTheme, darkSlnTheme }
+export default { light: lightSlnTheme, dark: darkSlnTheme }

@@ -23,3 +23,8 @@ export const darkGradientTheme = createTheme({
     colors,
   },
 })
+
+export default {
+  light: lightGradientTheme,
+  dark: darkGradientTheme,
+}

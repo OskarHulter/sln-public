@@ -1,5 +1,5 @@
 import { Container } from '@nextui-org/react'
-import fonts from '../../design/assets/fonts/fonts.js'
+import fonts from '../../design/fonts.js'
 import { BaseProps } from '../../types.js'
 import { Footer } from './Footer.js'
 import Header from './Header.js'

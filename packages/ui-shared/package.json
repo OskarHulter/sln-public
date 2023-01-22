@@ -1,5 +1,5 @@
 {
-  "name": "@sln/ui-shared",
+  "name": "@sln/ui-legacy",
   "version": "0.0.1",
   "type": "module",
   "main": "./index.js",

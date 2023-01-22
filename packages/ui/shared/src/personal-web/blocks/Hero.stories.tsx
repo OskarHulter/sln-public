@@ -1,13 +1,8 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Hero } from './Hero.js'
+import type { Story } from '@ladle/react'
+import Hero from './Hero.js'
 
-const Story: ComponentMeta<typeof Hero> = {
-  component: Hero,
-  title: 'Hero',
+export const HeroStory: Story<typeof Hero> = (args) => <Hero {...args} />
+
+HeroStory.meta = {
+  dependencies: ['next-ui', 'stitches'],
 }
-export default Story
-
-const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />
-
-export const Primary = Template.bind({})
-Primary.args = {}

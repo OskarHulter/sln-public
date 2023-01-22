@@ -1,6 +1,6 @@
 import { Container, Spacer } from '@nextui-org/react'
 import { fetchContent } from '@sln/data-access-shared'
-import { Hero, Layout, MailForm, Projects } from '@sln/ui-shared'
+import { Hero, Layout, MailForm, Projects } from '@sln/ui'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'

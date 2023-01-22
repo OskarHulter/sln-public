@@ -1,5 +1,5 @@
 {
-  "name": "ui-shared",
+  "name": "ui-legacy",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/ui-shared/src",
   "projectType": "library",

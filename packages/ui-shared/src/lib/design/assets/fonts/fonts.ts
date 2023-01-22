@@ -37,12 +37,7 @@ export const sourceCodePro = Source_Code_Pro({
 //   system: `${inter.variable}`,
 // }
 
-export const fonts = {
-  sans: `Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`,
-}
-
 export default {
   inter,
   sourceCodePro,
-  fonts,
 }

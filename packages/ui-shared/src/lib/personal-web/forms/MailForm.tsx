@@ -7,7 +7,7 @@ import InputField from '../atoms/inputs/InputField.js'
 import TextareaField from '../atoms/inputs/TextareaField.js'
 //import { IFormValues } from './types.js'
 
-export const MailForm = () => {
+export default function MailForm() {
   const {
     register,
     formState: { errors, isSubmitting, isSubmitSuccessful },

@@ -3,7 +3,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withNx } = require('@nrwl/next/plugins/with-nx')
 const { withAxiom } = require('next-axiom')
-If you need ECMAScript modules, you can use next.config.mjs:
+// If you need ECMAScript modules, you can use next.config.mjs:
 
 /**
  * @type {import('next-axiom').withAxiom}

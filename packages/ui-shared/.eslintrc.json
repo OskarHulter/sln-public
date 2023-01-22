@@ -20,7 +20,9 @@
           "packages/ui-shared/tsconfig.*?.json"
         ]
       },
-      "rules": {}
+      "rules": {
+        "allo"
+      }
     },
     {
       "files": [

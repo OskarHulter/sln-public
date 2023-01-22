@@ -1,6 +1,6 @@
 import { Container, Spacer } from '@nextui-org/react'
 import { fetchContent } from '@sln/data-access-shared'
-import { Hero, JobList, Layout, MailForm, Projects } from '@sln/ui-shared'
+import { Hero, Layout, MailForm, Projects } from '@sln/ui-shared'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import { NextPage } from 'next'
 import { InferGetStaticPropsType } from 'next/types'
@@ -29,11 +29,10 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
         css={{ width: 'full' }}
         as='main'
       >
-        <Hero />
+        {/* <Hero /> */}
         <Spacer y={2} />
-        <JobList />
         <Spacer y={2} />
-        <Projects />
+        {/* <Projects /> */}
         <Spacer y={2} />
         <MailForm />
       </Container>

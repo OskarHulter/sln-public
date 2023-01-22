@@ -5,6 +5,10 @@
     "test",
     "next-env.d.ts",
   ],
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "noEmit": true,
+  },
   "references": [
     {
       "path": "./tsconfig.lib.json"

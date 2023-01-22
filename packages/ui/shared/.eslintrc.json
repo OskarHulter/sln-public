@@ -1,11 +1,11 @@
 {
   "extends": [
     "plugin:@nrwl/nx/react",
-    "../../.eslintrc.json"
+    "../../../.eslintrc.json"
   ],
   "ignorePatterns": [
     "!**/*",
-    "test/*"
+    "vite.config.ts"
   ],
   "overrides": [
     {
@@ -17,9 +17,10 @@
       ],
       "parserOptions": {
         "project": [
-          "packages/ui-shared/tsconfig.*?.json"
+          "packages/ui/shared/tsconfig.*?.json"
         ]
-      }
+      },
+      "rules": {}
     },
     {
       "files": [

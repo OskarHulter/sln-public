@@ -23,6 +23,17 @@
         ]
       },
       "rules": {
+        "require-extensions/require-extensions": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+        ],
         "@next/next/no-html-link-for-pages": [
           "error",
           "apps/personal-web/pages"

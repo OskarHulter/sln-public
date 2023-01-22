@@ -136,6 +136,7 @@
           }
         ],
         "simple-import-sort/exports": "error",
+        "import/no-anonymous-default-export": "off",
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",

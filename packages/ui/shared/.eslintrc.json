@@ -15,12 +15,24 @@
         "*.js",
         "*.jsx"
       ],
+      "rules": {
+        "require-extensions/require-extensions": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
+          }
+        ]
+      },
       "parserOptions": {
         "project": [
           "packages/ui/shared/tsconfig.*?.json"
         ]
-      },
-      "rules": {}
+      }
     },
     {
       "files": [

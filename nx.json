@@ -1,27 +1,6 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": ["@nxtensions/astro"],
   "npmScope": "sln-public",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YWZmNDE2NDYtZWQ3Ni00NGY1LTk4NWYtNWVjZTI3MDkxNTVjfHJlYWQtd3JpdGU="
-      }
-    }
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
-    },
-    "test": {
-      "inputs": ["default", "^production"]
-    }
-  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -39,9 +18,33 @@
       "{workspaceRoot}/babel.config.json"
     ]
   },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": ["default", "^production"]
+    },
+    "check": {
+      "inputs": ["production", "^production"]
+    }
+  },
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e", "check"],
+        "accessToken": "YWZmNDE2NDYtZWQ3Ni00NGY1LTk4NWYtNWVjZTI3MDkxNTVjfHJlYWQtd3JpdGU="
+      }
+    }
   },
   "generators": {
     "@nrwl/react": {
@@ -66,5 +69,6 @@
         "linter": "eslint"
       }
     }
-  }
+  },
+  "defaultProject": "astro"
 }

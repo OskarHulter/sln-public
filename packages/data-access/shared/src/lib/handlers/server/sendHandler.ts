@@ -1,5 +1,5 @@
 import { mailFormSchema, mailOptionsSchema, sendExternal, sendInternal } from '@sln/features-mail'
-import { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next'
 import errorHandler from '../shared/errorHandler.js'
 import parseHandler from '../shared/parseHandler.js'
 

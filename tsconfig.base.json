@@ -1,20 +1,37 @@
+// `ignoreDeprecations: "5.0"`
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@sln/content-shared": ["packages/content/shared/src/index.ts"],
-      "@sln/data-access-shared": ["packages/data-access/shared/src/index.ts"],
-      "@sln/domain-shared": ["packages/domain/shared/src/index.ts"],
-      "@sln/features-mail": ["packages/features/mail/src/index.ts"],
-      "@sln/ui": ["packages/ui/shared/src/index.ts"],
-      "@sln/ui-shared": ["packages/ui-shared/src/index.ts"]
+      "@sln/content-shared": [
+        "packages/content/shared/src/index.ts"
+      ],
+      "@sln/data-access-shared": [
+        "packages/data-access/shared/src/index.ts"
+      ],
+      "@sln/domain-shared": [
+        "packages/domain/shared/src/index.ts"
+      ],
+      "@sln/features-mail": [
+        "packages/features/mail/src/index.ts"
+      ],
+      "@sln/ui": [
+        "packages/ui/shared/src/index.ts"
+      ],
+      "@sln/ui-shared": [
+        "packages/ui-shared/src/index.ts"
+      ]
     },
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
     "strict": true,
     "jsx": "react-jsx",
     "allowJs": true,
@@ -25,15 +42,14 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "importHelpers": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
     "resolveJsonModule": true,
     "noImplicitOverride": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error"
   },
   "types": [
     "node",
@@ -65,7 +81,11 @@
     "vite/client",
     "vitest",
     "react-email",
-    "next/types"
+    "next/types",
+    "astro/client"
   ],
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
 }

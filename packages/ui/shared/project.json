@@ -4,7 +4,8 @@
   "sourceRoot": "packages/ui/shared/src",
   "projectType": "library",
   "tags": [
-    "scope:shared"
+    "scope:shared",
+    "type:ui"
   ],
   "targets": {
     "lint": {

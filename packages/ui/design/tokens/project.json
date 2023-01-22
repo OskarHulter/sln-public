@@ -1,0 +1,34 @@
+{
+  "name": "design-tokens",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/packages/ui-shared/ui-shared/src",
+  "targets": {
+    "build": {
+      "executor": "@nxkit/style-dictionary:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/packages/packages/ui-shared/ui-shared",
+        "styleDictionaryConfig": "packages/packages/ui-shared/ui-shared/style-dictionary.config.ts",
+        "tsConfig": "packages/packages/ui-shared/ui-shared/tsconfig.json"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/packages/ui-shared/ui-shared/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [
+    "scope:shared",
+    "type:ui"
+  ]
+}

@@ -14,7 +14,7 @@ const documents = [
     text: 'A modern JavaScript utility library delivering modularity, performance & extras.',
   },
 ]
-export default lunr(function () {
+export const idx = lunr(function () {
   this.ref('name')
   this.field('text')
 

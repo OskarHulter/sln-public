@@ -6,9 +6,10 @@
     "run-all": "nx run-many --targets=lint,test,build --all",
     "lint": "nx run-many --targets=lint --all",
     "fix": "nx run-many --targets=lint --fix --all",
-    "test": "nx run-many --targets=build --all",
-    "build": "nx run-many --targets=test --all",
+    "test": "nx run-many --targets=test --all",
+    "build": "nx run-many --targets=build --all && pnpm ladle build",
     "serve": "nx serve personal-web",
+    "serve-l": "pnpm ladle serve",
     "nx-update": "nx migrate latest",
     "postinstall": "node ./tools/scripts/patch-nx-cli.cjs && node ./tools/scripts/patch-nx-cli.cjs"
   },

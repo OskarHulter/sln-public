@@ -21,7 +21,7 @@ export type UserTwitterCardProps = {
   onClick?: string
 } & Partial<GridItemProps>
 
-export function UserTwitterCard({
+export default function UserTwitterCard({
   avatarProps,
   css,
   onClick,
@@ -163,5 +163,3 @@ export function UserTwitterCard({
     </Grid.Container>
   )
 }
-
-export default UserTwitterCard

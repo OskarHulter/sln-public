@@ -1,16 +1,18 @@
 import { Container, Spacer } from '@nextui-org/react'
 import { fetchContent } from '@sln/data-access-shared'
+import { Content } from '@sln/domain-shared'
 import { Hero, Layout, MailForm } from '@sln/ui'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import type { InferGetStaticPropsType } from 'next/types'
 import { NextSeo } from 'next-seo'
+import { useMemo } from 'react'
 
 export async function getStaticProps() {
   const queryClient = new QueryClient()
 
   await queryClient.prefetchQuery({
     queryKey: ['initialContent'],
-    queryFn: () => fetchContent(),
+    queryFn: (): Promise<Content> => fetchContent(),
   })
 
   return {
@@ -19,7 +21,16 @@ export async function getStaticProps() {
     },
   }
 }
-export default function Home({ topics }: InferGetStaticPropsType<typeof getStaticProps>) {
+
+function useGetPrefetched(state) {
+  const content = useMemo(() => state, [state])
+
+  return {
+    ...content,
+  }
+}
+export default function Home({ dehydratedState }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const { topics } = useGetPrefetched(dehydratedState)
   console.log(topics)
   return (
     <>

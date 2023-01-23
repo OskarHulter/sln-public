@@ -1,7 +1,7 @@
 import { Navbar, Text } from '@nextui-org/react'
-import ThemeSwitch from '../atoms/buttons/ThemeSwitch.js'
-import LoadingSpinner from '../atoms/LoadingSpinner.js'
-import { useContent } from '../features/content/useContent.js'
+import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
+import LoadingSpinner from '../atoms/LoadingSpinner'
+import { useContent } from '../features/content/useContent'
 
 export default function Header() {
   const { data } = useContent()

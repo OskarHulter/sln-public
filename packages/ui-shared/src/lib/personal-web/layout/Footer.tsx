@@ -1,7 +1,7 @@
 import { Card, Grid, Link, Row, Text } from '@nextui-org/react'
-import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons.js'
-import LoadingSpinner from '../atoms/LoadingSpinner.js'
-import { useContent } from '../features/content/useContent.js'
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons'
+import LoadingSpinner from '../atoms/LoadingSpinner'
+import { useContent } from '../features/content/useContent'
 
 const MockItem = ({ text }: { text: string }) => {
   return (

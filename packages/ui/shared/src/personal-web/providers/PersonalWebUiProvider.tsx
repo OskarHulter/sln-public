@@ -1,7 +1,7 @@
 import { NextUIProvider } from '@nextui-org/react'
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { BaseProps } from '../../types.js'
-import theme from '../styles/themes/default.js'
+import type { BaseProps } from '../../types'
+import theme from '../styles/themes/default'
 
 export function PersonalWebUiProvider({ children }: BaseProps) {
   return (

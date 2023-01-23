@@ -1,6 +1,6 @@
 import { Loading } from '@nextui-org/react'
 
-export function LoadingSpinner() {
+export default function LoadingSpinner() {
   return (
     <Loading
       type='spinner'

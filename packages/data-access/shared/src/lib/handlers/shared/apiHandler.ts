@@ -3,7 +3,7 @@
 import type { Method } from 'axios'
 import createHttpError from 'http-errors'
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
-import errorHandler, { ErrorResponse } from './errorHandler.js'
+import errorHandler, { ErrorResponse } from './errorHandler'
 
 type ApiMethodHandlers = {
   [key in Uppercase<Method>]?: NextApiHandler

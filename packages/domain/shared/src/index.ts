@@ -1,9 +1,9 @@
-export { default as constants } from './lib/constants.js'
-export { default as content } from './lib/content.js'
-export { default as projects } from './lib/domain/projects.js'
-export { default as technologies } from './lib/domain/technologies.js'
-export { default as getDomain } from './lib/getDomain.js'
-export { default as images } from './lib/images.js'
+export { default as constants } from './lib/constants'
+export { default as content } from './lib/content'
+export { default as projects } from './lib/domain/projects'
+export { default as technologies } from './lib/domain/technologies'
+export { default as getDomain } from './lib/getDomain'
+export { default as images } from './lib/images'
 export type {
   About,
   ConstantsWeb,
@@ -18,4 +18,4 @@ export type {
   Technologies,
   Topic,
   Topics,
-} from './lib/types.js'
+} from './lib/types'

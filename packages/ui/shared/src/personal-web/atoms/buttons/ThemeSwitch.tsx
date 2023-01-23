@@ -1,8 +1,8 @@
 import { Switch, SwitchEvent, useTheme } from '@nextui-org/react'
 import { useTheme as useNextTheme } from 'next-themes'
-import React from 'react'
-import { MoonIcon, SunIcon } from '../../atoms/icons/Icons.js'
-import { useHasMounted } from '../../features/hasMounted/useHasMounted.js'
+import type { ChangeEvent } from 'react'
+import { MoonIcon, SunIcon } from '../../atoms/icons/Icons'
+import { useHasMounted } from '../../features/hasMounted/useHasMounted'
 
 export default function ThemeSwitch() {
   const { setTheme } = useNextTheme()
@@ -27,7 +27,7 @@ export default function ThemeSwitch() {
       size='xl'
       iconOn={<SunIcon filled />}
       iconOff={<MoonIcon filled />}
-      onChange={(e: React.ChangeEvent<HTMLInputElement> | SwitchEvent) =>
+      onChange={(e: ChangeEvent<HTMLInputElement> | SwitchEvent) =>
         setTheme(e.target.checked ? 'dark' : 'light')
       }
     />

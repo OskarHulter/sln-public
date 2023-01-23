@@ -1,10 +1,10 @@
 import { globalCss } from '@nextui-org/react'
-import fonts from './tokens/fonts.js'
+import { inter } from './tokens/fonts'
 
 export default globalCss({
   '@font-face': [
     {
-      fontFamily: fonts.inter.variable,
+      fontFamily: inter.variable,
       fontWeight: '$variable',
       fontStyle: 'normal',
       fontDisplay: 'swap',
@@ -40,7 +40,7 @@ export default globalCss({
   html: {
     padding: 0,
     margin: 0,
-    fontFamily: fonts.inter.variable,
+    fontFamily: inter.variable,
     fontSize: '$base',
     lineHeight: '$base',
     color: '$black',

@@ -1,5 +1,4 @@
 import { SSRProvider } from '@react-aria/ssr'
-import type { BaseProps } from '@sln/ui'
 import { globalMinimal, PersonalWebUiProvider } from '@sln/ui'
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
@@ -16,32 +15,27 @@ export { reportWebVitals } from 'next-axiom'
 log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
 
 globalMinimal()
-function HydrationProvider({ children, pageProps }: AppProps & BaseProps) {
-  return (
-    <SSRProvider>
-      <Hydrate state={pageProps.dehydratedState}>{children}</Hydrate>
-    </SSRProvider>
-  )
-}
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient())
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationProvider {...pageProps}>
-        <PersonalWebUiProvider>
-          <DefaultSeo {...SEO} />
-          <Head>
-            <meta charSet='utf-8' />
-            <meta
-              name='viewport'
-              content='viewport-fit=cover, width=device-width, initial-scale=1'
-            />
-          </Head>
-          <Component {...pageProps} />
-        </PersonalWebUiProvider>
-        <ReactQueryDevtools />
-      </HydrationProvider>
+      <SSRProvider>
+        <Hydrate state={pageProps.dehydratedState}>
+          <PersonalWebUiProvider>
+            <DefaultSeo {...SEO} />
+            <Head>
+              <meta charSet='utf-8' />
+              <meta
+                name='viewport'
+                content='viewport-fit=cover, width=device-width, initial-scale=1'
+              />
+            </Head>
+            <Component {...pageProps} />
+          </PersonalWebUiProvider>
+          <ReactQueryDevtools />
+        </Hydrate>
+      </SSRProvider>
     </QueryClientProvider>
   )
 }

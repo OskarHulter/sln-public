@@ -1,7 +1,7 @@
 import { mailFormSchema, mailOptionsSchema, sendExternal, sendInternal } from '@sln/features-mail'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import errorHandler from '../shared/errorHandler.js'
-import parseHandler from '../shared/parseHandler.js'
+import errorHandler from '../shared/errorHandler'
+import parseHandler from '../shared/parseHandler'
 
 export default async function sendHandler(req: NextApiRequest, res: NextApiResponse) {
   const parsedInternal = await parseHandler(mailFormSchema, { req, res })

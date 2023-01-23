@@ -1,5 +1,5 @@
-import content from './content.js'
-import { Content } from './types.js'
+import content from './content'
+import { Content } from './types'
 
 type Store = {
   content: Content

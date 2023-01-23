@@ -1,9 +1,8 @@
-import constants from './constants.js'
-import jobs from './domain/jobs.js'
-import projects from './domain/projects.js'
-import technologies from './domain/technologies.js'
-import images from './images.js'
-import { Content, Topic, Topics } from './types.js'
+import constants from './constants'
+import jobs from './domain/jobs'
+import projects from './domain/projects'
+import technologies from './domain/technologies'
+import images from './images'
 
 export const topTraits = ['learner', 'teacher', 'strategic']
 
@@ -82,9 +81,8 @@ export const about = {
   topics,
 }
 
-export const get: () => Content = () => content
 // export const getByName: (_: ContentKeys) => Partial<Content> = (name) => content[name]
-export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)
+// export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)
 
 export const content = {
   constants,
@@ -93,8 +91,6 @@ export const content = {
   jobs,
   technologies,
   images,
-  get,
-  findTopic,
 }
 
 export default content

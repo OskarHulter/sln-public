@@ -1,9 +1,9 @@
 import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
 import { MailFormSchema, submitContactForm } from '@sln/features-mail'
 import { useForm } from 'react-hook-form'
-import CheckboxField from '../atoms/inputs/CheckboxField.js'
-import InputField from '../atoms/inputs/InputField.js'
-import TextareaField from '../atoms/inputs/TextareaField.js'
+import CheckboxField from '../atoms/inputs/CheckboxField'
+import InputField from '../atoms/inputs/InputField'
+import TextareaField from '../atoms/inputs/TextareaField'
 
 export default function MailForm() {
   const {

@@ -3,7 +3,7 @@ import { invariant } from 'ts-invariant'
 
 export type Content = typeof content
 
-const mockFetch = async () => content.get()
+const mockFetch = async () => content
 
 const fetchContent = async (): Promise<Content> => {
   const res = await mockFetch()

@@ -1,7 +1,7 @@
 import sendgrid from '@sendgrid/mail'
 import type { z } from 'zod'
 import Email from '../emails/notion-magic-link'
-import { mailOptionsSchema } from '../schemas/mailOptions'
+import mailOptionsSchema from '../schemas/mailOptions'
 import type { MailOptionsSchema } from '../schemas/types'
 import serializeMail from './serializeMail'
 

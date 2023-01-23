@@ -5,7 +5,9 @@
     "types": [
       "vitest/globals",
       "node"
-    ]
+    ],
+    "composite": true,
+    "noEmit": false
   },
   "include": [
     "vite.config.ts",

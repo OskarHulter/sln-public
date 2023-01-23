@@ -85,7 +85,6 @@ export const content = {
   projects,
   jobs,
   topTraits,
-
   technologies,
   images,
 }

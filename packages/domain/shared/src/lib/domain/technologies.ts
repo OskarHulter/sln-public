@@ -76,9 +76,7 @@ export const favoriteTools = [
   },
 ]
 
-export const technologies = {
+export default {
   techNames,
   favoriteTools,
 }
-
-export default technologies

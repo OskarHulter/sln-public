@@ -5,7 +5,6 @@ export { default as technologies } from './lib/domain/technologies'
 export { default as getDomain } from './lib/getDomain'
 export { default as images } from './lib/images'
 export type {
-  About,
   ConstantsWeb,
   ConstantsWebType,
   Content,

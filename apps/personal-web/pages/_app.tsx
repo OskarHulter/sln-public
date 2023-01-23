@@ -9,7 +9,7 @@ import Head from 'next/head'
 import { log } from 'next-axiom'
 import { DefaultSeo } from 'next-seo'
 import React from 'react'
-import SEO from '../seo-default.js'
+import SEO from '../seo-default'
 
 export { reportWebVitals } from 'next-axiom'
 

@@ -97,7 +97,7 @@
     "@next/bundle-analyzer": "^13.1.4",
     "@next/font": "^13.1.2",
     "@nextui-org/react": "1.0.0-beta.12",
-    "@prisma/client": "^4.5.0",
+    "@prisma/client": "^4.9.0",
     "@react-aria/ssr": "^3.4.1",
     "@react-email/button": "^0.0.5",
     "@react-email/container": "^0.0.5",
@@ -147,3 +147,4 @@
     "zustand": "^4.3.2"
   }
 }
+

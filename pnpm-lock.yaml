@@ -29,7 +29,7 @@ specifiers:
   '@nxkit/style-dictionary': ^2.0.1
   '@nxtensions/astro': ^3.2.0
   '@playwright/test': ^1.29.2
-  '@prisma/client': ^4.5.0
+  '@prisma/client': ^4.9.0
   '@react-aria/ssr': ^3.4.1
   '@react-email/button': ^0.0.5
   '@react-email/container': ^0.0.5

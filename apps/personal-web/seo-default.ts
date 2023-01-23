@@ -11,6 +11,19 @@ export default {
     cardType: 'summary_large_image',
   },
 }
+
+// "paths": {
+//   "@sln/content-shared": [
+//     "../../dist/packages/content/shared/index.cjs"
+//   ],
+//     "@sln/data-access-shared": [
+//       "../../dist/packages/data-access-shared/index.cjs"
+//     ],
+//       "@sln/ui-shared": [
+//         "../../dist/packages/ui-shared/index.cjs"
+//       ]
+// }
+
 //   < meta charSet = 'utf-8' />
 //     <meta
 //               name='viewport'

@@ -1,5 +1,5 @@
 import sendgrid from '@sendgrid/mail'
-import { MailFormSchema } from '../schemas/types.js'
+import type { MailFormSchema } from '../schemas/types'
 
 const myMailAddress = 'oskarhulter@gmail.com'
 const sendgridMailAddress = 'hello@sendgridDomain.com'

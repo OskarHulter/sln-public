@@ -15,7 +15,7 @@
       ],
       "parserOptions": {
         "project": [
-          "packages/playwright-host/tsconfig.*?.json"
+          "packages/playwright-host-e2e/tsconfig.*?.json"
         ]
       },
       "rules": {

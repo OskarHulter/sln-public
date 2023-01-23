@@ -1,9 +1,9 @@
 import sendgrid from '@sendgrid/mail'
-import { z } from 'zod'
-import Email from '../emails/notion-magic-link.js'
-import mailOptionsSchema from '../schemas/mailOptions.js'
-import type { MailOptionsSchema } from '../schemas/types.js'
-import serializeMail from './serializeMail.js'
+import type { z } from 'zod'
+import Email from '../emails/notion-magic-link'
+import { mailOptionsSchema } from '../schemas/mailOptions'
+import type { MailOptionsSchema } from '../schemas/types'
+import serializeMail from './serializeMail'
 
 //sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
@@ -17,6 +17,7 @@ const url = 'https://example.com' // ?
  */
 export default function sendExternal(options: MailOptionsSchema) {
   const emailHtml = serializeMail(Email, url) //formatMailQuery(parsed) render(<Email url='https://example.com' />)
+
   const parsed = formatExternal(emailHtml, options)
   console.log('🚀 ~ file: sendMail.tsx:21 ~ sendMail ~ parsed', parsed)
   const optionsExample = {

@@ -1,8 +1,8 @@
 /* eslint-disable functional/no-throw-statement */
 /* eslint-disable functional/no-try-statement */
-import { Method } from 'axios'
+import type { Method } from 'axios'
 import createHttpError from 'http-errors'
-import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 import errorHandler, { ErrorResponse } from './errorHandler.js'
 
 type ApiMethodHandlers = {

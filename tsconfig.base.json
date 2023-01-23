@@ -38,18 +38,17 @@
     "explainFiles": true,
     "noEmit": true,
     "declaration": true,
+    "importHelpers": true,
     "declarationMap": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "importHelpers": true,
     "resolveJsonModule": true,
     "noImplicitOverride": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "importsNotUsedAsValues": "error"
+    "forceConsistentCasingInFileNames": true
   },
   "types": [
     "node",

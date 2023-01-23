@@ -36,14 +36,12 @@
     "import",
     "functional",
     "deprecation",
-    "require-extensions",
     "prettier"
   ],
   "extends": [
     "plugin:@nrwl/nx/react",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:require-extensions/recommended",
     "plugin:prettier/recommended"
   ],
   "overrides": [

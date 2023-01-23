@@ -1,7 +1,7 @@
 import ky from 'ky'
 import { stringify } from 'superjson'
-import { z } from 'zod'
-import mailFormSchema from '../schemas/mailForm.js'
+import type { z } from 'zod'
+import mailFormSchema from '../schemas/mailForm'
 
 const mailEndpoint = '/api/mail'
 // Get the response data from server as JSON.

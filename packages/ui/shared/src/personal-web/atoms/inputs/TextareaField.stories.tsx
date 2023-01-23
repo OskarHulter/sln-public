@@ -1,6 +1,6 @@
 import type { Story } from '@ladle/react'
-import { InputProps } from '../../forms/types.js'
-import TextareaField from './TextareaField.js'
+import { InputProps } from '../../forms/types'
+import TextareaField from './TextareaField'
 
 export const TextareaFieldStory: Story<InputProps> = (args) => <TextareaField {...args} />
 

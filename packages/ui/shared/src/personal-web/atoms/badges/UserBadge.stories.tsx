@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import UserBadge from './UserBadge.js'
+import UserBadge from './UserBadge'
 
 export const UserBadgeStory: Story = () => <UserBadge />
 

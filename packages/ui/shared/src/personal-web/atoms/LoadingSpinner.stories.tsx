@@ -1,6 +1,6 @@
 import type { Story } from '@ladle/react'
-import type { InputProps } from '../forms/types.js'
-import LoadingSpinner from './LoadingSpinner.js'
+import type { InputProps } from '../forms/types'
+import LoadingSpinner from './LoadingSpinner'
 
 export const LoadingSpinnerStory: Story<InputProps> = () => <LoadingSpinner />
 

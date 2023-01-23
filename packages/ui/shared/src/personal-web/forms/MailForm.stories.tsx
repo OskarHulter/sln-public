@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import MailForm from './MailForm.js'
+import MailForm from './MailForm'
 
 export const MailFormStory: Story<typeof MailForm> = (args) => <MailForm {...args} />
 

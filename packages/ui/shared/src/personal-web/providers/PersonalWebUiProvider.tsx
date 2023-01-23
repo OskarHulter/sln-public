@@ -3,7 +3,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import type { BaseProps } from '../../types'
 import theme from '../styles/themes/default'
 
-export function PersonalWebUiProvider({ children }: BaseProps) {
+export default function PersonalWebUiProvider({ children }: BaseProps) {
   return (
     <NextThemesProvider
       defaultTheme='system'
@@ -17,5 +17,3 @@ export function PersonalWebUiProvider({ children }: BaseProps) {
     </NextThemesProvider>
   )
 }
-
-export default PersonalWebUiProvider

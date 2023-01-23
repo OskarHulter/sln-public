@@ -1,14 +1,14 @@
 import type { GlobalProvider } from "@ladle/react"
 import React from 'react'
-import SharedUiProvider from '../packages/ui/src/personal-web/providers/PersonalWebUiProvider'
+import PersonalWebUiProvider from '../packages/ui/shared/src/personal-web/providers/PersonalWebUiProvider'
 export const Provider: GlobalProvider = ({
   children,
   globalState,
   storyMeta,
 }) => (
-  <SharedUiProvider>
+  <PersonalWebUiProvider>
     <h1>Theme: {globalState.theme}</h1>
     <h2>{storyMeta.customValue}</h2>
     {children}
-  </SharedUiProvider>
+  </PersonalWebUiProvider>
 )

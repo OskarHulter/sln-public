@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import UserTwitterCard from './UserTwitterCard.js'
+import UserTwitterCard from './UserTwitterCard'
 
 export const UserTwitterCardStory: Story<typeof UserTwitterCard> = (args) => (
   <UserTwitterCard {...args} />

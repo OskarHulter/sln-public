@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import { Footer } from './Footer.js'
+import Footer from './Footer'
 
 export const FooterStory: Story<typeof Footer> = (args) => <Footer {...args} />
 

@@ -1,6 +1,6 @@
 import type { Story } from '@ladle/react'
-import { CheckboxInputField } from '../../forms/types.js'
-import CheckboxField from './CheckboxField.js'
+import { CheckboxInputField } from '../../forms/types'
+import CheckboxField from './CheckboxField'
 
 export const CheckboxFieldStory: Story<CheckboxInputField> = (args) => <CheckboxField {...args} />
 

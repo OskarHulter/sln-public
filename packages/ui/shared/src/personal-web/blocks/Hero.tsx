@@ -4,7 +4,7 @@ import LoadingSpinner from '../atoms/LoadingSpinner'
 import useContent from '../features/content/useContent'
 import { default as UserTwitterCard } from './UserTwitterCard'
 
-export function Hero() {
+export default function Hero() {
   const { data } = useContent()
 
   if (!data) return <LoadingSpinner />
@@ -58,5 +58,3 @@ export function Hero() {
     </Grid>
   )
 }
-
-export default Hero

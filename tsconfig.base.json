@@ -1,4 +1,3 @@
-// `ignoreDeprecations: "5.0"`
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -8,30 +7,13 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@sln/content-shared": [
-        "packages/content/shared/src/index.ts"
-      ],
-      "@sln/data-access-shared": [
-        "packages/data-access/shared/src/index.ts"
-      ],
-      "@sln/domain-shared": [
-        "packages/domain/shared/src/index.ts"
-      ],
-      "@sln/features-mail": [
-        "packages/features/mail/src/index.ts"
-      ],
-      "@sln/ui": [
-        "packages/ui/shared/src/index.ts"
-      ],
-      "@sln/ui-shared": [
-        "packages/ui-shared/src/index.ts"
-      ]
+      "@sln/content-shared": ["packages/content/shared/src/index.ts"],
+      "@sln/data-access-shared": ["packages/data-access/shared/src/index.ts"],
+      "@sln/domain-shared": ["packages/domain/shared/src/index.ts"],
+      "@sln/features-mail": ["packages/features/mail/src/index.ts"],
+      "@sln/ui": ["packages/ui/shared/src/index.ts"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "strict": true,
     "jsx": "react-jsx",
     "allowJs": true,
@@ -83,8 +65,5 @@
     "next/types",
     "astro/client"
   ],
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ],
+  "exclude": ["node_modules", "tmp"]
 }

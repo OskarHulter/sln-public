@@ -1,8 +1,0 @@
-export { default as theme } from './default.js'
-export { default as elegant } from './elegant.js'
-export { default as greatGradient } from './greatGradient.js'
-export { default as modern } from './modern.js'
-export { default as retro } from './retro.js'
-export { default as shared } from './shared.js'
-export { default as slnTheme } from './sln.js'
-export { default as stresslessTheme } from './stressless.js'

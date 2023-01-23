@@ -2,7 +2,6 @@ import { Container, Spacer } from '@nextui-org/react'
 import { fetchContent } from '@sln/data-access-shared'
 import { Hero, Layout, MailForm } from '@sln/ui'
 import { dehydrate, QueryClient } from '@tanstack/react-query'
-import type { NextPage } from 'next'
 import type { InferGetStaticPropsType } from 'next/types'
 import { NextSeo } from 'next-seo'
 
@@ -20,8 +19,8 @@ export async function getStaticProps() {
     },
   }
 }
-const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log(props)
+export default function Home({ topics }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(topics)
   return (
     <>
       <NextSeo
@@ -74,5 +73,3 @@ const Home: NextPage = (props: InferGetStaticPropsType<typeof getStaticProps>) =
     </>
   )
 }
-
-export default Home

@@ -1,5 +1,5 @@
 import type { Story } from '@ladle/react'
-import Hero from './Hero.js'
+import Hero from './Hero'
 
 export const HeroStory: Story<typeof Hero> = (args) => <Hero {...args} />
 

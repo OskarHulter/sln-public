@@ -8,7 +8,7 @@ export const topTraits = ['learner', 'teacher', 'strategic']
 
 export const topics = [
   {
-    name: 'me',
+    name: 'hero',
     title: 'Hi, I’m Oskar',
     text: `I'm a fullstack Javascript developer from Sweden. I help teams deliver better software by driving adoption of todays most valuable tools and practices.`,
   },
@@ -76,19 +76,16 @@ export const topics = [
   },
 ] as const
 
-export const about = {
-  topTraits,
-  topics,
-}
-
 // export const getByName: (_: ContentKeys) => Partial<Content> = (name) => content[name]
 // export const findTopic = (name: Topic, list: Topics) => list.find((data) => data.name === name)
 
 export const content = {
   constants,
-  about,
+  topics,
   projects,
   jobs,
+  topTraits,
+
   technologies,
   images,
 }

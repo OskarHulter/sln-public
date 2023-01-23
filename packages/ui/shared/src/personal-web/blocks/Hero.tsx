@@ -1,7 +1,14 @@
-import { Button, Col, Grid, Row, Text } from '@nextui-org/react'
-import AvatarBadge from '../atoms/badges/AvatarBadge'
+import { Button, Col, Grid, Row, Text, Tooltip } from '@nextui-org/react'
+import { default as UserBadge } from '../atoms/badges/UserBadge'
+import LoadingSpinner from '../atoms/LoadingSpinner'
+import useContent from '../features/content/useContent'
+import { default as UserTwitterCard } from './UserTwitterCard'
 
 export function Hero() {
+  const { data } = useContent()
+
+  if (!data) return <LoadingSpinner />
+
   return (
     <Grid xs>
       <Row css={{ m: '$10' }}>
@@ -14,11 +21,9 @@ export function Hero() {
               textGradient: `316deg, $primary 3%, $secondary 100%`,
             }}
           >
-            {`Hi, I’m Oskar`}
+            {data.topics[0].title}
           </Text>
-          <Text>
-            {`I am the #1 NY Times Bestselling author of The Subtle Art of Not Giving a F*ck and Everything Is F*cked: A Book About Hope. I write life advice that is science-based, pragmatic, and non-bullshitty—a.k.a., life advice that doesn’t suck. Some people say I’m an idiot. Other people say I saved their life. Read on and decide for yourself.`}
-          </Text>
+          <Text>{data.topics[0].text}</Text>
 
           <Row>
             <Button
@@ -42,7 +47,12 @@ export function Hero() {
           </Row>
         </Col>
         <Col css={{ p: '$6' }}>
-          <AvatarBadge />
+          <Tooltip
+            placement='top'
+            content={<UserTwitterCard />}
+          >
+            <UserBadge />
+          </Tooltip>
         </Col>
       </Row>
     </Grid>

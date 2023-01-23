@@ -1,4 +1,3 @@
-//'use client'
 import {
   Avatar,
   AvatarProps,
@@ -12,8 +11,8 @@ import {
   Text,
 } from '@nextui-org/react'
 import React from 'react'
-import LoadingSpinner from '../atoms/LoadingSpinner.js'
-import { useContent } from '../features/content/useContent.js'
+import LoadingSpinner from '../atoms/LoadingSpinner'
+import useContent from '../features/content/useContent'
 
 export type UserTwitterCardProps = {
   avatarUrl: string

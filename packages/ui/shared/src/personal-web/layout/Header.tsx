@@ -1,7 +1,7 @@
 import { Navbar, Text } from '@nextui-org/react'
 import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
 import LoadingSpinner from '../atoms/LoadingSpinner'
-import { useContent } from '../features/content/useContent'
+import useContent from '../features/content/useContent'
 
 export default function Header() {
   const { data } = useContent()
@@ -23,7 +23,7 @@ export default function Header() {
             m: '0',
           }}
         >
-          {data?.constants.creatorName}
+          {data.constants.creatorName}
         </Text>
       </Navbar.Brand>
 

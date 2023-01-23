@@ -1,11 +1,10 @@
 import { fetchContent } from '@sln/data-access-shared'
-import { useQuery } from '@tanstack/react-query'
+import { Content } from '@sln/domain-shared'
+import { useQuery, UseQueryResult } from '@tanstack/react-query'
 
-const useContent = () => {
+export default function useContent(): UseQueryResult<Content> {
   return useQuery({
     queryKey: ['initialContent'],
-    queryFn: () => fetchContent(),
+    queryFn: fetchContent,
   })
 }
-
-export { useContent }

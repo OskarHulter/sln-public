@@ -1,15 +1,11 @@
-import ProjectInfoCard from '@/components/ProjectInfoCard'
-import RequestDataCard from '@/components/RequestDataCard'
-import RequestDetailsCard from '@/components/RequestDetalilsCard'
-import RequestMethodCard from '@/components/RequestMethodCard'
-import RequestModalContainer from '@/components/RequestModalContainer'
-import ModalStore from '@/store/ModalStore'
-import { approveNearRequest, rejectNearRequest } from '@/utils/NearRequestHandlerUtil'
-import { web3wallet } from '@/utils/WalletConnectUtil'
-import { NEAR_SIGNING_METHODS } from '@/data/NEARData'
-import { transactions } from 'near-api-js'
 import { Button, Divider, Modal, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
+import { NEAR_SIGNING_METHODS } from '../data/NEARData'
+import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
+import RequestDataCard from '../layoutTemplate/cards/RequestDataCard'
+import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
+import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
+import ModalStore from '../store/ModalStore'
 
 export default function SessionSignNearModal() {
   // Get request and wallet data from store

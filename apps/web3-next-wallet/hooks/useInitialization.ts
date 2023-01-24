@@ -1,12 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useSnapshot } from 'valtio'
 import SettingsStore from '../store/SettingsStore'
-import { createOrRestoreCosmosWallet } from '../utils/CosmosWalletUtil'
-import { createOrRestoreEIP155Wallet } from '../utils/EIP155WalletUtil'
-import { createOrRestoreElrondWallet } from '../utils/ElrondWalletUtil'
-import { createOrRestoreNearWallet } from '../utils/NearWalletUtil'
-import { createOrRestorePolkadotWallet } from '../utils/PolkadotWalletUtil'
-import { createOrRestoreSolanaWallet } from '../utils/SolanaWalletUtil'
 
 export default function useInitialization() {
   const [initialized, setInitialized] = useState(false)
@@ -16,19 +10,13 @@ export default function useInitialization() {
 
   const onInitialize = useCallback(async () => {
     try {
-      const { eip155Addresses } = createOrRestoreEIP155Wallet()
-      const { cosmosAddresses } = await createOrRestoreCosmosWallet()
-      const { solanaAddresses } = await createOrRestoreSolanaWallet()
-      const { polkadotAddresses } = await createOrRestorePolkadotWallet()
-      const { nearAddresses } = await createOrRestoreNearWallet()
-      const { elrondAddresses } = await createOrRestoreElrondWallet()
 
-      SettingsStore.setEIP155Address(eip155Addresses[0])
-      SettingsStore.setCosmosAddress(cosmosAddresses[0])
-      SettingsStore.setSolanaAddress(solanaAddresses[0])
-      SettingsStore.setPolkadotAddress(polkadotAddresses[0])
-      SettingsStore.setNearAddress(nearAddresses[0])
-      SettingsStore.setElrondAddress(elrondAddresses[0])
+      SettingsStore.setEIP155Address('hejsan')
+      SettingsStore.setCosmosAddress('hejsan')
+      SettingsStore.setSolanaAddress('hejsan')
+      SettingsStore.setPolkadotAddress('hejsan')
+      SettingsStore.setNearAddress('hejsan')
+      SettingsStore.setElrondAddress('hejsan')
       prevRelayerURLValue.current = relayerRegionURL
 
       await console.log(relayerRegionURL)

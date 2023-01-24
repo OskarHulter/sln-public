@@ -2,10 +2,9 @@ import { Text } from '@nextui-org/react'
 import { Fragment, useState } from 'react'
 import SessionCard from '../layoutTemplate/cards/SessionCard'
 import PageHeader from '../newLayout/PageHeader'
-import { web3wallet } from '../utils/WalletConnectUtil'
 
 export default function SessionsPage() {
-  const [sessions, setSessions] = useState(Object.values(web3wallet.getActiveSessions()))
+  const [sessions, setSessions] = useState([])
 
   if (!sessions.length) {
     return (

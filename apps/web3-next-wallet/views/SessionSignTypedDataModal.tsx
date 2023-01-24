@@ -7,9 +7,7 @@ import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
 import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
 import ModalStore from '../store/ModalStore'
-import { approveEIP155Request, rejectEIP155Request } from '../utils/EIP155RequestHandlerUtil'
 import { getSignTypedDataParamsData } from '../utils/HelperUtil'
-import { web3wallet } from '../utils/WalletConnectUtil'
 
 export default function SessionSignTypedDataModal() {
   // Get request and wallet data from store

@@ -6,8 +6,6 @@ import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
 import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
 import ModalStore from '../store/ModalStore'
-import { approveSolanaRequest, rejectSolanaRequest } from '../utils/SolanaRequestHandlerUtil'
-import { web3wallet } from '../utils/WalletConnectUtil'
 
 export default function SessionSignSolanaModal() {
   // Get request and wallet data from store

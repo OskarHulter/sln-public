@@ -6,19 +6,19 @@ export default function Navigation() {
   return (
     <Row justify="space-between" align="center">
       <Link href="/" passHref>
-        <a className="navLink">
+        <div className="navLink">
           <Image alt="accounts icon" src="/icons/accounts-icon.svg" width={27} height={27} />
-        </a>
+        </div>
       </Link>
 
       <Link href="/sessions" passHref>
-        <a className="navLink">
+        <div className="navLink">
           <Image alt="sessions icon" src="/icons/sessions-icon.svg" width={27} height={27} />
-        </a>
+        </div>
       </Link>
 
       <Link href="/walletconnect" passHref>
-        <a className="navLink">
+        <div className="navLink">
           <Avatar
             size="lg"
             css={{ cursor: 'pointer' }}
@@ -32,19 +32,19 @@ export default function Navigation() {
               />
             }
           />
-        </a>
+        </div>
       </Link>
 
       <Link href="/pairings" passHref>
-        <a className="navLink">
+        <div className="navLink">
           <Image alt="pairings icon" src="/icons/pairings-icon.svg" width={25} height={25} />
-        </a>
+        </div>
       </Link>
 
       <Link href="/settings" passHref>
-        <a className="navLink">
+        <div className="navLink">
           <Image alt="settings icon" src="/icons/settings-icon.svg" width={27} height={27} />
-        </a>
+        </div>
       </Link>
     </Row>
   )

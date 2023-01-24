@@ -1,7 +1,7 @@
 import { Avatar, Col, Link, Row, Text } from '@nextui-org/react'
 
 interface IProps {
-  metadata: {
+  metadata?: {
     icons: string
     name: string
     url: string

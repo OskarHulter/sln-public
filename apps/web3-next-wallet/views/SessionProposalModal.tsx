@@ -6,14 +6,7 @@ import ProposalSelectSection from '../newLayout/sections/ProposalSelectSection'
 import SessionProposalChainCard from '../layoutTemplate/cards/SessionProposalChainCard'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
 import ModalStore from '../store/ModalStore'
-import { cosmosAddresses } from '../utils/CosmosWalletUtil'
-import { eip155Addresses } from '../utils/EIP155WalletUtil'
-import { elrondAddresses } from '../utils/ElrondWalletUtil'
 import { isEIP155Chain, isCosmosChain, isSolanaChain, isPolkadotChain, isNearChain, isElrondChain } from '../utils/HelperUtil'
-import { nearAddresses } from '../utils/NearWalletUtil'
-import { polkadotAddresses } from '../utils/PolkadotWalletUtil'
-import { solanaAddresses } from '../utils/SolanaWalletUtil'
-import { web3wallet } from '../utils/WalletConnectUtil'
 
 export default function SessionProposalModal() {
   const [selectedAccounts, setSelectedAccounts] = useState<Record<string, string[]>>({})

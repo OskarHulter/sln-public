@@ -17,21 +17,19 @@ export default function SessionUnsuportedMethodModal() {
   }
 
   // Get required request data
-  const { topic, params } = requestEvent
-  const { chainId, request } = params
 
   return (
     <Fragment>
       <RequestModalContainer title="Unsuported Method">
-        <ProjectInfoCard metadata={requestSession.peer.metadata} />
+        <ProjectInfoCard />
 
         <Divider y={2} />
 
-        <RequesDetailsCard chains={[chainId ?? '']} protocol={requestSession.relay.protocol} />
+        <RequesDetailsCard chains={['']} protocol={''} />
 
         <Divider y={2} />
 
-        <RequestMethodCard methods={[request.method]} />
+        <RequestMethodCard methods={[]} />
       </RequestModalContainer>
 
       <Modal.Footer>

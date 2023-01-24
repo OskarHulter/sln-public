@@ -1,13 +1,11 @@
-import ProjectInfoCard from '@/components/ProjectInfoCard'
-import RequestDataCard from '@/components/RequestDataCard'
-import RequesDetailsCard from '@/components/RequestDetalilsCard'
-import RequestMethodCard from '@/components/RequestMethodCard'
-import RequestModalContainer from '@/components/RequestModalContainer'
-import ModalStore from '@/store/ModalStore'
-import { approveElrondRequest, rejectElrondRequest } from '@/utils/ElrondRequestHandlerUtil'
-import { web3wallet } from '@/utils/WalletConnectUtil'
 import { Button, Divider, Modal, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
+import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
+import RequestDataCard from '../layoutTemplate/cards/RequestDataCard'
+import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
+import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
+import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
+import ModalStore from '../store/ModalStore'
 
 export default function SessionSignElrondModal() {
   // Get request and wallet data from store

@@ -7,7 +7,8 @@
   ],
   "ignorePatterns": [
     "!**/*",
-    ".next/**/*"
+    ".next/**/*",
+    "mocks/"
   ],
   "overrides": [
     {

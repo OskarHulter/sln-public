@@ -1,5 +1,5 @@
 import { Input } from '@nextui-org/react'
-import { InputProps } from '../../forms/types.js'
+import { InputProps } from '../../forms/types'
 
 export default function InputField({ label, register, required, reset, errors }: InputProps) {
   return (

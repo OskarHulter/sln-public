@@ -8,9 +8,12 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "workbench.colorCustomizations": {},
-  "WillLuke.nextjs.addTypesOnSave": true,
-  "WillLuke.nextjs.hasPrompted": true,
+  "WillLuke.nextjs.addTypesOnSave": false,
+  "WillLuke.nextjs.hasPrompted": false,
   "[dotenv]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
 }

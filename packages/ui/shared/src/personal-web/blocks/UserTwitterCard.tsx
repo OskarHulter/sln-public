@@ -28,138 +28,140 @@ export default function UserTwitterCard({
   ...props
 }: Partial<UserTwitterCardProps>) {
   const [following, setFollowing] = React.useState(false)
-  const { data } = useContent()
+  const { data, status } = useContent()
 
-  if (!data) return <LoadingSpinner />
-
-  return (
-    <Grid.Container
-      className='user-twitter-card__container'
-      css={{
-        mw: '250px',
-        borderRadius: '$lg',
-        padding: '$sm',
-        ...css,
-      }}
-      onClick={onClick}
-      {...props}
-    >
-      <Row
-        justify='space-between'
-        align='center'
+  if (status === 'loading') return <LoadingSpinner />
+  if (status === 'error') return null
+  if (data) {
+    return (
+      <Grid.Container
+        className='user-twitter-card__container'
+        css={{
+          mw: '250px',
+          borderRadius: '$lg',
+          padding: '$sm',
+          ...css,
+        }}
+        onClick={onClick}
+        {...props}
       >
-        <Col span={3}>
-          <Avatar
-            size='lg'
-            src={data?.constants.urls.profilePicUrl}
-            color='gradient'
-            bordered
-            squared
-            {...avatarProps}
-          />
-        </Col>
-        <Col span={9}>
-          <Row>
-            <Grid
-              xs={12}
-              direction='column'
-            >
-              <Text
-                className='user-twitter-card__text'
-                b
-                size={15}
+        <Row
+          justify='space-between'
+          align='center'
+        >
+          <Col span={3}>
+            <Avatar
+              size='lg'
+              src={data[0].image?.src}
+              color='gradient'
+              bordered
+              squared
+              {...avatarProps}
+            />
+          </Col>
+          <Col span={9}>
+            <Row>
+              <Grid
+                xs={12}
+                direction='column'
               >
-                Oskar Hulter
-              </Text>
-              <Text
-                className='user-twitter-card__text'
-                size={14}
-                css={{ mt: '-$3' }}
-                color='#888888'
+                <Text
+                  className='user-twitter-card__text'
+                  b
+                  size={15}
+                >
+                  Oskar Hulter
+                </Text>
+                <Text
+                  className='user-twitter-card__text'
+                  size={14}
+                  css={{ mt: '-$3' }}
+                  color='#888888'
+                >
+                  @OHulter
+                </Text>
+              </Grid>
+              <Button
+                auto
+                rounded
+                onClick={() => setFollowing(!following)}
+                css={{
+                  maxHeight: '$space$12',
+                  fs: '$xs',
+                  fontWeight: '$semibold',
+                  borderColor: following ? '$foreground' : '$primary',
+                  color: following ? '$foreground' : '$white',
+                }}
+                color='primary'
+                bordered={following}
               >
-                @OHulter
-              </Text>
-            </Grid>
-            <Button
-              auto
-              rounded
-              onClick={() => setFollowing(!following)}
-              css={{
-                maxHeight: '$space$12',
-                fs: '$xs',
-                fontWeight: '$semibold',
-                borderColor: following ? '$foreground' : '$primary',
-                color: following ? '$foreground' : '$white',
-              }}
-              color='primary'
-              bordered={following}
+                {following ? 'Unfollow' : 'Follow'}
+              </Button>
+            </Row>
+          </Col>
+        </Row>
+        <Grid.Container className='user-twitter-card__username-container'>
+          <Grid xs={12}>
+            <Text
+              className='user-twitter-card__text'
+              size={14}
+              css={{ mt: '$1' }}
+              color='#888888'
             >
-              {following ? 'Unfollow' : 'Follow'}
-            </Button>
-          </Row>
-        </Col>
-      </Row>
-      <Grid.Container className='user-twitter-card__username-container'>
-        <Grid xs={12}>
+              Full-stack developer, @getnextui lover he/him{' '}
+              <span
+                role='img'
+                aria-label='celebration emoji'
+              >
+                🎉
+              </span>
+            </Text>
+          </Grid>
+        </Grid.Container>
+
+        <Grid.Container
+          className='user-twitter-card__metrics-container'
+          justify='flex-start'
+          alignContent='center'
+        >
           <Text
             className='user-twitter-card__text'
             size={14}
-            css={{ mt: '$1' }}
             color='#888888'
           >
-            Full-stack developer, @getnextui lover he/him{' '}
-            <span
-              role='img'
-              aria-label='celebration emoji'
+            <Text
+              b
+              color='foreground'
+              className='user-twitter-card__text'
+              size={14}
+              css={{ mr: '$1' }}
             >
-              🎉
-            </span>
+              4
+            </Text>
+            Following
           </Text>
-        </Grid>
-      </Grid.Container>
-
-      <Grid.Container
-        className='user-twitter-card__metrics-container'
-        justify='flex-start'
-        alignContent='center'
-      >
-        <Text
-          className='user-twitter-card__text'
-          size={14}
-          color='#888888'
-        >
+          <Spacer
+            inline
+            x={0.5}
+          />
           <Text
-            b
-            color='foreground'
             className='user-twitter-card__text'
             size={14}
-            css={{ mr: '$1' }}
+            color='#888888'
           >
-            4
+            <Text
+              b
+              color='foreground'
+              className='user-twitter-card__text'
+              size={14}
+              css={{ mr: '$1' }}
+            >
+              97.1K
+            </Text>
+            Followers
           </Text>
-          Following
-        </Text>
-        <Spacer
-          inline
-          x={0.5}
-        />
-        <Text
-          className='user-twitter-card__text'
-          size={14}
-          color='#888888'
-        >
-          <Text
-            b
-            color='foreground'
-            className='user-twitter-card__text'
-            size={14}
-            css={{ mr: '$1' }}
-          >
-            97.1K
-          </Text>
-          Followers
-        </Text>
+        </Grid.Container>
       </Grid.Container>
-    </Grid.Container>
-  )
+    )
+  } else return null
 }

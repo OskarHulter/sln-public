@@ -3,22 +3,23 @@ import useContent from '../../features/content/useContent'
 import LoadingSpinner from '../LoadingSpinner'
 
 export default function AvatarBadge() {
-  const { data } = useContent()
+  const { data, status } = useContent()
 
-  if (!data) return <LoadingSpinner />
-
-  return (
-    <Grid>
-      <Avatar
-        pointer
-        size='lg'
-        src={data?.constants.urls.profilePicUrl}
-        color='gradient'
-        bordered
-        squared
-      />
-    </Grid>
-  )
+  if (status === 'loading') return <LoadingSpinner />
+  if (status === 'error') return <div>error</div>
+  if (status === 'success')
+    return (
+      <Grid>
+        <Avatar
+          pointer
+          size='lg'
+          src={data[0].image?.src}
+          color='gradient'
+          bordered
+          squared
+        />
+      </Grid>
+    )
 }
 
 // export default function Avatar() {

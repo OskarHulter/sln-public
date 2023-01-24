@@ -1,5 +1,5 @@
 import { Textarea } from '@nextui-org/react'
-import { InputProps } from '../../forms/types.js'
+import { InputProps } from '../../forms/types'
 
 export default function TextareaField({
   label,

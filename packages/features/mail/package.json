@@ -27,7 +27,6 @@
     "@react-email/render": "*",
     "@react-email/section": "*",
     "@react-email/text": "*",
-    "@sendgrid/mail": "*",
     "react-email": "*"
   }
 }

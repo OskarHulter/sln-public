@@ -6,8 +6,8 @@ const profilePic = {
   key: uuid(),
   alt: 'Smiling profile picture of Oskar',
   src: `${constants.urls.profilePicUrl}`,
-  width: '300',
-  height: '300',
+  width: '200',
+  height: '200',
 }
 
 export const idSchema = z.string().uuid()
@@ -41,7 +41,7 @@ const contentList: ContentList = [
   {
     id: uuid(),
     name: 'hero',
-    title: 'Hi, I’m Oskar',
+    title: 'I’m Oskar',
     text: `I'm a fullstack Javascript developer from Sweden. I help teams deliver better software by driving adoption of todays most valuable tools and practices.`,
     image: profilePic,
   },

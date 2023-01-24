@@ -1,6 +1,6 @@
 import { Checkbox, Input, Textarea } from '@nextui-org/react'
 import React from 'react'
-import { InputProps } from '../../forms/types.js'
+import { InputProps } from '../../forms/types'
 
 export const InputField = ({ label, register, required }: InputProps) => (
   <>

@@ -1,30 +1,25 @@
-import { Navbar, Text } from '@nextui-org/react'
+import { Navbar, Tooltip } from '@nextui-org/react'
+import UserAvatar from '../atoms/badges/UserAvatar'
 import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
-import LoadingSpinner from '../atoms/LoadingSpinner'
-import useContent from '../features/content/useContent'
+import UserTwitterCard from '../blocks/UserTwitterCard'
 
 export default function Header() {
-  const { data } = useContent()
-  if (!data) return <LoadingSpinner />
   return (
     <Navbar
       variant='sticky'
       css={{
         width: '$full',
+        color: '$foreground',
+        backgroundColor: '$gradient',
       }}
     >
       <Navbar.Brand>
-        <Text
-          h1
-          transform='uppercase'
-          weight='bold'
-          size='$xl'
-          css={{
-            m: '0',
-          }}
+        <Tooltip
+          placement='left'
+          content={<UserTwitterCard />}
         >
-          {data.constants.creatorName}
-        </Text>
+          <UserAvatar />
+        </Tooltip>
       </Navbar.Brand>
 
       <Navbar.Content>

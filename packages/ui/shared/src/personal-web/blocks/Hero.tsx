@@ -1,60 +1,104 @@
-import { Button, Col, Grid, Row, Text, Tooltip } from '@nextui-org/react'
-import { useContentQuery } from '@sln/data-access-shared'
-import { default as UserBadge } from '../atoms/badges/UserBadge'
+import { Button, Grid, Row, Text, Tooltip } from '@nextui-org/react'
+import UserAvatar from '../atoms/badges/UserAvatar'
 import LoadingSpinner from '../atoms/LoadingSpinner'
-import { default as UserTwitterCard } from './UserTwitterCard'
+import useContent from '../features/content/useContent'
+import UserTwitterCard from './UserTwitterCard'
 
 export default function Hero() {
-  const res = useContentQuery('Hero')
+  const { data, status } = useContent()
 
-  if (res.isLoading) return <LoadingSpinner />
-  if (res.isError) return <div>error!</div>
-  if (res.data)
+  if (status === 'loading') return <LoadingSpinner />
+  if (status === 'error') return <div>error!</div>
+  if (status === 'success' && data)
     return (
-      <Grid xs>
-        <Row css={{ m: '$10' }}>
-          <Col css={{ p: '$6', mw: '55ch' }}>
-            <Text
-              h2
-              size={60}
-              css={{
-                lineHeight: '$sm',
-                textGradient: `316deg, $primary 3%, $secondary 100%`,
-              }}
-            >
-              {res.data.title}
-            </Text>
-            <Text>{res.data.text}</Text>
+      <Grid
+        xs
+        css={{ p: '$6', mw: '70ch' }}
+      >
+        <Row justify='space-between'>
+          <Text
+            h2
+            size={'$8xl'}
+            css={{
+              lineHeight: '$xs',
+              textGradient: `316deg, $primary 3%, $secondary 100%`,
+              letterSpacing: '$tight',
+              m: '$1',
+            }}
+          >
+            Hi,
+          </Text>
+          <Tooltip
+            placement='bottomStart'
+            content={<UserTwitterCard />}
+          >
+            <UserAvatar />
+          </Tooltip>
+        </Row>
+        <Row>
+          <Text
+            h2
+            size={'$7xl'}
+            weight='bold'
+            css={{
+              lineHeight: '$sm',
+              textGradient: '45deg, $yellow600 -20%, $red600 100%',
+              letterSpacing: '$tight',
 
-            <Row>
-              <Button
-                rounded
-                size='lg'
-                auto
-                color='gradient'
-                css={{ m: '$5', height: 'fit-content' }}
-              >
-                <Text
-                  color='$blue900'
-                  size='$xl'
-                  css={{
-                    lineHeight: '$3xl',
-                    letterSpacing: '$wide',
-                  }}
-                >
-                  Contact
-                </Text>
-              </Button>
-            </Row>
-          </Col>
-          <Col css={{ p: '$6' }}>
-            <Tooltip
-              placement='top'
-              content={<UserTwitterCard />}
+              p: 0,
+              m: 0,
+            }}
+          >
+            {data[0].title + '.'}
+          </Text>
+        </Row>
+
+        <Text
+          size='$xl'
+          color='$white'
+          css={{
+            letterSpacing: '$wide',
+            lineHeight: '$base',
+          }}
+        >
+          {data[0].text}
+        </Text>
+        <Row>
+          <Button
+            size='lg'
+            auto
+            color='primary'
+            css={{ m: '$5', p: '$3', minWidth: '16ch' }}
+          >
+            <Text
+              size='$xl'
+              weight='bold'
+              css={{
+                letterSpacing: 'inherit',
+              }}
+              color='$white'
             >
-              <UserBadge />
-            </Tooltip>
-          </Col>
+              Contact
+            </Text>
+          </Button>
+          <Button
+            size='lg'
+            auto
+            color='primary'
+            flat
+            css={{ m: '$5', p: '$3', minWidth: '16ch' }}
+          >
+            <Text
+              size='$xl'
+              weight='bold'
+              css={{
+                letterSpacing: 'inherit',
+              }}
+              color='$white'
+            >
+              About
+            </Text>
+          </Button>
         </Row>
       </Grid>
     )

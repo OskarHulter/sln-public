@@ -1,14 +1,7 @@
 import { Link, Row, Text } from '@nextui-org/react'
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons'
-import LoadingSpinner from '../atoms/LoadingSpinner'
-import useContent from '../features/content/useContent'
 
 export default function Footer() {
-  const { data } = useContent()
-
-  if (!data) {
-    return <LoadingSpinner />
-  }
   return (
     <>
       <Row
@@ -22,7 +15,7 @@ export default function Footer() {
           boxShadow: '$md',
         }}
       >
-        <Text>{`made by ${data.constants.creatorName}`}</Text>
+        <Text>{`made by Oskar Hulter`}</Text>
       </Row>
       <Row
         justify='center'
@@ -30,10 +23,10 @@ export default function Footer() {
         css={{
           bgBlur: '$backgroundAlpha',
           zIndex: 1,
-          width: '$full',
           bg: '$backgroundAlpha',
           border: '$space$0 solid transparent',
           boxShadow: '$md',
+          gridArea: 'footer',
         }}
       >
         <>

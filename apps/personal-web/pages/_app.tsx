@@ -1,7 +1,13 @@
 import { SSRProvider } from '@react-aria/ssr'
-import { globalMinimal, PersonalWebUiProvider } from '@sln/ui'
-import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import type { ContentBlock, ContentList } from '@sln/domain-shared'
+import { contentList } from '@sln/domain-shared'
+import { PersonalWebUiProvider } from '@sln/ui'
+import type { DehydratedState, QueryState } from '@tanstack/react-query'
+import { dehydrate, Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import axios from 'axios'
+// globalMinimal()
+import type { GetStaticProps, InferGetStaticPropsType, NextPageContext } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 // *.ts - structured logging from client, edge, or server-side files
@@ -14,9 +20,49 @@ export { reportWebVitals } from 'next-axiom'
 
 log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
 
-globalMinimal()
+export type PageProps = {
+  content: DehydratedState
+}
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export type ExtendedAppProps<P = object> = {
+  err?: NextPageContext['err']
+} & AppProps<P>
+
+export const fetchContent = async (): Promise<ContentList> => {
+  const { data } = await axios.get(`https://localhost:4200/content/`)
+  return data
+}
+
+type CustomApp = (_: ExtendedAppProps<PageProps>) => JSX.Element
+export const getStaticProps: GetStaticProps = async () => {
+  const queryClient = new QueryClient()
+
+  await queryClient.prefetchQuery({
+    queryKey: ['content'],
+    queryFn: fetchContent,
+    initialData: () => contentList,
+  })
+
+  const getContentCache = (name: string) => {
+    const { data }: QueryState<ContentList> = queryClient.getQueryState(['content'])
+    if (data) {
+      // return the individual todo
+      return data.find((d: ContentBlock) => d.name === name)
+    }
+    return contentList[0]
+  }
+
+  return {
+    props: {
+      content: dehydrate(queryClient),
+      getContentCache,
+    },
+  }
+}
+export const MyApp: CustomApp = ({
+  Component,
+  pageProps,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [queryClient] = React.useState(() => new QueryClient())
   return (
     <QueryClientProvider client={queryClient}>
@@ -39,3 +85,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   )
 }
+
+export default MyApp

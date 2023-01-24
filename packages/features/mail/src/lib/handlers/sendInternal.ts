@@ -3,6 +3,8 @@ import type { MailFormSchema } from '../schemas/types'
 
 const myMailAddress = 'oskarhulter@gmail.com'
 const sendgridMailAddress = 'hello@sendgridDomain.com'
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY || '')
 /**
  * * Send mail to myself
  * @date 2023-01-21 - 18:20:31

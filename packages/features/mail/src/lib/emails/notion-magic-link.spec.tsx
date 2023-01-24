@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react'
-import FeaturesMail from './FeaturesMail.js'
+import Email from './notion-magic-link'
 
-describe('FeaturesMail', () => {
+describe('Email', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<FeaturesMail />)
+    const { baseElement } = render(<Email />)
     expect(baseElement).toBeTruthy()
   })
 })

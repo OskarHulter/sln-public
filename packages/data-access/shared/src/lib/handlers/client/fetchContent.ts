@@ -1,14 +1,11 @@
-import { content } from '@sln/domain-shared'
+import type { ContentList } from '@sln/domain-shared'
+import { contentList } from '@sln/domain-shared'
 import { invariant } from 'ts-invariant'
 
-export type Content = typeof content
+const getContent = (): ContentList => contentList
 
-const mockFetch = async () => content
-
-const fetchContent = async (): Promise<Content> => {
-  const res = await mockFetch()
+export default async function fetchContent(): Promise<ContentList> {
+  const res = await getContent()
   invariant(res, 'Expected value to be content')
   return res
 }
-
-export default fetchContent

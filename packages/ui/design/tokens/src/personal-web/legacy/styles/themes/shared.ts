@@ -1,6 +1,6 @@
 import { Theme } from '@nextui-org/react'
-import colors from '../../colors.js'
-import fonts from '../../fonts.js'
+import colors from '../tokens/colors'
+import fonts from '../tokens/fonts'
 
 const sharedTheme: Theme = {
   theme: {

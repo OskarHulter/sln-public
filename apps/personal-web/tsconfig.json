@@ -24,7 +24,8 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.mjs",
-    "**/*.cjs"
+    "**/*.cjs",
+    "../../packages/ui/shared/src/personal-web/features/content/useGetPrefetched.tsx"
   ],
   "exclude": [
     "node_modules",

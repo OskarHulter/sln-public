@@ -1,4 +1,3 @@
-export * from './lib/FeaturesMail'
 export { default as sendExternal } from './lib/handlers/sendExternal'
 export { default as sendInternal } from './lib/handlers/sendInternal'
 export { default as serializeMail } from './lib/handlers/serializeMail'

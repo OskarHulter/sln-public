@@ -9,15 +9,32 @@
       ".mjs",
       ".jsx",
       ".ts",
-      ".tsx"
+      ".tsx",
+      ".d.ts",
+      "cjs"
     ],
+    "import/ignore": {},
     "import/parsers": {
       "@typescript-eslint/parser": [
         ".ts",
-        ".tsx"
+        ".tsx",
+        "d.ts"
       ]
     },
+    "import/external-modules-folders": [
+      "node_modules",
+      "@sln/ui",
+      "@sln/data-access-shared",
+      "@sln/features-mail",
+      "@sln/domain-shared",
+      ".ladle",
+      "tools",
+      "packages",
+      "dist",
+      "build"
+    ],
     "import/resolver": {
+      "typescript": true,
       "node": {
         "extensions": [
           ".js",
@@ -31,17 +48,15 @@
   },
   "plugins": [
     "@nrwl/nx",
+    "import",
     "unused-imports",
     "simple-import-sort",
-    "import",
     "functional",
     "deprecation",
     "prettier"
   ],
   "extends": [
     "plugin:@nrwl/nx/react",
-    "plugin:import/recommended",
-    "plugin:import/typescript",
     "plugin:prettier/recommended"
   ],
   "overrides": [
@@ -119,7 +134,7 @@
             "argsIgnorePattern": "^_"
           }
         ],
-        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-imports": "warn",
         "simple-import-sort/imports": [
           "error",
           {
@@ -138,7 +153,7 @@
         "import/first": "error",
         "import/newline-after-import": "error",
         "import/no-duplicates": "error",
-        "import/no-unresolved": 0,
+        "import/no-unresolved": "off",
         "functional/prefer-readonly-type": "off",
         "functional/no-conditional-statement": "off",
         "functional/functional-parameters": "off",
@@ -150,6 +165,17 @@
           "error",
           {
             "endOfLine": "auto"
+          }
+        ],
+        "require-extensions/require-extensions": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never"
           }
         ],
         "arrow-body-style": "off",

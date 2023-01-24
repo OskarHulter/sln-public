@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { CssBaseline } from '@nextui-org/react'
 import Document, {
   DocumentContext,
@@ -10,7 +9,7 @@ import Document, {
 } from 'next/document'
 import React from 'react'
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static override async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx)
 
@@ -34,5 +33,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument

@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "run-all": "nx run-many --targets=lint,test,build --all --exclude=design-tokens",
-    "lint": "nx run-many --targets=lint --all",
-    "fix": "nx run-many --targets=lint --fix --all",
+    "lint": "nx run-many --targets=lint --all --exclude=design-tokens",
+    "fix": "nx run-many --targets=lint --fix --all --exclude=design-tokens",
     "test": "nx run-many --targets=test --all --exclude=design-tokens",
     "build": "nx run-many --targets=build --all  --exclude=design-tokens && pnpm ladle build",
     "build-l": "pnpm ladle build",
@@ -53,6 +53,7 @@
     "@types/supertest": "^2.0.12",
     "@types/sync-fetch": "^0.4.0",
     "@types/testing-library__jest-dom": "^5.14.5",
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "@vitejs/plugin-react": "^3.0.1",
@@ -151,6 +152,7 @@
     "superjson": "^1.12.2",
     "ts-invariant": "^0.10.3",
     "tslib": "^2.4.1",
+    "uuid": "^9.0.0",
     "zod": "^3.20.2",
     "zustand": "^4.3.2"
   }

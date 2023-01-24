@@ -1,6 +1,6 @@
 import { render } from '@react-email/render'
 import sendgrid from '@sendgrid/mail'
-import Email from '../emails/vercel-invite-user.js'
+import Email from '../emails/sln-welcome-user.js'
 
 //sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 //url='https://example.com'

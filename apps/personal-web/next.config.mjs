@@ -8,8 +8,15 @@ import withBundleAnalyzer from '@next/bundle-analyzer'
  * @type {import('@nrwl/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  experimental: {
-    esmExternals: 'loose',
+  // experimental: {
+  //   esmExternals: 'loose',
+  // },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: false,
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {

@@ -4,12 +4,12 @@ import SessionCard from '../layoutTemplate/cards/SessionCard'
 import PageHeader from '../newLayout/PageHeader'
 
 export default function SessionsPage() {
-  const [sessions, setSessions] = useState([])
+  const [sessions] = useState([])
 
   if (!sessions.length) {
     return (
       <Fragment>
-        <PageHeader title="Sessions" />
+        <PageHeader title='Sessions' />
         <Text css={{ opacity: '0.5', textAlign: 'center', marginTop: '$20' }}>No sessions</Text>
       </Fragment>
     )
@@ -17,21 +17,21 @@ export default function SessionsPage() {
 
   return (
     <Fragment>
-      <PageHeader title="Sessions" />
+      <PageHeader title='Sessions' />
       {sessions.length
-        ? sessions.map(session => {
-          const { name, icons, url } = session.peer.metadata
+        ? sessions.map((session) => {
+            const { name, icons, url } = session.peer.metadata
 
-          return (
-            <SessionCard
-              key={session.topic}
-              topic={session.topic}
-              name={name}
-              logo={icons[0]}
-              url={url}
-            />
-          )
-        })
+            return (
+              <SessionCard
+                key={session.topic}
+                topic={session.topic}
+                name={name}
+                logo={icons[0]}
+                url={url}
+              />
+            )
+          })
         : null}
     </Fragment>
   )

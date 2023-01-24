@@ -20,7 +20,7 @@ export default function RequestDataCard({ data }: IProps) {
           showLineNumbers={false}
           text={JSON.stringify(data, null, 2)}
           theme={codepen}
-          language="json"
+          language='json'
         />
       </Col>
     </Row>

@@ -13,17 +13,17 @@ interface ModalData {
 interface State {
   open: boolean
   view?:
-  | 'SessionProposalModal'
-  | 'SessionSignModal'
-  | 'SessionSignTypedDataModal'
-  | 'SessionSendTransactionModal'
-  | 'SessionUnsuportedMethodModal'
-  | 'SessionSignCosmosModal'
-  | 'SessionSignSolanaModal'
-  | 'SessionSignPolkadotModal'
-  | 'SessionSignNearModal'
-  | 'SessionSignElrondModal'
-  | 'AuthRequestModal'
+    | 'SessionProposalModal'
+    | 'SessionSignModal'
+    | 'SessionSignTypedDataModal'
+    | 'SessionSendTransactionModal'
+    | 'SessionUnsuportedMethodModal'
+    | 'SessionSignCosmosModal'
+    | 'SessionSignSolanaModal'
+    | 'SessionSignPolkadotModal'
+    | 'SessionSignNearModal'
+    | 'SessionSignElrondModal'
+    | 'AuthRequestModal'
   data?: ModalData
 }
 
@@ -31,7 +31,7 @@ interface State {
  * State
  */
 const state = proxy<State>({
-  open: false
+  open: false,
 })
 
 /**
@@ -48,7 +48,7 @@ const ModalStore = {
 
   close() {
     state.open = false
-  }
+  },
 }
 
 export default ModalStore

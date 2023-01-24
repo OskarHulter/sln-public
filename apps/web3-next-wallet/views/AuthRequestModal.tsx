@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Modal, Row, Text, Code } from '@nextui-org/react'
+import { Button, Code, Col, Divider, Modal, Row, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
@@ -33,8 +33,8 @@ export default function AuthRequestModal() {
           id: request.id,
           signature: {
             s: signature,
-            t: 'eip191'
-          }
+            t: 'eip191',
+          },
         },
         iss
       )
@@ -48,7 +48,7 @@ export default function AuthRequestModal() {
       await web3wallet.respondAuthRequest(
         {
           id: request.id,
-          error: getSdkError('USER_REJECTED')
+          error: getSdkError('USER_REJECTED'),
         },
         iss
       )
@@ -57,13 +57,13 @@ export default function AuthRequestModal() {
   }
   return (
     <Fragment>
-      <RequestModalContainer title="Auth Message">
+      <RequestModalContainer title='Auth Message'>
         <Divider y={2} />
         <Row>
           <Col>
             <Text h5>Message</Text>
             <Code>
-              <Text color="$gray400">{message}</Text>
+              <Text color='$gray400'>{message}</Text>
             </Code>
           </Col>
         </Row>
@@ -71,10 +71,20 @@ export default function AuthRequestModal() {
       </RequestModalContainer>
 
       <Modal.Footer>
-        <Button auto flat color="error" onClick={onReject}>
+        <Button
+          auto
+          flat
+          color='error'
+          onClick={onReject}
+        >
           Reject
         </Button>
-        <Button auto flat color="success" onClick={onApprove}>
+        <Button
+          auto
+          flat
+          color='success'
+          onClick={onApprove}
+        >
           Approve
         </Button>
       </Modal.Footer>

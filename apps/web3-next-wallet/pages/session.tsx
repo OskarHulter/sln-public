@@ -49,7 +49,7 @@ export default function SessionPage() {
     console.log({
       topic,
       event: { name: 'chainChanged', data: 'Hello World' },
-      chainId: 'eip155:1'
+      chainId: 'eip155:1',
     })
     setLoading(false)
   }
@@ -58,11 +58,11 @@ export default function SessionPage() {
     eip155: {
       accounts: [
         'eip155:1:0x70012948c348CBF00806A3C79E3c5DAdFaAa347B',
-        'eip155:137:0x70012948c348CBF00806A3C79E3c5DAdFaAa347B'
+        'eip155:137:0x70012948c348CBF00806A3C79E3c5DAdFaAa347B',
       ],
       methods: ['personal_sign', 'eth_signTypedData', 'eth_sendTransaction'],
-      events: []
-    }
+      events: [],
+    },
   }
 
   async function onSessionUpdate() {
@@ -74,20 +74,25 @@ export default function SessionPage() {
 
   return (
     <Fragment>
-      <PageHeader title="Session Details" />
+      <PageHeader title='Session Details' />
 
-      <ProjectInfoCard metadata={{
-        icons: 'string',
-        name: 'string',
-        url: 'string',
-      }} />
+      <ProjectInfoCard
+        metadata={{
+          icons: 'string',
+          name: 'string',
+          url: 'string',
+        }}
+      />
 
       <Divider y={2} />
 
-      {Object.keys({}).map(chain => {
+      {Object.keys({}).map((chain) => {
         return (
           <Fragment key={chain}>
-            <Text h4 css={{ marginBottom: '$5' }}>{`Review ${chain} permissions`}</Text>
+            <Text
+              h4
+              css={{ marginBottom: '$5' }}
+            >{`Review ${chain} permissions`}</Text>
             <SessionChainCard namespace={''} />
             {/* {renderAccountSelection(chain)} */}
             <Divider y={2} />
@@ -95,37 +100,85 @@ export default function SessionPage() {
         )
       })}
 
-      <Row justify="space-between">
+      <Row justify='space-between'>
         <Text h5>Expiry</Text>
         <Text css={{ color: '$gray400' }}>{expiryDate.toDateString()}</Text>
       </Row>
 
-      <Row justify="space-between">
+      <Row justify='space-between'>
         <Text h5>Last Updated</Text>
         <Text css={{ color: '$gray400' }}>{updated.toDateString()}</Text>
       </Row>
 
       <Row css={{ marginTop: '$10' }}>
-        <Button flat css={{ width: '100%' }} color="error" onClick={onDeleteSession}>
-          {loading ? <Loading size="sm" color="error" /> : 'Delete'}
+        <Button
+          flat
+          css={{ width: '100%' }}
+          color='error'
+          onClick={onDeleteSession}
+        >
+          {loading ? (
+            <Loading
+              size='sm'
+              color='error'
+            />
+          ) : (
+            'Delete'
+          )}
         </Button>
       </Row>
 
       <Row css={{ marginTop: '$10' }}>
-        <Button flat css={{ width: '100%' }} color="primary" onClick={onSessionPing}>
-          {loading ? <Loading size="sm" color="primary" /> : 'Ping'}
+        <Button
+          flat
+          css={{ width: '100%' }}
+          color='primary'
+          onClick={onSessionPing}
+        >
+          {loading ? (
+            <Loading
+              size='sm'
+              color='primary'
+            />
+          ) : (
+            'Ping'
+          )}
         </Button>
       </Row>
 
       <Row css={{ marginTop: '$10' }}>
-        <Button flat css={{ width: '100%' }} color="secondary" onClick={onSessionEmit}>
-          {loading ? <Loading size="sm" color="secondary" /> : 'Emit'}
+        <Button
+          flat
+          css={{ width: '100%' }}
+          color='secondary'
+          onClick={onSessionEmit}
+        >
+          {loading ? (
+            <Loading
+              size='sm'
+              color='secondary'
+            />
+          ) : (
+            'Emit'
+          )}
         </Button>
       </Row>
 
       <Row css={{ marginTop: '$10' }}>
-        <Button flat css={{ width: '100%' }} color="warning" onClick={onSessionUpdate}>
-          {loading ? <Loading size="sm" color="warning" /> : 'Update'}
+        <Button
+          flat
+          css={{ width: '100%' }}
+          color='warning'
+          onClick={onSessionUpdate}
+        >
+          {loading ? (
+            <Loading
+              size='sm'
+              color='warning'
+            />
+          ) : (
+            'Update'
+          )}
         </Button>
       </Row>
     </Fragment>

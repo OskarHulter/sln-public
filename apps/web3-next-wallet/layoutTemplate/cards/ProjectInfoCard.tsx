@@ -12,7 +12,7 @@ export default function ProjectInfoCard({ metadata }: IProps) {
   const { icons, name, url } = metadata
 
   return (
-    <Row align="center">
+    <Row align='center'>
       <Col span={3}>
         <Avatar src={icons[0]} />
       </Col>

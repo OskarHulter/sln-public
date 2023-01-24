@@ -21,20 +21,34 @@ export default function AccountCard({ name, logo, rgb, address }: Props) {
   }
 
   return (
-    <ChainCard rgb={rgb} flexDirection="row" alignItems="center">
+    <ChainCard
+      rgb={rgb}
+      flexDirection='row'
+      alignItems='center'
+    >
       <Avatar src={logo} />
       <div style={{ flex: 1 }}>
-        <Text h5 css={{ marginLeft: '$9' }}>
+        <Text
+          h5
+          css={{ marginLeft: '$9' }}
+        >
           {name}
         </Text>
-        <Text weight="light" size={13} css={{ marginLeft: '$9' }}>
+        <Text
+          weight='light'
+          size={13}
+          css={{ marginLeft: '$9' }}
+        >
           {truncate(address, 19)}
         </Text>
       </div>
 
-      <Tooltip content={copied ? 'Copied!' : 'Copy'} placement="left">
+      <Tooltip
+        content={copied ? 'Copied!' : 'Copy'}
+        placement='left'
+      >
         <Button
-          size="sm"
+          size='sm'
           css={{ minWidth: 'auto', backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
           onClick={onCopy}
         >
@@ -42,7 +56,7 @@ export default function AccountCard({ name, logo, rgb, address }: Props) {
             src={copied ? '/icons/checkmark-icon.svg' : '/icons/copy-icon.svg'}
             width={15}
             height={15}
-            alt="copy icon"
+            alt='copy icon'
           />
         </Button>
       </Tooltip>

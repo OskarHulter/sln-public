@@ -17,14 +17,14 @@ interface Props {
 export default function Layout({ children, initialized }: Props) {
   return (
     <Container
-      display="flex"
-      justify="center"
-      alignItems="center"
+      display='flex'
+      justify='center'
+      alignItems='center'
       css={{
         width: '100vw',
         height: '100vh',
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
       }}
     >
       <Card
@@ -40,8 +40,8 @@ export default function Layout({ children, initialized }: Props) {
           '@xs': {
             borderRadius: '$lg',
             height: '95vh',
-            maxWidth: '450px'
-          }
+            maxWidth: '450px',
+          },
         }}
       >
         {initialized ? (
@@ -55,8 +55,8 @@ export default function Layout({ children, initialized }: Props) {
                   paddingBottom: '40px',
                   '@xs': {
                     padding: '20px',
-                    paddingBottom: '40px'
-                  }
+                    paddingBottom: '40px',
+                  },
                 }}
               >
                 {children}
@@ -74,7 +74,7 @@ export default function Layout({ children, initialized }: Props) {
                 backgroundColor: '#111111',
                 zIndex: 200,
                 bottom: 0,
-                left: 0
+                left: 0,
               }}
             >
               <Navigation />

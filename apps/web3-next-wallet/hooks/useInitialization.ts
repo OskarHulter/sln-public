@@ -10,7 +10,6 @@ export default function useInitialization() {
 
   const onInitialize = useCallback(async () => {
     try {
-
       SettingsStore.setEIP155Address('hejsan')
       SettingsStore.setCosmosAddress('hejsan')
       SettingsStore.setSolanaAddress('hejsan')

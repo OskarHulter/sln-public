@@ -4,13 +4,13 @@ import PairingCard from '../layoutTemplate/cards/PairingCard'
 import PageHeader from '../newLayout/PageHeader'
 
 export default function PairingsPage() {
-  const [pairings, setPairings] = useState([])
+  const [pairings] = useState([])
 
   return (
     <Fragment>
-      <PageHeader title="Pairings" />
+      <PageHeader title='Pairings' />
       {pairings.length ? (
-        pairings.map(pairing => {
+        pairings.map((pairing) => {
           const { peerMetadata } = pairing
 
           return (

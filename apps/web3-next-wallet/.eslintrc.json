@@ -5,20 +5,51 @@
     "next/core-web-vitals",
     "../../.eslintrc.json"
   ],
-  "ignorePatterns": ["!**/*", ".next/**/*"],
+  "ignorePatterns": [
+    "!**/*",
+    ".next/**/*",
+    "views/"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx",
+        "next-env.d.ts",
+        "index.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.mjs",
+        "**/*.cjs"
+      ],
+      "parserOptions": {
+        "project": [
+          "apps/web3-next-wallet/tsconfig(.*)?.json"
+        ]
+      },
       "rules": {
-        "@next/next/no-html-link-for-pages": ["error", "apps/web3-next-wallet/pages"]
+        "@next/next/no-html-link-for-pages": [
+          "error",
+          "apps/web3-next-wallet/pages"
+        ]
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
       "rules": {}
     },
     {
-      "files": ["*.js", "*.jsx"],
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {}
     }
   ],

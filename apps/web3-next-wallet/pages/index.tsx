@@ -20,52 +20,118 @@ export default function HomePage() {
     solanaAddress,
     polkadotAddress,
     nearAddress,
-    elrondAddress
+    elrondAddress,
   } = useSnapshot(SettingsStore.state)
 
   return (
     <Fragment>
-      <PageHeader title="Accounts">
+      <PageHeader title='Accounts'>
         <AccountPicker />
       </PageHeader>
-      <Text h4 css={{ marginBottom: '$5' }}>
+      <Text
+        h4
+        css={{ marginBottom: '$5' }}
+      >
         Mainnets
       </Text>
       {Object.values(EIP155_MAINNET_CHAINS).map(({ name, logo, rgb }) => (
-        <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={eip155Address} />
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={eip155Address}
+        />
       ))}
       {Object.values(COSMOS_MAINNET_CHAINS).map(({ name, logo, rgb }) => (
-        <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={cosmosAddress} />
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={cosmosAddress}
+        />
       ))}
       {Object.values(SOLANA_MAINNET_CHAINS).map(({ name, logo, rgb }) => (
-        <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={solanaAddress} />
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={solanaAddress}
+        />
       ))}
       {Object.values(POLKADOT_MAINNET_CHAINS).map(({ name, logo, rgb }) => (
-        <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={polkadotAddress} />
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={polkadotAddress}
+        />
       ))}
       {Object.values(ELROND_MAINNET_CHAINS).map(({ name, logo, rgb }) => (
-        <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={elrondAddress} />
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={elrondAddress}
+        />
       ))}
 
       {testNets ? (
         <Fragment>
-          <Text h4 css={{ marginBottom: '$5' }}>
+          <Text
+            h4
+            css={{ marginBottom: '$5' }}
+          >
             Testnets
           </Text>
           {Object.values(EIP155_TEST_CHAINS).map(({ name, logo, rgb }) => (
-            <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={eip155Address} />
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={eip155Address}
+            />
           ))}
           {Object.values(SOLANA_TEST_CHAINS).map(({ name, logo, rgb }) => (
-            <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={solanaAddress} />
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={solanaAddress}
+            />
           ))}
           {Object.values(POLKADOT_TEST_CHAINS).map(({ name, logo, rgb }) => (
-            <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={polkadotAddress} />
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={polkadotAddress}
+            />
           ))}
           {Object.values(NEAR_TEST_CHAINS).map(({ name, logo, rgb }) => (
-            <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={nearAddress} />
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={nearAddress}
+            />
           ))}
           {Object.values(ELROND_TEST_CHAINS).map(({ name, logo, rgb }) => (
-            <AccountCard key={name} name={name} logo={logo} rgb={rgb} address={elrondAddress} />
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={elrondAddress}
+            />
           ))}
         </Fragment>
       ) : null}

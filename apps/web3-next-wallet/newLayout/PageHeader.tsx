@@ -15,13 +15,17 @@ interface Props {
 export default function PageHeader({ title, children }: Props) {
   return (
     <Fragment>
-      <Row css={{ marginBottom: '$5', width: '100%' }} justify="space-between" align="center">
+      <Row
+        css={{ marginBottom: '$5', width: '100%' }}
+        justify='space-between'
+        align='center'
+      >
         <Col>
           <Text
             h3
-            weight="bold"
+            weight='bold'
             css={{
-              textGradient: '90deg, $secondary, $primary 30%'
+              textGradient: '90deg, $secondary, $primary 30%',
             }}
           >
             {title}

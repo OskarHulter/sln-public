@@ -12,8 +12,8 @@ export const ELROND_MAINNET_CHAINS = {
     name: 'Elrond',
     logo: '/chain-logos/elrond-1.png',
     rgb: '43, 45, 46',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 export const ELROND_TEST_CHAINS = {
@@ -22,8 +22,8 @@ export const ELROND_TEST_CHAINS = {
     name: 'Elrond Devnet',
     logo: '/chain-logos/elrond-1.png',
     rgb: '43, 45, 46',
-    rpc: ''
-  }
+    rpc: '',
+  },
   // Keep only one Test Chain visible
   // 'elrond:T': {
   //   chainId: 'T',
@@ -43,5 +43,5 @@ export const ELROND_SIGNING_METHODS = {
   ELROND_SIGN_TRANSACTION: 'erd_signTransaction',
   ELROND_SIGN_TRANSACTIONS: 'erd_signTransactions',
   ELROND_SIGN_MESSAGE: 'erd_signMessage',
-  ELROND_SIGN_LOGIN_TOKEN: 'erd_signLoginToken'
+  ELROND_SIGN_LOGIN_TOKEN: 'erd_signLoginToken',
 }

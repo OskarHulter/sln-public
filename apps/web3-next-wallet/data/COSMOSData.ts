@@ -12,8 +12,8 @@ export const COSMOS_MAINNET_CHAINS = {
     name: 'Cosmos Hub',
     logo: '/chain-logos/cosmos-cosmoshub-4.png',
     rgb: '107, 111, 147',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 /**
@@ -21,5 +21,5 @@ export const COSMOS_MAINNET_CHAINS = {
  */
 export const COSMOS_SIGNING_METHODS = {
   COSMOS_SIGN_DIRECT: 'cosmos_signDirect',
-  COSMOS_SIGN_AMINO: 'cosmos_signAmino'
+  COSMOS_SIGN_AMINO: 'cosmos_signAmino',
 }

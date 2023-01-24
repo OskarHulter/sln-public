@@ -12,8 +12,8 @@ export const POLKADOT_MAINNET_CHAINS = {
     name: 'Polkadot',
     logo: '/chain-logos/polkadot.svg',
     rgb: '230, 1, 122',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 export const POLKADOT_TEST_CHAINS = {
@@ -22,8 +22,8 @@ export const POLKADOT_TEST_CHAINS = {
     name: 'Polkadot Westend',
     logo: '/chain-logos/westend.svg',
     rgb: '218, 104, 167',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 /**
@@ -31,5 +31,5 @@ export const POLKADOT_TEST_CHAINS = {
  */
 export const POLKADOT_SIGNING_METHODS = {
   POLKADOT_SIGN_TRANSACTION: 'polkadot_signTransaction',
-  POLKADOT_SIGN_MESSAGE: 'polkadot_signMessage'
+  POLKADOT_SIGN_MESSAGE: 'polkadot_signMessage',
 }

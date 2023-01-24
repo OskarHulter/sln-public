@@ -1,7 +1,7 @@
 import { Button, Divider, Modal, Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
-import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
+import RequesDetailsCard from '../layoutTemplate/cards/RequestDetailsCard'
 import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
 import ModalStore from '../store/ModalStore'
@@ -20,12 +20,15 @@ export default function SessionUnsuportedMethodModal() {
 
   return (
     <Fragment>
-      <RequestModalContainer title="Unsuported Method">
+      <RequestModalContainer title='Unsuported Method'>
         <ProjectInfoCard />
 
         <Divider y={2} />
 
-        <RequesDetailsCard chains={['']} protocol={''} />
+        <RequesDetailsCard
+          chains={['']}
+          protocol={''}
+        />
 
         <Divider y={2} />
 
@@ -33,7 +36,12 @@ export default function SessionUnsuportedMethodModal() {
       </RequestModalContainer>
 
       <Modal.Footer>
-        <Button auto flat color="error" onClick={ModalStore.close}>
+        <Button
+          auto
+          flat
+          color='error'
+          onClick={ModalStore.close}
+        >
           Close
         </Button>
       </Modal.Footer>

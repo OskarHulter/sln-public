@@ -12,12 +12,15 @@ export default function AccountPicker() {
   return (
     <select
       value={relayerRegionURL}
-      onChange={e => onSelect(e.currentTarget.value)}
-      aria-label="relayerRegions"
+      onChange={(e) => onSelect(e.currentTarget.value)}
+      aria-label='relayerRegions'
     >
       {REGIONALIZED_RELAYER_ENDPOINTS.map((endpoint, index) => {
         return (
-          <option key={index} value={endpoint.value}>
+          <option
+            key={index}
+            value={endpoint.value}
+          >
             {endpoint.label}
           </option>
         )

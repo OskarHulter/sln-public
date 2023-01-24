@@ -12,8 +12,8 @@ export const SOLANA_MAINNET_CHAINS = {
     name: 'Solana',
     logo: '/chain-logos/solana-4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ.png',
     rgb: '30, 240, 166',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 export const SOLANA_TEST_CHAINS = {
@@ -22,8 +22,8 @@ export const SOLANA_TEST_CHAINS = {
     name: 'Solana Devnet',
     logo: '/chain-logos/solana-4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ.png',
     rgb: '30, 240, 166',
-    rpc: ''
-  }
+    rpc: '',
+  },
 }
 
 export const SOLANA_CHAINS = { ...SOLANA_MAINNET_CHAINS, ...SOLANA_TEST_CHAINS }
@@ -33,5 +33,5 @@ export const SOLANA_CHAINS = { ...SOLANA_MAINNET_CHAINS, ...SOLANA_TEST_CHAINS }
  */
 export const SOLANA_SIGNING_METHODS = {
   SOLANA_SIGN_TRANSACTION: 'solana_signTransaction',
-  SOLANA_SIGN_MESSAGE: 'solana_signMessage'
+  SOLANA_SIGN_MESSAGE: 'solana_signMessage',
 }

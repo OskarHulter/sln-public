@@ -20,19 +20,20 @@ interface IProps {
  * Component
  */
 export default function QrReader({ onConnect }: IProps) {
+  console.log('🚀 ~ file: QrReader.tsx:23 ~ QrReader ~ onConnect', onConnect)
   const [show, setShow] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  function onError() {
-    setShow(false)
-  }
+  // function onError() {
+  //   setShow(false)
+  // }
 
-  async function onScan(data: string | null) {
-    if (data) {
-      await onConnect(data)
-      setShow(false)
-    }
-  }
+  // async function onScan(data: string | null) {
+  //   if (data) {
+  //     await onConnect(data)
+  //     setShow(false)
+  //   }
+  // }
 
   function onShowScanner() {
     setLoading(true)
@@ -40,11 +41,11 @@ export default function QrReader({ onConnect }: IProps) {
   }
 
   return (
-    <div className="container">
+    <div className='container'>
       {show ? (
         <Fragment>
           {loading && <Loading css={{ position: 'absolute' }} />}
-          <div className="qrVideoMask">
+          <div className='qrVideoMask'>
             {/* <ReactQrReader
               onLoad={() => setLoading(false)}
               showViewFinder={false}
@@ -55,16 +56,16 @@ export default function QrReader({ onConnect }: IProps) {
           </div>
         </Fragment>
       ) : (
-        <div className="container qrPlaceholder">
+        <div className='container qrPlaceholder'>
           <Image
-            src="/icons/qr-icon.svg"
+            src='/icons/qr-icon.svg'
             width={100}
             height={100}
-            alt="qr code icon"
-            className="qrIcon"
+            alt='qr code icon'
+            className='qrIcon'
           />
           <Button
-            color="gradient"
+            color='gradient'
             css={{ marginTop: '$10', width: '100%' }}
             onClick={onShowScanner}
           >

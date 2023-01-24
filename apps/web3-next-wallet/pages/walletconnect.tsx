@@ -10,7 +10,7 @@ export default function WalletConnectPage() {
   async function onConnect(uri: string) {
     try {
       setLoading(true)
-      return console.log('connected!')
+      return console.log(uri)
     } catch (err: unknown) {
       alert(err)
     } finally {
@@ -21,30 +21,33 @@ export default function WalletConnectPage() {
 
   return (
     <Fragment>
-      <PageHeader title="WalletConnect" />
+      <PageHeader title='WalletConnect' />
 
       <QrReader onConnect={onConnect} />
 
-      <Text size={13} css={{ textAlign: 'center', marginTop: '$10', marginBottom: '$10' }}>
+      <Text
+        size={13}
+        css={{ textAlign: 'center', marginTop: '$10', marginBottom: '$10' }}
+      >
         or use walletconnect uri
       </Text>
 
       <Input
         css={{ width: '100%' }}
         bordered
-        aria-label="wc url connect input"
-        placeholder="e.g. wc:a281567bb3e4..."
-        onChange={e => setUri(e.target.value)}
+        aria-label='wc url connect input'
+        placeholder='e.g. wc:a281567bb3e4...'
+        onChange={(e) => setUri(e.target.value)}
         value={uri}
         contentRight={
           <Button
-            size="xs"
+            size='xs'
             disabled={!uri}
             css={{ marginLeft: -60 }}
             onClick={() => onConnect(uri)}
-            color="gradient"
+            color='gradient'
           >
-            {loading ? <Loading size="sm" /> : 'Connect'}
+            {loading ? <Loading size='sm' /> : 'Connect'}
           </Button>
         }
       />

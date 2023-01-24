@@ -13,19 +13,19 @@ type RelayerType = {
 export const REGIONALIZED_RELAYER_ENDPOINTS: RelayerType[] = [
   {
     value: 'wss://relay.walletconnect.com',
-    label: 'Default'
+    label: 'Default',
   },
 
   {
     value: 'wss://us-east-1.relay.walletconnect.com/',
-    label: 'US'
+    label: 'US',
   },
   {
     value: 'wss://eu-central-1.relay.walletconnect.com/',
-    label: 'EU'
+    label: 'EU',
   },
   {
     value: 'wss://ap-southeast-1.relay.walletconnect.com/',
-    label: 'Asia Pacific'
-  }
+    label: 'Asia Pacific',
+  },
 ]

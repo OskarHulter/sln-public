@@ -27,7 +27,7 @@ const state = proxy<State>({
   polkadotAddress: '',
   nearAddress: '',
   elrondAddress: '',
-  relayerRegionURL: ''
+  relayerRegionURL: '',
 })
 
 /**
@@ -73,7 +73,7 @@ const SettingsStore = {
     } else {
       localStorage.removeItem('TEST_NETS')
     }
-  }
+  },
 }
 
 export default SettingsStore

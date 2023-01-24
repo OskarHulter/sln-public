@@ -18,12 +18,15 @@ export default function ProposalSelectSection({
   addresses,
   selectedAddresses,
   chain,
-  onSelect
+  onSelect,
 }: IProps) {
   return (
     <Row>
       <Col>
-        <Text h4 css={{ marginTop: '$5' }}>{`Choose ${chain} accounts`}</Text>
+        <Text
+          h4
+          css={{ marginTop: '$5' }}
+        >{`Choose ${chain} accounts`}</Text>
         {addresses.map((address, index) => (
           <AccountSelectCard
             key={address}

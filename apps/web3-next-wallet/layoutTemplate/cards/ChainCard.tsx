@@ -12,13 +12,13 @@ export default function ChainCard({ rgb, children, flexDirection, alignItems }: 
   return (
     <Card
       variant='bordered'
-      borderWeight="light"
+      borderWeight='light'
       css={{
         borderColor: `rgba(${rgb}, 0.4)`,
         boxShadow: `0 0 10px 0 rgba(${rgb}, 0.15)`,
         backgroundColor: `rgba(${rgb}, 0.25)`,
         marginBottom: '$6',
-        minHeight: '70px'
+        minHeight: '70px',
       }}
     >
       <Card.Body
@@ -26,7 +26,7 @@ export default function ChainCard({ rgb, children, flexDirection, alignItems }: 
           flexDirection,
           alignItems,
           justifyContent: 'space-between',
-          overflow: 'hidden'
+          overflow: 'hidden',
         }}
       >
         {children}

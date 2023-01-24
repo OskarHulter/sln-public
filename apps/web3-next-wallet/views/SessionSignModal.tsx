@@ -1,4 +1,5 @@
 import { Button, Col, Divider, Modal, Row, Text } from '@nextui-org/react'
+import React from 'react'
 import { Fragment } from 'react'
 import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
 import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
@@ -18,20 +19,16 @@ export default function SessionSignModal() {
   }
 
   // Get required request data
-  const { topic, params } = requestEvent
-  const { request, chainId } = params
+  // const { topic, params } = requestEvent
+  // const { request, chainId } = params
 
   // Get message, convert it to UTF8 string if it is valid hex
-  const message = getSignParamsMessage(request.params)
+  //const message = getSignParamsMessage(request.params)
 
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (requestEvent) {
-      const response = await approveEIP155Request(requestEvent)
-      await web3wallet.respondSessionRequest({
-        topic,
-        response
-      })
+
       ModalStore.close()
     }
   }
@@ -39,11 +36,7 @@ export default function SessionSignModal() {
   // Handle reject action
   async function onReject() {
     if (requestEvent) {
-      const response = rejectEIP155Request(requestEvent)
-      await web3wallet.respondSessionRequest({
-        topic,
-        response
-      })
+
       ModalStore.close()
     }
   }
@@ -51,24 +44,24 @@ export default function SessionSignModal() {
   return (
     <Fragment>
       <RequestModalContainer title="Sign Message">
-        <ProjectInfoCard metadata={requestSession.peer.metadata} />
+        <ProjectInfoCard />
 
         <Divider y={2} />
 
-        <RequesDetailsCard chains={[chainId ?? '']} protocol={requestSession.relay.protocol} />
+        <RequesDetailsCard chains={['']} protocol='{requestSession.relay.protocol' />
 
         <Divider y={2} />
 
         <Row>
           <Col>
             <Text h5>Message</Text>
-            <Text color="$gray400">{message}</Text>
+            <Text color="$gray400">{"message"}</Text>
           </Col>
         </Row>
 
         <Divider y={2} />
 
-        <RequestMethodCard methods={[request.method]} />
+        <RequestMethodCard methods={['request.method']} />
       </RequestModalContainer>
 
       <Modal.Footer>

@@ -1,6 +1,7 @@
 import { Card, Container, Loading } from '@nextui-org/react'
 import { Fragment, ReactNode } from 'react'
 import Balancer from 'react-wrap-balancer'
+import Footer from '../layout/Footer'
 import Navigation from './Navigation'
 import RouteTransition from './RouteTransition'
 
@@ -49,6 +50,7 @@ export default function Layout({ children, initialized }: Props) {
           <Fragment>
             <RouteTransition>
               <Card.Body
+                as='main'
                 css={{
                   display: 'block',
                   paddingLeft: 2,
@@ -79,6 +81,7 @@ export default function Layout({ children, initialized }: Props) {
               }}
             >
               <Navigation />
+              <Footer />
             </Card.Footer>
           </Fragment>
         ) : (

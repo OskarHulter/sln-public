@@ -2,8 +2,6 @@ import { Container, css, styled } from '@nextui-org/react'
 import Balancer from 'react-wrap-balancer'
 import type { BaseProps } from '../../types'
 //import fonts from '../styles/tokens/fonts'
-import Footer from './Footer'
-import Header from './Header'
 
 const globalContainer = css({
   maxWidth: '800px',
@@ -44,18 +42,13 @@ const GlobalGrid = styled(Container, grid)
 //     p: '0',
 //       }}
 //     >
-export default function Layout({ children }: BaseProps) {
+//<Header />
+//<Footer />
+export default function LayoutGrid({ children }: BaseProps) {
   return (
     <GlobalContainer>
       <GlobalGrid>
-        <Header />
-        <Container
-          as='main'
-          css={{ gridArea: 'main' }}
-        >
-          <Balancer>{children}</Balancer>
-        </Container>
-        <Footer />
+        <Balancer>{children}</Balancer>
       </GlobalGrid>
     </GlobalContainer>
   )

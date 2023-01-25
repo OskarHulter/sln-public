@@ -8,7 +8,7 @@ export { default as Typescript } from './personal-web/atoms/icons/svgr/Typescrip
 export { default as Hero } from './personal-web/blocks/Hero'
 export { default as useContent } from './personal-web/features/content/useContent'
 export { default as MailForm } from './personal-web/forms/MailForm'
-export { default as Layout } from './personal-web/layout/Layout'
+export { default as Layout } from './personal-web/layout/LayoutGrid'
 export { default as PersonalWebUiProvider } from './personal-web/providers/PersonalWebUiProvider'
 export { default as globalMinimal } from './personal-web/styles/global'
 export { default as colors } from './personal-web/styles/tokens/colors'

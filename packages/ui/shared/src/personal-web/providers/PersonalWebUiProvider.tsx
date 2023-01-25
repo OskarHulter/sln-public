@@ -3,6 +3,7 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { Provider } from 'react-wrap-balancer'
 import type { BaseProps } from '../../types'
 import theme from '../styles/themes/default'
+import Layout from '../web3/Layout'
 
 export default function PersonalWebUiProvider({ children }: BaseProps) {
   return (
@@ -15,7 +16,9 @@ export default function PersonalWebUiProvider({ children }: BaseProps) {
       }}
     >
       <NextUIProvider>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Layout initialized>{children}</Layout>
+        </Provider>
       </NextUIProvider>
     </NextThemesProvider>
   )

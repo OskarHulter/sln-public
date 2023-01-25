@@ -15,7 +15,7 @@ export default function Footer() {
           boxShadow: '$md',
         }}
       >
-        <Text>{`made by Oskar Hulter`}</Text>
+        <Text>©2023 - Oskar Hulter</Text>
       </Row>
       <Row
         justify='center'

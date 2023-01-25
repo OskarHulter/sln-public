@@ -121,6 +121,42 @@ const contentList: ContentList = [
       `,
     image: null,
   },
+  {
+    id: uuid(),
+    name: 'Favorite Subjects',
+    title: 'Teamwork',
+    text: `
+      Programming, music, finance, crypto, and IT-architecture are all fascinating subjects that have many connections and similarities.
+
+First, programming and music both involve creativity and problem-solving. In programming, one has to write code to solve a problem, while in music, one has to compose a melody or lyrics to convey a message. Both require a deep understanding of the medium, whether it's a programming language or music theory, in order to create something that is beautiful and functional.
+
+Second, finance and crypto share a lot of similarities. Both deal with the flow of money and the management of assets. In finance, one has to understand the markets and how to invest in them, while in crypto, one has to understand blockchain technology and how to navigate the digital asset market. Both require a deep understanding of economics and a keen sense of risk management.
+
+Finally, IT-architecture and all of the above are connected by the importance of understanding systems and how they work. IT-architecture deals with the design and organization of IT systems, while programming deals with the implementation of those systems, music deals with the creation of systems of sound, finance deals with the systems of money, and crypto deals with the systems of digital assets. All of them require a deep understanding of how systems work and how to optimize them for maximum efficiency and performance.
+
+All these subjects are fascinating because they require creativity, problem-solving, and a deep understanding of complex systems. They also have a direct impact on our daily lives, whether through the technology we use, the music we listen to, the financial decisions we make, or the digital assets we own. They offer endless possibilities for innovation, growth, and progress.`,
+    image: null,
+  },
+  {
+    id: uuid(),
+    name: 'Favorite Subjects',
+    title: 'Teamwork',
+    text: `
+      Sure, one way that programming, music, finance, crypto, and IT-architecture connect is through the use of patterns. In programming, patterns are used to solve common problems and improve code organization. One example is Domain-Driven Design (DDD), which is a pattern used to design software that reflects a domain expert's understanding of the problem. DDD emphasizes the use of a rich domain model and communication with domain experts in order to create a more accurate and effective solution.
+
+Type systems, which are used in programming languages such as Haskell and TypeScript, are another example of patterns that can be used to improve the quality and maintainability of code. Type systems allow for the creation of more robust and predictable code by enforcing strict rules on data types and function signatures. This can help prevent common programming errors and make the code easier to understand and maintain.
+
+In music, patterns are also an important aspect. The use of chord progressions, melody, and rhythm are examples of patterns that are used to create structure and coherence in a song. These patterns can be used to evoke emotions and convey a message in a way that is easily understandable for the listener.
+
+In finance, patterns can be found in the stock market, where trends and patterns are used to predict future price movements. Technical analysis, for example, is a method that uses patterns in historical stock prices to identify potential opportunities for investment.
+
+In crypto, patterns can be found in the behavior of the market, where trends and patterns in trading activity are used to predict future price movements. Some crypto traders use technical analysis to identify patterns in historical crypto prices to make investment decisions.
+
+In IT-architecture, patterns are a fundamental aspect of the design and organization of IT systems. Some examples of patterns include Microservices architecture, Event-Driven architecture, and CQRS (Command Query Responsibility Segregation). These patterns provide a structure for building scalable, maintainable, and flexible systems.
+
+Overall, patterns are an important aspect of programming, music, finance, crypto, and IT-architecture, and they play a crucial role in solving common problems, improving code organization, and creating structure and coherence in systems.`,
+    image: null,
+  },
 ]
 
 export default contentList

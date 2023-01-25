@@ -22,7 +22,7 @@ export default function Navigation() {
         </div>
       </Link>
 
-      <Link
+      {/* <Link
         href='/sessions'
         passHref
       >
@@ -34,7 +34,7 @@ export default function Navigation() {
             height={27}
           />
         </div>
-      </Link>
+      </Link> */}
 
       <Link
         href='/walletconnect'
@@ -71,7 +71,7 @@ export default function Navigation() {
         </div>
       </Link>
 
-      <Link
+      {/* <Link
         href='/settings'
         passHref
       >
@@ -83,7 +83,7 @@ export default function Navigation() {
             height={27}
           />
         </div>
-      </Link>
+      </Link> */}
     </Row>
   )
 }

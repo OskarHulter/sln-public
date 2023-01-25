@@ -2,6 +2,7 @@ import { globalCss } from '@nextui-org/react'
 import { inter } from './tokens/fonts'
 
 export default globalCss({
+  '@import': 'main.css',
   '@font-face': [
     {
       fontFamily: inter.variable,

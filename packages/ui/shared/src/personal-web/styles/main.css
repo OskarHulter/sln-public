@@ -25,24 +25,6 @@
   align-items: center;
 }
 
-.qrVideoMask {
-  width: 100%;
-  border-radius: 15px;
-  overflow: hidden !important;
-  position: relative;
-}
-
-.qrPlaceholder {
-  border: 2px rgba(139, 139, 139, 0.4) dashed;
-  width: 100%;
-  border-radius: 15px;
-  padding: 50px;
-}
-
-.qrIcon {
-  opacity: 0.3;
-}
-
 .codeBlock code {
   flex: 1;
 }

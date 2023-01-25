@@ -6,9 +6,9 @@ import Footer from './Footer'
 import Header from './Header'
 
 const globalContainer = css({
-  maxWidth: '2000px',
-  minWidth: '100vw',
-  h: '100vh',
+  maxWidth: '800px',
+  display: 'grid',
+
   // top: 0,
   // left: 0,
   // bottom: 0,
@@ -21,7 +21,6 @@ const globalContainer = css({
 })
 
 const GlobalContainer = styled(Container, globalContainer)
-
 const grid = css({
   display: 'grid',
   gridTemplateAreas: `
@@ -50,12 +49,12 @@ export default function Layout({ children }: BaseProps) {
     <GlobalContainer>
       <GlobalGrid>
         <Header />
-        <GlobalGrid
+        <Container
           as='main'
           css={{ gridArea: 'main' }}
         >
           <Balancer>{children}</Balancer>
-        </GlobalGrid>
+        </Container>
         <Footer />
       </GlobalGrid>
     </GlobalContainer>

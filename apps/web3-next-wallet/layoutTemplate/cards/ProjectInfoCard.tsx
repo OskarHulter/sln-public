@@ -8,7 +8,7 @@ interface IProps {
   }
 }
 
-export default function ProjectInfoCard({ metadata }: IProps) {
+export default function ProjectInfoCard({ metadata }: Partial<IProps>) {
   const { icons, name, url } = metadata
 
   return (

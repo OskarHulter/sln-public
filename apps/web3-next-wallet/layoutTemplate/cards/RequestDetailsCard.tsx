@@ -17,7 +17,7 @@ interface IProps {
 /**
  * Component
  */
-export default function RequesDetailsCard({ chains, protocol }: IProps) {
+export default function RequesDetailsCard({ chains, protocol }: Partial<IProps>) {
   return (
     <Fragment>
       <Row>

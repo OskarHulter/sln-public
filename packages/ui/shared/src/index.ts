@@ -8,9 +8,19 @@ export { default as Typescript } from './personal-web/atoms/icons/svgr/Typescrip
 export { default as Hero } from './personal-web/blocks/Hero'
 export { default as useContent } from './personal-web/features/content/useContent'
 export { default as MailForm } from './personal-web/forms/MailForm'
-export { default as Layout } from './personal-web/layout/LayoutGrid'
-export { default as PersonalWebUiProvider } from './personal-web/providers/PersonalWebUiProvider'
-export { default as globalMinimal } from './personal-web/styles/global'
+export { default as WebUiProvider } from './personal-web/providers/WebUiProvider'
+export { default as globalStyles } from './personal-web/styles/global'
+export { default as theme } from './personal-web/styles/themes/default'
 export { default as colors } from './personal-web/styles/tokens/colors'
 export { default as fonts } from './personal-web/styles/tokens/fonts'
-export type { BaseProps, BlockCardProps, Icon, MediaProps, SafeNumber } from './types'
+export { default as Layout } from './personal-web/web3/Layout'
+export { default as Navigation } from './personal-web/web3/Navigation'
+export { default as PageHeader } from './personal-web/web3/PageHeader'
+export type {
+  BaseProps,
+  BlockCardProps,
+  Icon,
+  MediaProps,
+  ProviderProps,
+  SafeNumber,
+} from './types'

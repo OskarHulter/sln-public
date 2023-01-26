@@ -1,62 +1,185 @@
-export const colors = {
-  // generic colors
+// const defaultColors: {
+//   // generic colors
+//   white: '#ffffff'
+//   black: '#000000'
+
+//   // background colors (light)
+//   background: '$white'
+//   backgroundAlpha: 'rgba(255, 255, 255, 0.8)' // used for semi-transparent backgrounds like the navbar
+//   foreground: '$black'
+//   backgroundContrast: '$white'
+
+//   //semantic colors (light)
+//   blue50: '#EDF5FF'
+//   // ...
+//   blue900: '#00254D'
+//   // ...
+
+//   // brand colors
+//   primaryLight: '$blue200'
+//   primaryLightHover: '$blue300' // commonly used on hover state
+//   primaryLightActive: '$blue400' // commonly used on pressed state
+//   primaryLightContrast: '$blue600' // commonly used for text inside the component
+//   primary: '$blue600'
+//   primaryBorder: '$blue500'
+//   primaryBorderHover: '$blue600'
+//   primarySolidHover: '$blue700'
+//   primarySolidContrast: '$white' // commonly used for text inside the component
+//   primaryShadow: '$blue500'
+
+//   // ... rest of colors (secondary, success, warning, error, etc)
+// }
+
+export const halcyonColors = {
+  hiContrast: 'hsl(206,10%,5%)',
+  loContrast: 'white',
+
+  link: '#54b9ff',
+  linkLight: '#007ac',
+  selection: '',
+  code: '',
+
+  background: 'hsl(206,22%,99%)',
+  backgroundAlpha: 'hsl(206,12%,97%)',
+  backgroundContrast: 'hsl(206,11%,92%)',
+  foreground: '#4bf3c8',
+  //  foreground: '#cccccc',
+
+  text: 'hsl(206,10%,76%)',
+  textLight: 'hsl(206,10%,44%)',
+  border: '#697177',
   white: '#F5F5F5',
   black: '#252121',
-  gray: '#697177',
+
+  accents100: 'hsl(206,22%,99%)',
+  accents200: 'hsl(206,12%,97%)',
+  accents300: 'hsl(206,11%,92%)',
+  accents400: 'hsl(206,10%,84%)',
+  accents500: 'hsl(206,10%,76%)',
+  accents600: 'hsl(206,10%,44%)',
+  accents700: 'hsl(206,10%,44%)',
+  accents800: 'hsl(206,10%,44%)',
+  accents900: 'hsl(206,10%,44%)',
+
   whiteContrast: '#ffffff',
-  blackContrast: '#000000',
+  blackContrast: 'hsl(206,10%,5%)',
   grayContrast: '#DAE5E6',
-  editorWarningbackground: '#a9904000',
-  ansiBrightBlack: '#545864',
-  ansiBlack: '#17191e',
-  markerNavigationbackground: '#23262d',
-  activeLineNumberforeground: '#c6c6c6',
   widgetforeground: '#d4d4d4',
-  lineNumberactiveForeground: '#858b98',
-  foreground: '#cccccc',
-  widgetresolvedBorder: '#cccccc80',
-  breadcrumbPickerbackground: '#343841',
-  buttonSeparator: '#17191e66',
-  border: '#80808059',
-  selectionBackground: '#ffffff40',
-  whitespaceforeground: '#23262d',
-  widgetbackgroundGrey: '#343841',
-  widgetbackground: '#252526',
-  widgetborder: '#454545',
-  LineNumberforeground: '#545864',
+
+  gray100: '#343841',
+  gray200: '#80808059',
+  gray300: '#454545',
+  gray400: '#545864',
+  gray500: '#ffffff40',
+  gray600: '#cccccc80',
+  gray700: '#697177',
+  gray800: '#858b98',
+  gray900: '#c6c6c6',
+
+  black100: 'hsl(206,10%,5%)',
+  black200: '#a9904000',
+  black300: '#17191e',
+  black400: '#252121',
+  black500: '#252526',
+  black600: '#23262d',
+  black700: '#007acc1a',
+  black800: '#2d4860',
+  black900: 'hsl(206,10%,44%)',
+
+  white100: 'hsl(206,22%,99%)',
+  white200: 'hsl(206,12%,97%)',
+  white300: 'hsl(206,11%,92%)',
+  white400: 'hsl(206,10%,84%)',
+  white500: 'hsl(206,10%,76%)',
+  white600: 'hsl(206,10%,44%)',
+  white700: 'hsl(206,10%,44%)',
+  white800: '#eef0f9',
+  white900: '#fafafa',
+
+  blue100: '#007acc66',
+  blue200: '#157efb88',
+  blue300: '#2b7eca',
+  blue400: '#007acc',
+  blue500: '#0087ff',
+  blue600: '#0097fb',
+  blue700: '#179fff',
+  blue800: '#54b9ff',
+  blue900: '#27b3ff',
+
+  purple100: 'hsl(206,22%,99%)',
+  purple200: 'hsl(206,12%,97%)',
+  purple300: 'hsl(206,11%,92%)',
+  purple400: 'hsl(206,10%,84%)',
+  purple500: ' #956ed4',
+  purple600: '#ad5dca',
+  purple700: '#cc75f4',
+  purple800: '#da70d6',
+  purple900: ' #f195f0',
+
+  green100: '#001f33',
+  green200: '#062f4a',
+  green300: 'hsl(206,11%,92%)',
+  green400: 'hsl(206,10%,84%)',
+  green500: 'hsl(206,10%,76%)',
+  green600: 'hsl(206,10%,44%)',
+  green700: '#23d18b',
+  green800: '#4bf3c8',
+  green900: 'hsl(206,10%,44%)',
+
+  yellow100: '#ee931e',
+  yellow200: ' #ffc612',
+  yellow300: '#fbc23b',
+  yellow400: '#ffd700',
+  yellow500: '#ffd700',
+  yellow600: '#ffc368',
+  yellow700: '#ffd493',
+  yellow800: '#ffd493',
+  yellow900: '#ffd493',
+
+  red100: 'hsl(206,22%,99%)',
+  red200: 'hsl(206,12%,97%)',
+  red300: 'hsl(206,11%,92%)',
+  red400: 'hsl(206,10%,84%)',
+  red500: 'hsl(206,10%,76%)',
+  red600: 'hsl(206,10%,44%)',
+  red700: '#dc3657',
+  red800: '#f4587e',
+  red900: 'hsl(206,10%,44%)',
+
+  cyan100: 'hsl(206,22%,99%)',
+  cyan200: 'hsl(206,12%,97%)',
+  cyan300: 'hsl(206,11%,92%)',
+  cyan400: 'hsl(206,10%,84%)',
+  cyan500: 'hsl(206,10%,76%)',
+  cyan600: 'hsl(206,10%,44%)',
+  cyan700: '#24c0cf',
+  cyan800: '#00daef',
+  cyan900: 'hsl(206,10%,44%)',
+
+  pink100: 'hsl(206,22%,99%)',
+  pink200: 'hsl(206,12%,97%)',
+  pink300: 'hsl(206,11%,92%)',
+  pink400: 'hsl(206,10%,84%)',
+  pink500: 'hsl(206,10%,76%)',
+  pink600: 'hsl(206,10%,44%)',
+  pink700: 'hsl(206,10%,44%)',
+  pink800: 'hsl(206,10%,44%)',
+  pink900: ' #f195f0',
+}
+
+// 50	UI element background
+// 100	Hovered UI element background
+// 200	Active / Selected UI element background
+// 300	Subtle borders and separators
+// 400	UI element border and focus rings
+// 500	Hovered UI element border
+// 600	Solid backgrounds
+// 700	Hovered solid backgrounds
+// 800	Low - contrast text
+// 900	High - contrast text
+
+export const colors = {
   // generic colors
-  bracketHighlightforeground3: '#179fff',
-  widgethighlightForeground: '#0097fb',
-  peekViewborder: '#007acc',
-  ansiBlue: '#2b7eca',
-  cCursorbackground: '#0087ff',
-  widgetrangeActiveBackground: '#007acc1a',
-  peekViewbackground: '#001f33',
-  bookmarksoverviewRuler: '#157efb88',
-  widgetrangeActiveBorder: '#007acc66',
-  widgetselectedBackground: '#062f4a',
-  addedResourceForeground: '#4bf3c8',
-  focusBorder: '#00daef',
-  bannericonForeground: '#54b9ff',
-  ansiBrightBlue: '#54b9ff',
-  ansiBrightWhite: '#fafafa',
-  ansiWhite: '#eef0f9',
-  BracketHighlightforeground2: '#da70d6',
-  ansiBrightMagenta: '#cc75f4',
-  ansiMagenta: '#ad5dca',
-  ansiBrightCyan: '#00daef',
-  ansiCyan: '#24c0cf',
-  ansiBrightGreen: '#4bf3c8',
-  ansiGreen: '#23d18b',
-  ansiBrightRed: '#f4587e',
-  ansiRed: '#dc3657',
-  BracketHighlightforeground1: '#ffd700',
-  ansiBrightYellow: '#ffd493',
-  ansiYellow: '#ffc368',
-  warningforeground: '#fbc23b',
-  peekViewEditormatchHighlightBorder: '#ee931e',
-  textLinkforeground: '#54b9ff',
-  bannerbackground: '#2d4860',
 }
 
 export const awesomeGradient = `linear-gradient(0deg, rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), linear-gradient(80.52deg, #ffc612 8.87 %, #f195f0 27.48 %,#956ed4 60.07 %,#27b3ff 89.47 %)`
@@ -66,6 +189,7 @@ export const textGradient = `80.52deg,#ffc612 8.87%,#f195f0 27.48%,#956ed4 60.07
 export const buttonGradient = `316deg, rgb(75, 161, 252) 3 %, rgb(236, 42, 237) 100 %`
 
 export default colors
+
 // "editorWidget.foreground": "#ffffff",
 // "#ffffff00",
 // "editorWarning.background": "#a9904000",

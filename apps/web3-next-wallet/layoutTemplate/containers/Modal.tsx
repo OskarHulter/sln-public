@@ -1,7 +1,6 @@
 import { Modal as NextModal } from '@nextui-org/react'
 import { useSnapshot } from 'valtio'
 import ModalStore from '../../store/ModalStore'
-import AuthRequestModal from '../../views/AuthRequestModal'
 import SessionProposalModal from '../../views/SessionProposalModal'
 import SessionSendTransactionModal from '../../views/SessionSendTransactionModal'
 import SessionSignPolkadotModal from '../../views/SessionSignPolkadotModal'
@@ -20,7 +19,6 @@ export default function Modal() {
       {view === 'SessionSendTransactionModal' && <SessionSendTransactionModal />}
       {view === 'SessionUnsuportedMethodModal' && <SessionUnsuportedMethodModal />}
       {view === 'SessionSignPolkadotModal' && <SessionSignPolkadotModal />}
-      {view === 'AuthRequestModal' && <AuthRequestModal />}
     </NextModal>
   )
 }

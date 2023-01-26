@@ -1,22 +1,12 @@
+import { BaseProps } from '@sln/ui'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useRouter } from 'next/router'
-import { ReactNode } from 'react'
 
-/**
- * Types
- */
-interface IProps {
-  children: ReactNode | ReactNode[]
-}
-
-/**
- * Components
- */
-export default function RouteTransition({ children }: IProps) {
+export default function RouteTransition({ children }: BaseProps) {
   const { pathname } = useRouter()
 
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode='wait'>
       <motion.div
         className='routeTransition'
         key={pathname}

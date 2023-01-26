@@ -10,7 +10,7 @@ interface IProps {
 /**
  * Component
  */
-export default function RequestMethodCard({ methods }: IProps) {
+export default function RequestMethodCard({ methods }: Partial<IProps>) {
   return (
     <Row>
       <Col>

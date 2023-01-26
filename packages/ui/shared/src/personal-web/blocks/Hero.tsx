@@ -1,8 +1,6 @@
-import { Button, Grid, Row, Text, Tooltip } from '@nextui-org/react'
-import UserAvatar from '../atoms/badges/UserAvatar'
+import { Button, Grid, Row, Text } from '@nextui-org/react'
 import LoadingSpinner from '../atoms/LoadingSpinner'
 import useContent from '../features/content/useContent'
-import UserTwitterCard from './UserTwitterCard'
 
 export default function Hero() {
   const { data, status } = useContent()
@@ -15,10 +13,12 @@ export default function Hero() {
         xs
         css={{ p: '$6', mw: '70ch' }}
       >
-        <Row justify='space-between'>
+        <Row justify='space-between'></Row>
+        <Row>
           <Text
             h2
-            size={'$8xl'}
+            size={'$7xl'}
+            weight='bold'
             css={{
               lineHeight: '$xs',
               textGradient: `316deg, $primary 3%, $secondary 100%`,
@@ -26,16 +26,8 @@ export default function Hero() {
               m: '$1',
             }}
           >
-            Hi,
+            Hi, {data[0].title + '.'}
           </Text>
-          <Tooltip
-            placement='bottomStart'
-            content={<UserTwitterCard />}
-          >
-            <UserAvatar />
-          </Tooltip>
-        </Row>
-        <Row>
           <Text
             h2
             size={'$7xl'}
@@ -48,9 +40,7 @@ export default function Hero() {
               p: 0,
               m: 0,
             }}
-          >
-            {data[0].title + '.'}
-          </Text>
+          ></Text>
         </Row>
 
         <Text
@@ -59,6 +49,7 @@ export default function Hero() {
           css={{
             letterSpacing: '$wide',
             lineHeight: '$base',
+            fontFamily: '$sans',
           }}
         >
           {data[0].text}
@@ -68,7 +59,7 @@ export default function Hero() {
             size='lg'
             auto
             color='primary'
-            css={{ m: '$5', p: '$3', minWidth: '16ch' }}
+            css={{ m: '$5', p: '$3', minWidth: '16ch', fontFamily: '--space-grotesk-font' }}
           >
             <Text
               size='$xl'

@@ -12,7 +12,7 @@ interface IProps {
 /**
  * Component
  */
-export default function RequestModalContainer({ children, title }: IProps) {
+export default function RequestModalContainer({ children, title }: Partial<IProps>s) {
   return (
     <Fragment>
       <Modal.Header>

@@ -11,7 +11,7 @@ interface IProps {
 /**
  * Component
  */
-export default function RequestDataCard({ data }: IProps) {
+export default function RequestDataCard({ data }: Partial<IProps>) {
   return (
     <Row>
       <Col>

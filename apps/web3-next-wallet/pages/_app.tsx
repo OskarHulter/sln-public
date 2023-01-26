@@ -1,4 +1,4 @@
-import './main.css'
+import '../main.css'
 import { createTheme, Modal, NextUIProvider } from '@nextui-org/react'
 import { AppProps } from 'next/app'
 import useInitialization from '../hooks/useInitialization'

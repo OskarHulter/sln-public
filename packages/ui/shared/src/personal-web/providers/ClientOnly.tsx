@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaseProps } from '../../types.js'
+import { BaseProps } from '../../types'
 
 export function ClientOnly({ children, ...delegated }: BaseProps) {
   const [hasMounted, setHasMounted] = React.useState(false)

@@ -1,25 +1,31 @@
 import { Avatar, Grid } from '@nextui-org/react'
-import useContent from '../../features/content/useContent'
-import LoadingSpinner from '../LoadingSpinner'
+import Image from 'next/image'
 
 export default function AvatarBadge() {
-  const { data, status } = useContent()
+  // const { data, status } = useContent()
 
-  if (status === 'loading') return <LoadingSpinner />
-  if (status === 'error') return <div>error</div>
-  if (status === 'success')
-    return (
-      <Grid>
-        <Avatar
-          pointer
-          size='lg'
-          src={data[0].image?.src}
-          color='gradient'
-          bordered
-          squared
-        />
-      </Grid>
-    )
+  // if (status === 'loading') return <LoadingSpinner />
+  // if (status === 'error') return <div>error</div>
+  // if (status === 'success')
+  return (
+    <Grid>
+      <Avatar
+        pointer
+        size='lg'
+        color='gradient'
+        bordered
+        squared
+        icon={
+          <Image
+            alt='Profile picture of Oskar Hulter'
+            src='/images/profile-pic.webp'
+            fill
+            priority
+          />
+        }
+      />
+    </Grid>
+  )
 }
 
 // export default function Avatar() {

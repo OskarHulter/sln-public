@@ -1,6 +1,6 @@
 import { Spacer } from '@nextui-org/react'
 //import { fetchContent, useContentQuery } from '@sln/data-access-shared'
-import { Hero, Layout, MailForm, useContent } from '@sln/ui'
+import { Hero, MailForm, useContent } from '@sln/ui'
 import type { InferGetStaticPropsType } from 'next'
 //import { dehydrate, QueryClient } from '@tanstack/query-core'
 //import type { GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -48,10 +48,10 @@ export default function Home({ contentList }: InferGetStaticPropsType<typeof get
   if (status === 'error') return <div>error</div>
   if (data)
     return (
-      <Layout>
+      <>
         <Hero />
         <Spacer y={2} />
         <MailForm />
-      </Layout>
+      </>
     )
 }

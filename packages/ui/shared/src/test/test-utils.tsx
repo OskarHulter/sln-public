@@ -1,9 +1,9 @@
 import { render, RenderOptions } from '@testing-library/react'
 import React from 'react'
-import PersonalWebUiProvider from '../personal-web/providers/PersonalWebUiProvider.js'
+import WebUiProvider from '../personal-web/providers/WebUiProvider.js'
 
 const AllProviders = ({ children }: { children: React.ReactNode }) => (
-  <PersonalWebUiProvider> {children}</PersonalWebUiProvider>
+  <WebUiProvider> {children}</WebUiProvider>
 )
 
 const customRender = (ui: React.ReactElement, options?: Omit<RenderOptions, 'wrapper'>) =>

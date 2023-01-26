@@ -2,7 +2,6 @@ import { Button, Col, Divider, Modal, Row, Text } from '@nextui-org/react'
 import React from 'react'
 import { Fragment } from 'react'
 import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
-import RequesDetailsCard from '../layoutTemplate/cards/RequestDetalilsCard'
 import RequestMethodCard from '../layoutTemplate/cards/RequestMethodCard'
 import RequestModalContainer from '../layoutTemplate/containers/RequestModalContainer'
 import ModalStore from '../store/ModalStore'
@@ -48,7 +47,6 @@ export default function SessionSignModal() {
 
         <Divider y={2} />
 
-        <RequesDetailsCard chains={['']} protocol='{requestSession.relay.protocol' />
 
         <Divider y={2} />
 

@@ -18,17 +18,17 @@ export default function SessionSignPolkadotModal() {
   }
 
   // Get required request data
-  const { topic, params } = requestEvent
-  const { request, chainId } = params
+  // const { topic, params } = requestEvent
+  //const { request, chainId } = params
 
   // Handle approve action (logic varies based on request method)
   async function onApprove() {
     if (requestEvent) {
-      const response = await approvePolkadotRequest(requestEvent)
-      await web3wallet.respondSessionRequest({
-        topic,
-        response,
-      })
+      // const response = await approvePolkadotRequest(requestEvent)
+      // await web3wallet.respondSessionRequest({
+      //   topic,
+      //   response,
+      // })
       ModalStore.close()
     }
   }
@@ -36,11 +36,11 @@ export default function SessionSignPolkadotModal() {
   // Handle reject action
   async function onReject() {
     if (requestEvent) {
-      const response = rejectPolkadotRequest(requestEvent)
-      await web3wallet.respondSessionRequest({
-        topic,
-        response,
-      })
+      // const response = rejectPolkadotRequest(requestEvent)
+      // await web3wallet.respondSessionRequest({
+      //   topic,
+      //   response,
+      // })
       ModalStore.close()
     }
   }

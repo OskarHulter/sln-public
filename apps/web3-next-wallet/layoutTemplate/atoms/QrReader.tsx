@@ -13,7 +13,7 @@ import { Fragment, useState } from 'react'
  * Types
  */
 interface IProps {
-  onConnect: (uri: string) => Promise<void>
+  onConnect?: (uri: string) => Promise<void>
 }
 
 /**

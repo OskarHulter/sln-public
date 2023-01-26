@@ -5,9 +5,6 @@ import ProjectInfoCard from '../layoutTemplate/cards/ProjectInfoCard'
 import SessionChainCard from '../layoutTemplate/cards/SessionChainCard'
 import PageHeader from '../newLayout/PageHeader'
 
-/**
- * Component
- */
 export default function SessionPage() {
   const [topic, setTopic] = useState('')
   const [updated, setUpdated] = useState(new Date())
@@ -93,7 +90,7 @@ export default function SessionPage() {
               h4
               css={{ marginBottom: '$5' }}
             >{`Review ${chain} permissions`}</Text>
-            <SessionChainCard namespace={''} />
+            <SessionChainCard />
             {/* {renderAccountSelection(chain)} */}
             <Divider y={2} />
           </Fragment>

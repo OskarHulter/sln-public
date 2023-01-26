@@ -16,6 +16,10 @@ export type BaseProps = {
   children: React.ReactNode
 }
 
+export type ProviderProps = {
+  initialized: boolean
+} & BaseProps
+
 export type MediaProps = {
   src: string
   alt: string

@@ -1,135 +1,140 @@
-import { Avatar, Navbar, Row } from '@nextui-org/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
-import { GithubIcon } from '../atoms/icons/Icons'
+import { Col, Link, Row } from '@nextui-org/react'
+import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from '../atoms/icons/Icons'
 
 export default function Navigation() {
   return (
-    <>
-      <Navbar
-        variant='sticky'
-        css={{
-          width: '$full',
-          color: '$foreground',
-          backgroundColor: '$gradient',
-        }}
-      >
-        <Navbar.Brand>Oskar Hulter</Navbar.Brand>
-
-        <Navbar.Content>
-          <Navbar.Item>
-            <ThemeSwitch />
-          </Navbar.Item>
-        </Navbar.Content>
-      </Navbar>
-      <Row
-        justify='space-between'
-        align='center'
-      >
+    <Row
+      justify='space-evenly'
+      align='center'
+      css={{
+        zIndex: 1,
+        boxShadow: '$md',
+        p: '0 $10',
+        m: '0 $10',
+      }}
+    >
+      <Col css={{ width: 'fit-content' }}>
         <Link
-          href='/'
-          passHref
+          block
+          color='primary'
+          href='https://github.com/oskarhulter'
+          css={{
+            p: '0',
+            m: '0',
+          }}
         >
-          <div className='navLink'>
-            <Image
-              alt='accounts icon'
-              src='/icons/accounts-icon.svg'
-              width={27}
-              height={27}
-            />
-          </div>
-        </Link>
-
-        <Link
-          href='/sessions'
-          passHref
-        >
-          <div className='navLink'>
-            <Image
-              alt='sessions icon'
-              src='/icons/sessions-icon.svg'
-              width={27}
-              height={27}
-            />
-          </div>
-        </Link>
-
-        <Link
-          href='/walletconnect'
-          passHref
-        >
-          <div className='navLink'>
-            <Avatar
-              size='lg'
-              css={{ cursor: 'pointer' }}
-              color='gradient'
-              icon={
-                <Image
-                  alt='wallet connect icon'
-                  src='/wallet-connect-logo.svg'
-                  width={30}
-                  height={30}
-                />
-              }
-            />
-          </div>
-        </Link>
-
-        <Link
-          href='/pairings'
-          passHref
-        >
-          <div className='navLink'>
-            <Image
-              alt='pairings icon'
-              src='/icons/pairings-icon.svg'
-              width={25}
-              height={25}
-            />
-          </div>
-        </Link>
-        <GithubIcon fill={'$ansiBlack'} />
-        <Link
-          href='/settings'
-          passHref
-        >
-          <div className='navLink'>
-            <Image
-              alt='settings icon'
-              src='/icons/iconmonstr-github-3.svg'
-              width={27}
-              height={27}
-            />
-          </div>
-        </Link>
-        <Link
-          href='/settings'
-          passHref
-        >
-          <div className='navLink'>
-            <Image
-              alt='settings icon'
-              src='/icons/iconmonstr-github-2.svg'
-              width={27}
-              height={27}
-            />
-          </div>
-        </Link>
-        <Link
-          href='/settings'
-          passHref
-          className='navLink'
-        >
-          <Image
-            alt='settings icon'
-            src='/icons/iconmonstr-github-1.svg'
-            width={27}
-            height={27}
+          <GithubIcon
+            fill='currentColor'
+            size={'3.5em'}
           />
         </Link>
-        <ThemeSwitch />
-      </Row>
-    </>
+      </Col>
+
+      <Col css={{ width: 'fit-content' }}>
+        <Link
+          block
+          color='primary'
+          href='mailto:oskarhulter@gmail.com'
+          css={{
+            p: '0',
+            m: '0',
+          }}
+        >
+          <MailIcon
+            fill='currentColor'
+            size={'3.5em'}
+          />
+        </Link>
+      </Col>
+
+      <Col css={{ width: 'fit-content' }}>
+        <Link
+          block
+          color='primary'
+          href='https://www.linkedin.com/in/oskar-hulter'
+          css={{
+            p: '0',
+            m: '0',
+          }}
+        >
+          <LinkedinIcon
+            fill='currentColor'
+            size={'3.5em'}
+          />
+        </Link>
+      </Col>
+
+      <Col css={{ width: 'fit-content', height: 'auto' }}>
+        <Link
+          block
+          color='primary'
+          href='https://www.twitter.com/ohulter'
+          css={{
+            p: '0',
+            m: '0',
+          }}
+        >
+          <TwitterIcon
+            fill='currentColor'
+            size={'3.5em'}
+          />
+        </Link>
+      </Col>
+    </Row>
   )
 }
+// <Row>
+//   <Text>©2023 - Oskar Hulter</Text>
+// </Row>
+
+//  <Link
+//       href='/'
+//       passHref
+//     >
+//       <div className='navLink'>
+//         <Image
+//           fill
+//           alt='accounts icon'
+//           src='/icons/accounts-icon.svg'
+//           sizes='(min-width: 60em) 24vw,
+//                 (min-width: 28em) 45vw,
+//                 100vw'
+//           style={{ objectFit: 'contain' }}
+//         />
+//       </div>
+//     </Link>
+
+//     <Link
+//       href='/walletconnect'
+//       passHref
+//     >
+//       <div className='navLink'>
+//         <Avatar
+//           size='lg'
+//           css={{ cursor: 'pointer' }}
+//           color='gradient'
+//           icon={
+//             <Image
+//               alt='wallet connect icon'
+//               src='/icons/iconmonstr-github-3.svg'
+//               style={{ objectFit: 'contain' }}
+//               width={initialIconSize}
+//               height={initialIconSize}
+//             />
+//           }
+//         />
+//       </div>
+//     </Link>
+//     <Link
+//       href='/settings'
+//       passHref
+//       className='navLink'
+//     >
+//       <Image
+//         alt='gh'
+//         src='/icons/iconmonstr-github-1.svg'
+//         width={27}
+//         height={27}
+//       />
+//     </Link>
+//     <ThemeSwitch />

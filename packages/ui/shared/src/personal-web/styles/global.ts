@@ -1,17 +1,16 @@
 import { globalCss } from '@nextui-org/react'
-import { inter } from './tokens/fonts'
+import { spaceGrotesk } from './tokens/fonts'
 
 export default globalCss({
-  '@import': 'main.css',
+  '@import': '/main.css',
   '@font-face': [
     {
-      fontFamily: inter.variable,
+      fontFamily: spaceGrotesk.variable,
       fontWeight: '$variable',
       fontStyle: 'normal',
       fontDisplay: 'swap',
     },
   ],
-
   '*:focus': {
     outline: `2px solid $secondary`,
     outlineOffset: '-2px',
@@ -19,7 +18,7 @@ export default globalCss({
   html: {
     padding: 0,
     margin: 0,
-    fontFamily: inter.variable,
+    fontFamily: spaceGrotesk.variable,
     fontSize: '$base',
     lineHeight: '$base',
     color: '$black',

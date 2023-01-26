@@ -1,3 +1,19 @@
+:root {
+  #gradient-horizontal {
+    --color-stop-1: #a770ef;
+    --color-stop-2: #cf8bf3;
+    --color-stop-3: #fdb99b;
+  }
+  #gradient-vertical {
+    --color-stop-1: #00c3ff;
+    --color-stop-2: #77e190;
+    --color-stop-3: #ffff1c;
+  }
+}
+.gradient-icon {
+  fill: url(#gradient-horizontal) gray;
+  stroke: url(#gradient-horizontal) gray;
+}
 * {
   box-sizing: border-box;
   -ms-overflow-style: none;
@@ -54,6 +70,7 @@
 
 .navLink {
   transition: ease-in-out 0.2s opacity;
+  position: relative;
 }
 
 .navLink:hover {

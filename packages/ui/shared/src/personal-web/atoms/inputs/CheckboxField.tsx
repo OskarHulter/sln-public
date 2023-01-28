@@ -1,7 +1,11 @@
 import { Checkbox, Text } from '@nextui-org/react'
-import { CheckboxInputField } from '../../forms/types.js'
+import type { CheckboxInputField } from '../../forms/types'
 
-export default function CheckboxField({ label, register, errors, setValue }: CheckboxInputField) {
+type CheckboxProps = {
+  text: string
+} & CheckboxInputField
+
+export default function CheckboxField({ text, label, register, errors, setValue }: CheckboxProps) {
   // const [checked, setChecked] = React.useState(false)
   // onChange={isSelected => {
   //   setChecked(isSelected)
@@ -16,10 +20,20 @@ export default function CheckboxField({ label, register, errors, setValue }: Che
         {...register(label)}
         onChange={(checked) => setValue('emailUpdates', checked)}
       >
-        {label}
+        <Text
+          as='label'
+          size={'$lg'}
+          id={label}
+          css={{
+            fontWeight: '$medium',
+            color: '$accents8',
+          }}
+        >
+          {text}
+        </Text>
       </Checkbox>
       <Text
-        id='emailUpdates'
+        id={label}
         color='error'
       >
         {errors[label]?.message}

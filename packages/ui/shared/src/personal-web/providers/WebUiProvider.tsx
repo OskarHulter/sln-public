@@ -13,10 +13,10 @@ import Layout from '../web3/Layout'
 
 export default function WebUiProvider({ initialized, children }: ProviderProps) {
   return (
-    <NextUIProvider>
-      <Layout initialized={initialized}>
-        <BalancerProvider>{children}</BalancerProvider>
-      </Layout>
-    </NextUIProvider>
+    <BalancerProvider>
+      <NextUIProvider>
+        <Layout initialized={initialized}>{children}</Layout>
+      </NextUIProvider>
+    </BalancerProvider>
   )
 }

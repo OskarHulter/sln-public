@@ -1,4 +1,4 @@
-import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
+import { Button, Grid, Loading, Text } from '@nextui-org/react'
 import { MailFormSchema, submitContactForm } from '@sln/features-mail'
 import { useForm } from 'react-hook-form'
 import CheckboxField from '../atoms/inputs/CheckboxField'
@@ -15,21 +15,18 @@ export default function MailForm() {
   } = useForm<MailFormSchema>()
 
   return (
-    <Container
-      justify='center'
-      fluid
-    >
-      {isSubmitSuccessful ? (
-        <Text>Message sent successfully!</Text>
-      ) : (
-        <form onSubmit={handleSubmit(async (data) => await submitContactForm(data))}>
-          <Text
-            h3
-            size='$5xl'
-          >
-            Contact
-          </Text>
-          <Spacer y={2} />
+    <>
+      {isSubmitSuccessful && <Text>Submit Successfull!</Text>}
+
+      <Grid.Container
+        as='form'
+        gap={3}
+        justify='center'
+        alignContent='center'
+        alignItems='center'
+        onSubmit={handleSubmit(async (data) => await submitContactForm(data))}
+      >
+        <Grid xs={12}>
           <InputField
             label='mail'
             register={register}
@@ -37,7 +34,8 @@ export default function MailForm() {
             reset={resetField}
             required
           />
-          <Spacer y={2} />
+        </Grid>
+        <Grid xs={12}>
           <InputField
             label='name'
             register={register}
@@ -45,40 +43,60 @@ export default function MailForm() {
             reset={resetField}
             required
           />
-          <Spacer y={2} />
+        </Grid>
+        <Grid xs={12}>
           <TextareaField
             label='message'
             register={register}
             errors={errors}
             required
           />
-          <Spacer y={1} />
+        </Grid>
+        <Grid
+          xs={12}
+          justify='center'
+        >
           <CheckboxField
+            text='Send me occasional email updates'
             label='emailUpdates'
             register={register}
             errors={errors}
             setValue={setValue}
           />
-          <Spacer y={1} />
+        </Grid>
+        <Grid
+          xs={12}
+          justify='center'
+        >
           <Button
             type='submit'
             disabled={isSubmitting}
-            color='primary'
+            color='gradient'
+            bordered
             size='xl'
+            css={{
+              minWidth: '15ch',
+            }}
           >
-            {isSubmitting ? (
+            {isSubmitting && (
               <Loading
                 type='points-opacity'
                 color='currentColor'
                 size='sm'
               />
-            ) : (
-              'Send email'
             )}
+            <Text
+              as='div'
+              size='$3xl'
+              css={{
+                letterSpacing: '$wide',
+              }}
+            >
+              submit
+            </Text>
           </Button>
-          <Spacer y={2} />
-        </form>
-      )}
-    </Container>
+        </Grid>
+      </Grid.Container>
+    </>
   )
 }

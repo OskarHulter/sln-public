@@ -1,96 +1,102 @@
-import { Button, Grid, Row, Text } from '@nextui-org/react'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { Grid, Spacer, Text } from '@nextui-org/react'
+import Balancer from 'react-wrap-balancer'
+import { ActionButton } from '../atoms/buttons/ActionButton'
 import LoadingSpinner from '../atoms/LoadingSpinner'
 import useContent from '../features/content/useContent'
 
 export default function Hero() {
   const { data, status } = useContent()
+  const [parent] = useAutoAnimate()
 
   if (status === 'loading') return <LoadingSpinner />
   if (status === 'error') return <div>error!</div>
   if (status === 'success' && data)
     return (
-      <Grid
-        xs
-        css={{ p: '$6', mw: '70ch' }}
+      <Grid.Container
+        gap={1}
+        css={{
+          p: '0 $20 0 $20',
+          m: '0',
+        }}
       >
-        <Row justify='space-between'></Row>
-        <Row>
+        <Grid
+          xs={12}
+          css={{
+            p: '0',
+            m: '0',
+          }}
+        >
           <Text
             h2
-            size={'$7xl'}
+            weight='thin'
+            css={{
+              fontSize: 'clamp(2rem, 5vw, 5rem)',
+              lineHeight: '$xs',
+              textGradient: '45deg,  #00254D -20%, #54b9ff 100%',
+              letterSpacing: '$tight',
+              paddingLeft: '$10',
+              m: '0',
+            }}
+          >
+            Hi, my name is
+          </Text>
+        </Grid>
+        <Grid xs={12}>
+          <Text
+            h1
             weight='bold'
             css={{
               lineHeight: '$xs',
               textGradient: `316deg, $primary 3%, $secondary 100%`,
-              letterSpacing: '$tight',
+              letterSpacing: '$tighter',
               m: '$1',
+              fontSize: 'clamp(5rem, 5vw, 32rem)',
+              // '@smMax': {
+              //   fontSize: '$8xl',
+              // },
+              // '@mdMax': {
+              //   fontSize: '10rem',
+              // },
+              '@xlMin': {
+                fontSize: '$9xl',
+              },
+              p: '$2',
             }}
           >
-            Hi, {data[0].title + '.'}
+            {data[0].title}
           </Text>
-          <Text
-            h2
-            size={'$7xl'}
-            weight='bold'
-            css={{
-              lineHeight: '$sm',
-              textGradient: '45deg, $yellow600 -20%, $red600 100%',
-              letterSpacing: '$tight',
-
-              p: 0,
-              m: 0,
-            }}
-          ></Text>
-        </Row>
-
-        <Text
-          size='$xl'
-          color='$white'
+        </Grid>
+        <Grid
+          xs={12}
+          justify='center'
           css={{
-            letterSpacing: '$wide',
-            lineHeight: '$base',
-            fontFamily: '$sans',
+            maxWidth: '65ch',
           }}
         >
-          {data[0].text}
-        </Text>
-        <Row>
-          <Button
-            size='lg'
-            auto
-            color='primary'
-            css={{ m: '$5', p: '$3', minWidth: '16ch', fontFamily: '--space-grotesk-font' }}
-          >
+          <Balancer>
             <Text
-              size='$xl'
-              weight='bold'
-              css={{
-                letterSpacing: 'inherit',
-              }}
+              size='$2xl'
               color='$white'
-            >
-              Contact
-            </Text>
-          </Button>
-          <Button
-            size='lg'
-            auto
-            color='primary'
-            flat
-            css={{ m: '$5', p: '$3', minWidth: '16ch' }}
-          >
-            <Text
-              size='$xl'
-              weight='bold'
               css={{
-                letterSpacing: 'inherit',
+                letterSpacing: '$wide',
+                lineHeight: '$base',
+                fontWeight: '$thin',
               }}
-              color='$white'
             >
-              About
+              {data[0].text}
             </Text>
-          </Button>
-        </Row>
-      </Grid>
+          </Balancer>
+          <Spacer y={4} />
+        </Grid>
+        <Grid
+          xs={12}
+          alignContent='stretch'
+          justify='space-evenly'
+          direction='row'
+        >
+          <ActionButton>contact</ActionButton>
+        </Grid>
+      </Grid.Container>
     )
 }

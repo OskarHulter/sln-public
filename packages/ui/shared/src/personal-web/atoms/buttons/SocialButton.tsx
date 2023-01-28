@@ -1,22 +1,46 @@
-import { Button, Link } from '@nextui-org/react'
-import { Icon } from '../../../types.js'
+import { Avatar, Link } from '@nextui-org/react'
+import type { ImageProps } from 'next/image'
+import Image from 'next/image'
+import { default as NextLink } from 'next/link'
 
-export type SocialProps = {
+type SocialButtonProps = {
   href: string
-  icon: Icon
-}
+} & ImageProps
 
-export function SocialButton({ href, icon }: SocialProps) {
+export function SocialButton({ href, src, alt }: SocialButtonProps) {
   return (
-    <Link
+    <NextLink
+      target='_blank'
       href={href}
-      css={{ m: '$6' }}
     >
-      <Button
-        auto
-        rounded
-        icon={icon}
-      />
-    </Link>
+      <Link
+        block
+        css={{ m: '$6' }}
+      >
+        <Avatar
+          size='xl'
+          icon={
+            <Image
+              className='social-icon'
+              src={src}
+              alt={alt}
+              width={50}
+              height={50}
+            />
+          }
+        />
+      </Link>
+    </NextLink>
   )
 }
+// css = {{
+//   objectFit: 'cover',
+//     position: 'relative',
+//       overflow: 'hidden',
+//           }}
+// {
+/* <Button
+          auto
+          rounded
+          icon={icon}
+        /> */

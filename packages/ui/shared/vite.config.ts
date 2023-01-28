@@ -10,7 +10,15 @@ export default defineConfig({
       root: '../../../',
     }),
   ],
-
+  resolve: {
+    alias: {
+      "next/original-image": require.resolve("next/image"),
+      "next/image": "./.ladle/UnoptimizedImage.tsx",
+    },
+  },
+  define: {
+    "process.env": process.env,
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [
@@ -36,6 +44,7 @@ export default defineConfig({
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
+    ssr: true
   },
 
   test: {

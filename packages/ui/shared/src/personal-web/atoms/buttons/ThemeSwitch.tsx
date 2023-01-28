@@ -1,8 +1,9 @@
-import { Grid, Switch, SwitchEvent, useTheme } from '@nextui-org/react'
+import { Container, Switch, SwitchEvent, useTheme } from '@nextui-org/react'
 import Image from 'next/image'
 import { useTheme as useNextTheme } from 'next-themes'
 import type { ChangeEvent } from 'react'
 import { useHasMounted } from '../../features/hasMounted/useHasMounted'
+import { ClientOnly } from '../../providers/ClientOnly'
 
 export default function ThemeSwitch() {
   const { setTheme } = useNextTheme()
@@ -23,38 +24,34 @@ export default function ThemeSwitch() {
   // checked={hasMounted ? isDark : type === 'dark' ? true : false}
   // }
   return (
-    <Grid
-      alignContent='center'
-      justify='center'
-      alignItems='center'
-    >
-      <Switch
-        className='gradient-icon'
-        color='secondary'
-        checked={hasMounted ? isDark : true}
-        size='xl'
-        iconOn={
-          <Image
-            className='gradient-icon'
-            src='/icons/sun-ray.svg'
-            alt='toggle light theme'
-            width={30}
-            height={30}
-          />
-        }
-        iconOff={
-          <Image
-            className='gradient-icon'
-            src='/icons/moon.svg'
-            alt='toggle dark theme'
-            width={30}
-            height={30}
-          />
-        }
-        onChange={(e: ChangeEvent<HTMLInputElement> | SwitchEvent) =>
-          setTheme(e.target.checked ? 'dark' : 'light')
-        }
-      />
-    </Grid>
+    <Container css={{ width: 'fit-content', m: 0, p: 0 }}>
+      <ClientOnly>
+        <Switch
+          color='success'
+          bordered
+          checked={isDark === undefined ? true : isDark}
+          size='xl'
+          onChange={(e: ChangeEvent<HTMLInputElement> | SwitchEvent) =>
+            setTheme(e.target.checked ? 'dark' : 'light')
+          }
+          iconOn={
+            <Image
+              src='/icons/sun-ray.svg'
+              alt='activate light theme'
+              width={50}
+              height={50}
+            />
+          }
+          iconOff={
+            <Image
+              src='/icons/moon.svg'
+              alt='activate dark theme'
+              width={50}
+              height={50}
+            />
+          }
+        />
+      </ClientOnly>
+    </Container>
   )
 }

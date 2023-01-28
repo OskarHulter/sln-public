@@ -6,8 +6,8 @@ const profilePic = {
   key: uuid(),
   alt: 'Smiling profile picture of Oskar',
   src: `${constants.urls.profilePicUrl}`,
-  width: '200',
-  height: '200',
+  width: 200,
+  height: 200,
 }
 
 export const idSchema = z.string().uuid()
@@ -17,8 +17,8 @@ export const imageSchema = z.object({
   key: z.string().uuid(),
   alt: z.string(),
   src: z.string().url(),
-  width: z.string(),
-  height: z.string(),
+  width: z.number(),
+  height: z.number(),
 })
 export const contentBlockSchema = z.object({
   id: z.string().uuid(),
@@ -41,8 +41,22 @@ const contentList: ContentList = [
   {
     id: uuid(),
     name: 'hero',
-    title: 'I’m Oskar',
+    title: 'Oskar Hulter',
     text: `I'm a fullstack Javascript developer from Sweden. I help teams deliver better software by driving adoption of todays most valuable tools and practices.`,
+    image: profilePic,
+  },
+  {
+    id: uuid(),
+    name: 'hero2',
+    title: 'Oskar Hulter',
+    text: `Hi, my name is:`,
+    image: profilePic,
+  },
+  {
+    id: uuid(),
+    name: 'hero3',
+    title: 'Oskar Hulter.',
+    text: `let myName = () => `,
     image: profilePic,
   },
   {

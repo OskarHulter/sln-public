@@ -1,14 +1,68 @@
-import type { GlobalProvider } from "@ladle/react"
-import React from 'react'
-import PersonalWebUiProvider from '../packages/ui/shared/src/personal-web/providers/PersonalWebUiProvider'
+import type { GlobalProvider } from '@ladle/react'
+import WebUiProvider from '../packages/ui/shared/src/personal-web/providers/WebUiProvider'
+import React, { useEffect, useState } from 'react'
+import 'tailwindcss/tailwind.css'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { fetchContent } from '../packages/data-access/shared/src'
+
+const createWrapper = () => {
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  })
+  return ({ children }) => (
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  )
+}
+
 export const Provider: GlobalProvider = ({
   children,
   globalState,
   storyMeta,
-}) => (
-  <PersonalWebUiProvider>
-    <h1>Theme: {globalState.theme}</h1>
-    <h2>{storyMeta.customValue}</h2>
-    {children}
-  </PersonalWebUiProvider>
-)
+}) => {
+  const [queryClient] = useState(() => new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: Infinity,
+        retry: false,
+        refetchOnMount: false,
+        keepPreviousData: true,
+        refetchOnReconnect: false,
+        refetchOnWindowFocus: false,
+        queryFn: () => fetchContent(),
+        initialData: () => fetchContent(),
+        onError: () => console.error('error!'),
+      },
+    },
+    logger: {
+      log: console.log,
+      warn: console.warn,
+      // ✅ no more errors on the console
+      error: () => { },
+    }
+  }))
+
+  useEffect(() => {
+    if (globalState.theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [globalState.theme])
+
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <WebUiProvider initialized={true}>
+        <h1>Theme: {globalState.theme}</h1>
+        <h2>{storyMeta.customValue}</h2>
+        <div className='p-4'>
+          {children}
+        </div>
+      </WebUiProvider>
+    </QueryClientProvider>
+  )
+}

@@ -9,8 +9,10 @@ export default function Navigation() {
       css={{
         zIndex: 1,
         boxShadow: '$md',
-        p: '0 $10',
-        m: '0 $10',
+        m: '0 $4',
+        '@xs': {
+          padding: '0 $8 $1 $8',
+        },
       }}
     >
       <Col css={{ width: 'fit-content' }}>

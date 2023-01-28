@@ -8,7 +8,7 @@ export default function PageHeader() {
     <>
       <Row
         css={{
-          maxWidth: '800px',
+          maxWidth: '900px',
           position: 'sticky',
           boxShadow: '0 10px 15px #111111',
           background: '#111111',

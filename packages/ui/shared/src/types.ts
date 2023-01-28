@@ -1,7 +1,13 @@
+import type { Content } from '@sln/domain-shared'
 import { SVGProps } from 'react'
 
 export type SafeNumber = number | `${number}`
 export type Icon = React.ReactElement<SVGProps<SVGSVGElement>>
+
+export type Unpacked<T> = T extends (infer U)[] ? U : T
+export type BlockProps = {
+  blockContent: Unpacked<Content>
+}
 
 export type IconProps = {
   fill: string

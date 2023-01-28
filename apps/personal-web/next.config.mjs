@@ -14,11 +14,27 @@ const nextConfig = {
   nx: {
     svgr: true,
   },
+  experimental: {
+    fontLoaders: [
+      {
+        loader: '@next/font/google',
+        options: {
+          subsets: ['latin'],
+        },
+      },
+      {
+        loader: '@next/font/local',
+        options: {
+          subsets: ['latin'],
+        },
+      },
+    ],
+  },
 }
 
 const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
-  openAnalyzer: true,
+  openAnalyzer: false,
 })
 
 export default withNx(

@@ -2,25 +2,6 @@ import { createTheme } from '@nextui-org/react'
 // eslint-disable-next-line prettier/prettier
 import type { } from '@stitches/react'
 import sharedTheme from './shared'
-/*
-  ex: padding, margin, and top, left, right, bottom, width, height
-  spacing: {
-    min: 'min-content',
-    max: 'max-content',
-    fit: 'fit-content',
-    screen: '100vw',
-    full: '100%',
-    px: '1px',
-  }
-
-    breakpoints: {
-    xs: '650px',
-    sm: '960px',
-    md: '1280px',
-    lg: '1400px',
-    xl: '1920px'
-  }
-*/
 
 export const lightTheme = createTheme({
   ...sharedTheme,

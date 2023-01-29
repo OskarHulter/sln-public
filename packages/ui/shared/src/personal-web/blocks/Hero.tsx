@@ -1,4 +1,3 @@
-import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { Grid, Spacer, Text } from '@nextui-org/react'
 import Balancer from 'react-wrap-balancer'
 import { ActionButton } from '../atoms/buttons/ActionButton'
@@ -7,7 +6,6 @@ import useContent from '../features/content/useContent'
 
 export default function Hero() {
   const { data, status } = useContent()
-  const [parent] = useAutoAnimate()
 
   if (status === 'loading') return <LoadingSpinner />
   if (status === 'error') return <div>error!</div>
@@ -39,7 +37,7 @@ export default function Hero() {
               m: '0',
             }}
           >
-            Hi, my name is
+            <Balancer>Hi, my name is</Balancer>
           </Text>
         </Grid>
         <Grid xs={12}>
@@ -64,7 +62,7 @@ export default function Hero() {
               p: '$2',
             }}
           >
-            {data[0].title}
+            <Balancer>{data[0].title}</Balancer>
           </Text>
         </Grid>
         <Grid
@@ -74,19 +72,17 @@ export default function Hero() {
             maxWidth: '65ch',
           }}
         >
-          <Balancer>
-            <Text
-              size='$2xl'
-              color='$white'
-              css={{
-                letterSpacing: '$wide',
-                lineHeight: '$base',
-                fontWeight: '$thin',
-              }}
-            >
-              {data[0].text}
-            </Text>
-          </Balancer>
+          <Text
+            size='$2xl'
+            color='$white'
+            css={{
+              letterSpacing: '$wide',
+              lineHeight: '$base',
+              fontWeight: '$thin',
+            }}
+          >
+            <Balancer>{data[0].text}</Balancer>
+          </Text>
           <Spacer y={4} />
         </Grid>
         <Grid
@@ -95,7 +91,12 @@ export default function Hero() {
           justify='space-evenly'
           direction='row'
         >
-          <ActionButton>contact</ActionButton>
+          <ActionButton
+            as='a'
+            href='#contact-form'
+          >
+            contact
+          </ActionButton>
         </Grid>
       </Grid.Container>
     )

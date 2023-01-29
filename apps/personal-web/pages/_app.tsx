@@ -1,5 +1,4 @@
-import { DM_Sans, Inter, Raleway, Source_Code_Pro, Space_Grotesk } from '@next/font/google'
-import localFont from '@next/font/local'
+import { Inter } from '@next/font/google'
 import { SSRProvider } from '@react-aria/ssr'
 import { fetchContent } from '@sln/data-access-shared'
 import { globalStyles, theme, WebUiProvider } from '@sln/ui'
@@ -19,38 +18,20 @@ import SEO from '../seo-default'
 export const inter = Inter({
   variable: '--inter-font',
 })
-export const spaceGrotesk = Space_Grotesk({
-  variable: '--space-grotesk-font',
-})
-export const raleway = Raleway({
-  variable: '--raleway-font',
-})
-export const sourceCodePro = Source_Code_Pro({
-  variable: '--source-code-pro-font',
-})
-export const dmSans = DM_Sans({
-  variable: '--dm-sans-font',
-  weight: '400',
-})
-
-export const switzer = localFont({
-  src: '../public/fonts/switzer-variable.ttf',
-  variable: '--switzer-font',
-})
-export const satoshi = localFont({
-  src: '../public/fonts/satoshi-variable.ttf',
-  variable: '--satoshi-font',
-})
-export const futuraMedium = localFont({
-  src: '../public/fonts/futura-medium.ttf',
-  variable: '--futura-medium-font',
-  weight: '700',
-})
-export const futuraRound = localFont({
-  src: '../public/fonts/futura-round.ttf',
-  variable: '--futura-round-font',
-  weight: '700',
-})
+// export const spaceGrotesk = Space_Grotesk({
+//   variable: '--space-grotesk-font',
+// })
+// export const raleway = Raleway({
+//   variable: '--raleway-font',
+// })
+// export const switzer = localFont({
+//   src: '../public/fonts/switzer-variable.ttf',
+//   variable: '--switzer-font',
+// })
+// export const satoshi = localFont({
+//   src: '../public/fonts/satoshi-variable.ttf',
+//   variable: '--satoshi-font',
+// })
 
 export { reportWebVitals } from 'next-axiom'
 if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
@@ -99,7 +80,6 @@ export const MyApp = ({ Component, pageProps }: AppProps<{ dehydratedState: Dehy
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <NextThemesProvider
-            enableSystem={false}
             enableColorScheme={true}
             defaultTheme='dark'
             attribute='class'
@@ -108,7 +88,7 @@ export const MyApp = ({ Component, pageProps }: AppProps<{ dehydratedState: Dehy
               dark: theme.light.className,
             }}
           >
-            <WebUiProvider initialized={true}>
+            <WebUiProvider>
               <DefaultSeo {...SEO} />
               <Head>
                 <meta charSet='utf-8' />

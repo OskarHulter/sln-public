@@ -39,6 +39,14 @@
   box-sizing: border-box;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 0;
+}
+* + * {
+  margin: 0 0 0 0.5em;
+}
+
+img {
+  margin: 0;
 }
 
 ::-webkit-scrollbar {
@@ -75,13 +83,6 @@ i {
   justify-content: center;
   align-items: center;
 }
-.social-icon {
-  width: 5rem;
-  height: 5rem;
-  margin: 1rem;
-  aspect-ratio: 1;
-  stroke: var(--nextui-color-error);
-}
 
 .global-container {
   min-height: 95vh;
@@ -104,30 +105,96 @@ i {
   columns: 2;
   gap: max(30vw, 2rem);
 }
+.footer-copyright {
+  grid-area: copyright;
+}
+.footer-form {
+  grid-area: form;
+}
+.footer-nav {
+  grid-area: nav;
+  margin-inline: auto;
+}
+.footer-social {
+  grid-area: social;
+}
+.footer-logo {
+  grid-area: logo;
+}
+.footer-copyright {
+  grid-area: copyright;
+  opacity: 1;
+  margin-inline: auto;
+  margin-bottom: 0;
+}
+
+.footer-container {
+  height: fit-content;
+  width: var(--full);
+  display: grid;
+  gap: var(--size-200);
+  justify-content: center;
+  align-items: center;
+  background: 'rgba(255, 255, 255, 0.8)';
+  padding-top: 1rem;
+
+  grid-template-areas:
+    'social'
+    'copyright';
+}
+/* 'form'
+    'nav'
+    'social'
+    'logo'
+    'copyright'; */
+.footer-container > * {
+  margin-inline: auto;
+}
+#contact-form > * {
+  margin-inline: auto;
+  margin-top: 3em;
+}
 
 .footer-nav a {
   color: var(--nextui-colors-cyan300);
   text-decoration: none;
 }
 
-.footer-nav a:is(:hover, :focus) {
+.footer-nav a:is(:hover, :focus) .social-icon {
   color: var(--nextui-colors-cyan500);
 }
 
 .social-list {
   display: flex;
-  gap: var(--size-700);
-  background: 'rgba(255, 255, 255, 0.8)';
-  background-color: 'black';
-  height: 85px;
-  width: var(--full);
+  gap: var(--size-200);
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: min(100vw, 25em);
+  max-height: 5rem;
 }
-
+.social-icon {
+  width: 5rem;
+  height: 5rem;
+  aspect-ratio: 1;
+  stroke: var(--nextui-color-error);
+}
+/* 'logo nav form'
+      'social nav copyright'; */
 @media (min-width: 50em) {
+  .footer-container {
+    grid-template-areas:
+      'social'
+      'copyright';
+    grid-template-columns: min-content;
+  }
+
+  .social-list {
+    gap: var(--size-300);
+  }
   .social-icon {
-    width: var(--size-900);
+    width: 4rem;
+    max-width: revert;
+    margin-bottom: 0;
   }
 }
 /*

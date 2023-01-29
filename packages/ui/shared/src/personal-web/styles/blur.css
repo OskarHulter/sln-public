@@ -38,3 +38,12 @@
   background-blend-mode: normal, normal, normal, normal, normal, normal;
   filter: blur(66px);
 }
+// TODO: to stop svg radi bleeding via border radius
+.element {
+  border-radius: 10px;
+
+  /* Prevent background color leak outs */
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}

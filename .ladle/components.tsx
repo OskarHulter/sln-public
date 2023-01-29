@@ -2,7 +2,9 @@ import type { GlobalProvider } from '@ladle/react'
 import WebUiProvider from '../packages/ui/shared/src/personal-web/providers/WebUiProvider'
 import React, { useEffect, useState } from 'react'
 import 'tailwindcss/tailwind.css'
+import '../apps/personal-web/public/main.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Container } from '@nextui-org/react'
 import { fetchContent } from '../packages/data-access/shared/src'
 
 const createWrapper = () => {
@@ -56,13 +58,14 @@ export const Provider: GlobalProvider = ({
 
   return (
     <QueryClientProvider client={queryClient}>
-      <WebUiProvider initialized={true}>
+      <WebUiProvider>
         <h1>Theme: {globalState.theme}</h1>
         <h2>{storyMeta.customValue}</h2>
-        <div className='p-4'>
+        <Container>
+
           {children}
-        </div>
+        </Container>
       </WebUiProvider>
-    </QueryClientProvider>
+    </QueryClientProvider >
   )
 }

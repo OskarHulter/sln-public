@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react'
 import { Provider as BalancerProvider } from 'react-wrap-balancer'
-import type { ProviderProps } from '../../types'
+import type { BaseProps } from '../../types'
 import Layout from '../web3/Layout'
 
 // type WebUiProviderProps = {
@@ -11,11 +11,11 @@ import Layout from '../web3/Layout'
 //   defaultTheme?: 'light' | 'dark'
 // } & ProviderProps
 
-export default function WebUiProvider({ initialized, children }: ProviderProps) {
+export default function WebUiProvider({ children }: BaseProps) {
   return (
     <BalancerProvider>
       <NextUIProvider>
-        <Layout initialized={initialized}>{children}</Layout>
+        <Layout>{children}</Layout>
       </NextUIProvider>
     </BalancerProvider>
   )

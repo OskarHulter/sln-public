@@ -5,15 +5,14 @@ export default function InputField({ label, register, required, reset, errors }:
   return (
     <Input
       bordered
-      size={'xl'}
-      clearable
+      size={'lg'}
       fullWidth
       onClearClick={() => reset}
       status={errors[label]?.message ? 'error' : 'default'}
       color={errors[label]?.message ? 'error' : 'secondary'}
-      helperColor={errors[label]?.message ? 'error' : 'primary'}
+      helperColor={errors[label]?.message ? 'error' : 'success'}
       helperText={errors[label]?.message}
-      {...register(label, { required })}
+      {...register(label, { required, minLength: { value: 4, message: 'error message' } })}
       labelPlaceholder={label}
     />
   )

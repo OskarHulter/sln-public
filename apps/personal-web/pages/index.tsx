@@ -1,10 +1,6 @@
 import { Spacer } from '@nextui-org/react'
-//import { fetchContent, useContentQuery } from '@sln/data-access-shared'
-import { Block, Hero, MailForm, useContent } from '@sln/ui'
+import { Hero, MailForm, useContent } from '@sln/ui'
 import { NextSeo } from 'next-seo'
-//import { dehydrate, QueryClient } from '@tanstack/query-core'
-//import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-//import { NextSeo } from 'next-seo'
 
 export default function Home() {
   const { data, status } = useContent()
@@ -14,8 +10,8 @@ export default function Home() {
     return (
       <>
         <NextSeo
-          title='Using More of Config'
-          description='This example uses more of the available config options.'
+          title='Oskar Hulter - Senior Full Stack JS, TS, react,  dev'
+          description='This is the portfolio page of Oskar Hulter.'
           canonical='https://www.canonical.ie/'
           openGraph={{
             url: 'https://www.url.ie/a',
@@ -39,7 +35,7 @@ export default function Home() {
               { url: 'https://www.example.ie/og-image-03.jpg' },
               { url: 'https://www.example.ie/og-image-04.jpg' },
             ],
-            siteName: 'SiteName',
+            siteName: 'OskarHulterPersonal',
           }}
           twitter={{
             handle: '@OHulter',
@@ -48,11 +44,13 @@ export default function Home() {
           }}
         />
         <Hero />
+
         <Spacer y={2} />
-        <Block {...data[11]} />
-        <Spacer y={2} />
+
         <MailForm />
-        <Spacer y={3} />
+
+        <Spacer y={4} />
       </>
     )
 }
+// <Block {...data[11]} />

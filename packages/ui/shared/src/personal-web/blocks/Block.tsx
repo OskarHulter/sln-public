@@ -1,8 +1,7 @@
-import { Card, Loading, Spacer, Text, Tooltip } from '@nextui-org/react'
+import { Card, Loading, Spacer, Text } from '@nextui-org/react'
 import type { ContentBlock } from '@sln/domain-shared'
 import Image from 'next/image'
 import Balancer from 'react-wrap-balancer'
-import UserTwitterCard from './UserTwitterCard'
 
 export default function Block(props: ContentBlock) {
   if (!props) return <Loading />
@@ -13,7 +12,7 @@ export default function Block(props: ContentBlock) {
       key={props.id}
     >
       <Card.Header id={props.id}>
-        <Text>{props.title}</Text>
+        <Text css={{ margin: 'auto' }}>{props.title}</Text>
       </Card.Header>
       <Card.Body>
         {props.image ? (
@@ -31,19 +30,15 @@ export default function Block(props: ContentBlock) {
           css={{
             letterSpacing: '$wide',
             lineHeight: '$base',
+            fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+            maxWidth: '50ch',
+            minWidth: 'min(40ch, 70vw)',
+            margin: 'auto',
           }}
         >
           <Balancer>{props.text}</Balancer>
         </Text>
       </Card.Body>
-      <Card.Footer>
-        <Tooltip
-          placement='bottomStart'
-          content={<UserTwitterCard />}
-        >
-          <Text>Keep an eye on this space as I have a few plans up my sleeve.</Text>
-        </Tooltip>
-      </Card.Footer>
       <Spacer y={4} />
     </Card>
   )

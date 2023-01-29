@@ -27,7 +27,8 @@ export default function ThemeSwitch() {
     <Container css={{ width: 'fit-content', m: 0, p: 0 }}>
       <ClientOnly>
         <Switch
-          color='success'
+          color='secondary'
+          disabled
           bordered
           checked={isDark === undefined ? true : isDark}
           size='xl'

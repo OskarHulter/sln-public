@@ -12,7 +12,8 @@ type ApiMethodHandlers = {
 export default function apiHandler(handler: ApiMethodHandlers) {
   return async (req: NextApiRequest, res: NextApiResponse<ErrorResponse>) => {
     try {
-      const method = req.method ? (req.method.toUpperCase() as keyof ApiMethodHandlers) : undefined
+      // const method = req.method ? (req.method.toUpperCase() as keyof ApiMethodHandlers) : undefined
+      const method = req.method ? 'GET' : undefined
 
       // check if handler supports current HTTP method
       if (!method)

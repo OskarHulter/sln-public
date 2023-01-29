@@ -33,20 +33,20 @@ const createTestQueryClient = () => new QueryClient({
 export function renderWithClient(ui: React.ReactElement) {
   const testQueryClient = createTestQueryClient()
   const { rerender, ...result } = render(
-    <QueryClientProvider client={ testQueryClient } > { ui } < /QueryClientProvider>
+    <QueryClientProvider client={testQueryClient} > {ui} </QueryClientProvider>
   )
-  return {
+  return ({
     ...result,
     rerender: (rerenderUi: React.ReactElement) =>
       rerender(
-        <QueryClientProvider client={ testQueryClient } > { rerenderUi } < /QueryClientProvider>
+        <QueryClientProvider client={testQueryClient} > {rerenderUi} </QueryClientProvider>
       ),
-  }
+  })
 }
 
 export function createWrapper() {
   const testQueryClient = createTestQueryClient()
   return ({ children }: { children: React.ReactNode }) => (
-    <QueryClientProvider client= { testQueryClient } > { children } < /QueryClientProvider>
-    )
+    <QueryClientProvider client={testQueryClient} > {children} </QueryClientProvider>
+  )
 }

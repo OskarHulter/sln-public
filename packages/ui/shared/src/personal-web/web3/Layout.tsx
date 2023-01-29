@@ -1,13 +1,14 @@
 import { Button, Card, Col, Container, Text } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { BaseProps } from '../../types'
 import UserAvatar from '../atoms/badges/UserAvatar'
 import ThemeSwitch from '../atoms/buttons/ThemeSwitch'
+import { UiProviderProps } from '../providers/WebUiProvider'
 
-export default function Layout({ children }: BaseProps) {
+export default function Layout({ children, fonts }: UiProviderProps) {
   return (
     <Container
+      className={fonts}
       css={{
         backgroundColor: '$backgroundContrast',
         display: 'flex',
@@ -50,6 +51,8 @@ export default function Layout({ children }: BaseProps) {
           <ThemeSwitch />
         </Card.Header>
         <Card.Body
+          as='main'
+          className={fonts}
           css={{
             display: 'block',
             paddingLeft: '2',
@@ -62,7 +65,7 @@ export default function Layout({ children }: BaseProps) {
             },
           }}
         >
-          <main>{children}</main>
+          {children}
         </Card.Body>
         <Card.Footer
           css={{

@@ -1,58 +1,51 @@
-import { Container, Switch, SwitchEvent, useTheme } from '@nextui-org/react'
+import { Container, Switch, Tooltip } from '@nextui-org/react'
 import Image from 'next/image'
-import { useTheme as useNextTheme } from 'next-themes'
-import type { ChangeEvent } from 'react'
-import { useHasMounted } from '../../features/hasMounted/useHasMounted'
-import { ClientOnly } from '../../providers/ClientOnly'
 
 export default function ThemeSwitch() {
-  const { setTheme } = useNextTheme()
-  const { isDark, type } = useTheme()
-  const hasMounted = useHasMounted()
-
-  // if (!hasMounted) {
-  //   return (
-  //     <Switch
-  //       color={'primary'}
-  //       checked={false}
-  //       size='xl'
-  //       iconOn={<SunIcon filled />}
-  //       iconOff={<MoonIcon filled />}
-  //       onChange={() => console.log('toggling theme')}
-  //     />
-  //   )<SunIcon color='$blue700' />
-  // checked={hasMounted ? isDark : type === 'dark' ? true : false}
-  // }
   return (
     <Container css={{ width: 'fit-content', m: 0, p: 0 }}>
-      <ClientOnly>
+      <Tooltip
+        content={'Light theme under construction! thanks for testing 😎'}
+        placement='left'
+      >
         <Switch
           color='secondary'
           disabled
           bordered
-          checked={isDark === undefined ? true : isDark}
+          checked={false}
           size='xl'
-          onChange={(e: ChangeEvent<HTMLInputElement> | SwitchEvent) =>
-            setTheme(e.target.checked ? 'dark' : 'light')
-          }
+          css={{ minWidth: 'auto', backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
           iconOn={
             <Image
               src='/icons/sun-ray.svg'
               alt='activate light theme'
-              width={50}
-              height={50}
+              width={40}
+              height={40}
             />
           }
           iconOff={
             <Image
               src='/icons/moon.svg'
               alt='activate dark theme'
-              width={50}
-              height={50}
+              width={40}
+              height={40}
             />
           }
         />
-      </ClientOnly>
+      </Tooltip>
     </Container>
   )
 }
+
+// import { useTheme as useNextTheme } from 'next-themes'
+// import { useHasMounted } from '../../features/hasMounted/useHasMounted'
+
+// const { setTheme } = useNextTheme()
+// const { isDark, type } = useTheme()
+// const hasMounted = useHasMounted()
+
+// onChange={(e: ChangeEvent<HTMLInputElement> | SwitchEvent) =>
+//   setTheme(e.target.checked ? 'dark' : 'light')
+// }
+
+// src = { copied? '/icons/checkmark-icon.svg': '/icons/copy-icon.svg' }

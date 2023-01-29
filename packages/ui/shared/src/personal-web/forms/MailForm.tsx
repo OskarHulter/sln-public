@@ -8,7 +8,7 @@ import InputField from '../atoms/inputs/InputField'
 import TextareaField from '../atoms/inputs/TextareaField'
 
 export async function submitMailOld(data: MailFormSchema) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mail`, {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export async function submitMailOld(data: MailFormSchema) {
 }
 
 export async function submitMail(data: MailFormSchema) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mail`, {
     body: SuperJSON.stringify(data),
     method: 'POST',
   })
@@ -34,21 +34,17 @@ export async function submitMail(data: MailFormSchema) {
 }
 
 export default function MailForm() {
-  // const { data } = useQuery({
-  //   queryKey: ['mail', values],
-  //   queryFn: () => fetchPerson(id),
-  //   staleTime: Infinity,
-  // })
   const {
     register,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     handleSubmit,
     resetField,
-    setValue,
     reset,
   } = useForm<MailFormSchema>()
 
-  const { mutate, isSuccess, isLoading, isError } = useMutation((data) => submitMail(data))
+  const { mutate, isSuccess, isLoading, isError } = useMutation((data: MailFormSchema) =>
+    submitMail(data)
+  )
 
   useEffect(() => {
     if (isSuccess && isSubmitSuccessful) reset()
@@ -56,33 +52,21 @@ export default function MailForm() {
 
   return (
     <>
-      {isSuccess && <Text>Submit Successfull!</Text>}
       <Container
         as='form'
         id='contact-form'
-        gap={3.2}
+        gap={2}
         justify='center'
         alignContent='center'
         alignItems='center'
-        onSubmit={handleSubmit(mutate)}
-        //mutate(values, { onSuccess: () => reset() })
+        onSubmit={handleSubmit(submitMail)}
         css={{
           width: 'min(30em, 80vw)',
+          height: 'fit-content',
           marginInline: 'auto',
           textAlign: 'center',
         }}
       >
-        <Text
-          h2
-          size='$6xl'
-          css={{
-            fontWeight: '$thin',
-            letterSpacing: '$tighter',
-          }}
-        >
-          Contact
-        </Text>
-
         <InputField
           label='mail'
           register={register}
@@ -103,14 +87,6 @@ export default function MailForm() {
           errors={errors}
           required
         />
-
-        {/* <CheckboxField
-          text='Send me occasional email updates'
-          label='emailUpdates'
-          register={register}
-          errors={errors}
-          setValue={setValue}
-        /> */}
 
         <Button
           type='submit'
@@ -141,6 +117,24 @@ export default function MailForm() {
           </Text>
         </Button>
       </Container>
+      {isSuccess && <Text>Submit Successfull!</Text>}
     </>
   )
 }
+
+// const { data } = useQuery({
+//   queryKey: ['mail', values],
+//   queryFn: () => fetchPerson(id),
+//   staleTime: Infinity,
+// })
+
+// setValue,
+//mutate(values, { onSuccess: () => reset() })
+
+/* <CheckboxField
+        text='Send me occasional email updates'
+        label='emailUpdates'
+        register={register}
+        errors={errors}
+        setValue={setValue}
+      /> */

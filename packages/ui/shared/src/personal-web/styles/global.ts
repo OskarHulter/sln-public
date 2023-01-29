@@ -2,14 +2,14 @@ import { globalCss } from '@nextui-org/react'
 
 export default globalCss({
   '@import': '/main.css',
-  '@font-face': [
-    {
-      fontFamily: 'var(--nextui-fonts-sans)',
-      fontWeight: '$variable',
-      fontStyle: 'normal',
-      fontDisplay: 'swap',
-    },
-  ],
+  // '@font-face': [
+  //   {
+  //     fontFamily: 'var(--nextui-fonts-sans)',
+  //     fontWeight: '$variable',
+  //     fontStyle: 'normal',
+  //     fontDisplay: 'swap',
+  //   },
+  // ],
   p: {
     fontSize: 'clamp(1rem, 5vw, 1.5rem)',
   },

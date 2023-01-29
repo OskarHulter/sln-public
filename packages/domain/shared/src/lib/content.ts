@@ -42,22 +42,29 @@ const contentList: ContentList = [
     id: uuid(),
     name: 'hero',
     title: 'Oskar Hulter',
-    text: `I'm a fullstack Javascript developer from Sweden. I help teams deliver better software by driving adoption of todays most valuable tools and practices.`,
+    text: `I'm a fullstack Javascript developer from Sweden.`,
     image: profilePic,
   },
   {
     id: uuid(),
     name: 'hero2',
     title: 'Oskar Hulter',
-    text: `Hi, my name is:`,
+    text: `Hi, my name is`,
     image: profilePic,
   },
   {
     id: uuid(),
     name: 'hero3',
     title: 'Oskar Hulter.',
-    text: `let myName = () => `,
+    text: `I help teams deliver better software by driving adoption of todays most valuable tools and practices.`,
     image: profilePic,
+  },
+  {
+    id: uuid(),
+    name: 'hero3',
+    title: 'Oskar Hulter.',
+    text: `Open to discuss select consultancy requests.`,
+    image: null,
   },
   {
     id: uuid(),
@@ -71,9 +78,7 @@ const contentList: ContentList = [
     name: 'skills',
     title: 'Skills',
     text: `Specialized in semantic HTML, modern CSS, JavaScript, Node & TypesScript.
-      I'm up to date about the newest trends but I always try to choose the right tool for the job. I know that my greatest asset isn't knowledge about flavour of the month frameworks, but in my reasoning about the trade-offs they offer.
-      My favorite JS tools are react, webpack, cypress, styled-components & gatsby.
-      Design patterns, testing, software architecture & declarative/functional programming are the technical topics I am most excited about at the moment.`,
+      Design patterns, testing, software architecture, monorepos & functional programming are my current favorite technical topics.`,
     image: null,
   },
   {

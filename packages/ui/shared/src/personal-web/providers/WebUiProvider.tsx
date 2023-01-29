@@ -1,21 +1,17 @@
 import { NextUIProvider } from '@nextui-org/react'
 import { Provider as BalancerProvider } from 'react-wrap-balancer'
+import { theme } from '../..'
 import type { BaseProps } from '../../types'
 import Layout from '../web3/Layout'
 
-// type WebUiProviderProps = {
-//   theme: {
-//     light: string
-//     dark: string
-//   }
-//   defaultTheme?: 'light' | 'dark'
-// } & ProviderProps
-
-export default function WebUiProvider({ children }: BaseProps) {
+export type UiProviderProps = {
+  fonts: string
+} & BaseProps
+export default function WebUiProvider({ children, fonts }: UiProviderProps) {
   return (
     <BalancerProvider>
-      <NextUIProvider>
-        <Layout>{children}</Layout>
+      <NextUIProvider theme={theme.dark}>
+        <Layout fonts={fonts}>{children}</Layout>
       </NextUIProvider>
     </BalancerProvider>
   )

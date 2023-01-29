@@ -12,7 +12,10 @@ export default function InputField({ label, register, required, reset, errors }:
       color={errors[label]?.message ? 'error' : 'secondary'}
       helperColor={errors[label]?.message ? 'error' : 'success'}
       helperText={errors[label]?.message}
-      {...register(label, { required, minLength: { value: 4, message: 'error message' } })}
+      {...register(label, {
+        required,
+        minLength: { value: 4, message: `Please write a longer ${label}` },
+      })}
       labelPlaceholder={label}
     />
   )

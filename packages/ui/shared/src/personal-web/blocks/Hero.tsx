@@ -1,7 +1,6 @@
-import { Grid, Spacer, Text } from '@nextui-org/react'
-import Balancer from 'react-wrap-balancer'
-import { ActionButton } from '../atoms/buttons/ActionButton'
+import { Grid, Text } from '@nextui-org/react'
 import LoadingSpinner from '../atoms/LoadingSpinner'
+import Paragraph from '../atoms/Paragraph'
 import useContent from '../features/content/useContent'
 
 export default function Hero() {
@@ -14,7 +13,7 @@ export default function Hero() {
       <Grid.Container
         gap={1}
         css={{
-          p: '0 $20 0 $20',
+          p: '0 $10 0 $10',
           m: '0',
         }}
       >
@@ -29,63 +28,69 @@ export default function Hero() {
             h2
             weight='thin'
             css={{
-              fontSize: 'clamp(2rem, 5vw, 5rem)',
+              fontSize: 'clamp(1rem, 2vw + 1rem, 4rem)',
               lineHeight: '$xs',
               textGradient: '45deg,  #00254D -20%, #54b9ff 100%',
               letterSpacing: '$tight',
-              paddingLeft: '$10',
+              p: '$2 0 0 $9',
               m: '0',
+              marginInline: 'auto',
             }}
           >
-            <Balancer>Hi, my name is</Balancer>
+            {data[1].text}
           </Text>
         </Grid>
         <Grid xs={12}>
           <Text
             h1
-            weight='bold'
+            weight='semibold'
             css={{
               lineHeight: '$xs',
               textGradient: `316deg, $primary 3%, $secondary 100%`,
               letterSpacing: '$tighter',
               m: '$1',
-              fontSize: 'clamp(5rem, 5vw, 32rem)',
+              fontSize: 'clamp(6rem, 2vw + 1rem, 18rem)',
+              marginInline: 'auto',
+
               // '@smMax': {
               //   fontSize: '$8xl',
               // },
               // '@mdMax': {
               //   fontSize: '10rem',
               // },
-              '@xlMin': {
-                fontSize: '$9xl',
+              '@smMax': {
+                fontSize: '4rem',
+              },
+              '@xsMax': {
+                fontSize: '3rem',
               },
               p: '$2',
             }}
           >
-            <Balancer>{data[0].title}</Balancer>
+            {data[0].title}
           </Text>
         </Grid>
         <Grid
           xs={12}
-          justify='center'
           css={{
-            maxWidth: '65ch',
+            maxWidth: 'min(30ch, 90vw)',
           }}
         >
-          <Text
-            size='$2xl'
-            color='$white'
-            css={{
-              letterSpacing: '$wide',
-              lineHeight: '$base',
-              fontWeight: '$thin',
-            }}
-          >
-            <Balancer>{data[0].text}</Balancer>
-          </Text>
-          <Spacer y={4} />
+          <Paragraph>{data[0].text}</Paragraph>
         </Grid>
         <Grid
+          xs={12}
+          css={{
+            maxWidth: 'min(30ch, 90vw)',
+          }}
+        >
+          <Paragraph>{data[2].text}</Paragraph>
+        </Grid>
+      </Grid.Container>
+    )
+}
+
+/* <Grid
           xs={12}
           alignContent='stretch'
           justify='space-evenly'
@@ -97,7 +102,4 @@ export default function Hero() {
           >
             contact
           </ActionButton>
-        </Grid>
-      </Grid.Container>
-    )
-}
+        </Grid> */

@@ -14,20 +14,24 @@ export function Socials() {
             className='navLink'
             color='gradient'
             rounded
-            icon={<Image
-              src='/icons/social/mail-round-fill.svg'
-              alt='mail icon'
-              fill
-              style={{
-                fill: '#54b9ff',
-                padding: 2,
-              }} />}
+            icon={
+              <Image
+                src='/icons/social/mail-round-fill.svg'
+                alt='mail icon'
+                fill
+                style={{
+                  fill: '#54b9ff',
+                  padding: 2,
+                }}
+              />
+            }
             css={{
               aspectRatio: 1,
               minWidth: '3.5rem',
               minHeight: '3.5rem',
               marginInline: 'auto',
-            }} />
+            }}
+          />
         </Link>
       </Col>
       <Col className='social-icon'>
@@ -45,14 +49,18 @@ export function Socials() {
               minHeight: '3.5rem',
               marginInline: 'auto',
             }}
-            icon={<Image
-              src='/icons/social/linkedin-round-big.svg'
-              alt='linkedin icon'
-              fill
-              style={{
-                fill: '#54b9ff',
-                padding: 2,
-              }} />} />
+            icon={
+              <Image
+                src='/icons/social/linkedin-round-big.svg'
+                alt='linkedin icon'
+                fill
+                style={{
+                  fill: '#54b9ff',
+                  padding: 2,
+                }}
+              />
+            }
+          />
         </Link>
       </Col>
       <Col className='social-icon'>
@@ -72,14 +80,18 @@ export function Socials() {
 
               backgroundColor: 'rgb(0,29,85)',
             }}
-            icon={<Image
-              src='/icons/social/twitter-round-fill-1.svg'
-              alt='twitter icon'
-              fill
-              style={{
-                fill: '#54b9ff',
-                padding: 2,
-              }} />} />
+            icon={
+              <Image
+                src='/icons/social/twitter-round-fill-1.svg'
+                alt='twitter icon'
+                fill
+                style={{
+                  fill: '#54b9ff',
+                  padding: 2,
+                }}
+              />
+            }
+          />
         </Link>
       </Col>
       <Col className='social-icon'>
@@ -107,14 +119,18 @@ export function Socials() {
                 borderColor: '$green400',
               },
             }}
-            icon={<Image
-              src='/icons/social/github-round-fill-1.svg'
-              alt='github icon'
-              fill
-              style={{
-                fill: '#54b9ff',
-                padding: 2,
-              }} />} />
+            icon={
+              <Image
+                src='/icons/social/github-round-fill-1.svg'
+                alt='github icon'
+                fill
+                style={{
+                  fill: '#54b9ff',
+                  padding: 2,
+                }}
+              />
+            }
+          />
         </Link>
       </Col>
     </Row>

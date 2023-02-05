@@ -82,7 +82,7 @@ export default function Layout({ children, fonts }: UiProviderProps) {
             <div className='footer-copyright'>
               <Text
                 color='$blue500'
-                weight={'thin'}
+                weight='thin'
               >
                 ©2023 - Oskar Hulter
               </Text>

@@ -5,7 +5,7 @@ export default function ThemeSwitch() {
   return (
     <Container css={{ width: 'fit-content', m: 0, p: 0 }}>
       <Tooltip
-        content={'Light theme under construction! thanks for testing 😎'}
+        content={'coming soon 😎'}
         placement='left'
       >
         <Switch
@@ -14,7 +14,7 @@ export default function ThemeSwitch() {
           bordered
           checked={false}
           size='xl'
-          css={{ minWidth: 'auto', backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+          css={{ minWidth: 'auto' }}
           iconOn={
             <Image
               src='/icons/sun-ray.svg'

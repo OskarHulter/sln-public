@@ -14,13 +14,15 @@ import { DefaultSeo } from 'next-seo'
 import { useState } from 'react'
 import SEO from '../seo-default'
 
+log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
+
 export { reportWebVitals } from 'next-axiom'
 export const inter = Inter({
   variable: '--inter-font',
 })
-if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
-  require('../mocks')
-}
+// if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
+//   require('../mocks')
+// }
 log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -63,8 +65,11 @@ export const MyApp = ({ Component, pageProps }: AppProps<{ dehydratedState: Dehy
                 content='viewport-fit=cover, width=device-width, initial-scale=1'
               />
             </Head>
-            <main className={inter.className}>
-              <Component {...pageProps} />
+            <main>
+              <Component
+                className={inter.className}
+                {...pageProps}
+              />
             </main>
           </WebUiProvider>
 

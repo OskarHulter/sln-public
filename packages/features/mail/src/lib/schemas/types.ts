@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import mailFormSchema from './mailForm.js'
-import mailOptionsSchema from './mailOptions.js'
+import mailFormSchema from './mailForm'
+import mailOptionsSchema from './mailOptions'
 
 export type MailFormSchema = z.infer<typeof mailFormSchema>
 export type MailOptionsSchema = z.infer<typeof mailOptionsSchema>

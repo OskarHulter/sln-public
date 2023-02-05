@@ -1,4 +1,4 @@
-import { Spacer, Text } from '@nextui-org/react'
+import { Spacer } from '@nextui-org/react'
 import { Hero, MailForm, useContent } from '@sln/ui'
 import { NextSeo } from 'next-seo'
 
@@ -19,22 +19,10 @@ export default function Home() {
           }}
         />
         <Hero />
-        <Text
-          h2
-          size='$4xl'
-          css={{
-            fontWeight: '$normal',
-            letterSpacing: '$tighter',
-            marginInline: 'auto',
-            textAlign: 'center',
-            marginBottom: '0',
-          }}
-        >
-          Contact
-        </Text>
+
         <MailForm />
 
-        <Spacer y={4} />
+        <Spacer y={3} />
       </>
     )
 }

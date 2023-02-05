@@ -1,5 +1,4 @@
 import { Container, css, styled } from '@nextui-org/react'
-import Balancer from 'react-wrap-balancer'
 import type { BaseProps } from '../../types'
 //import fonts from '../styles/tokens/fonts'
 
@@ -47,9 +46,7 @@ const GlobalGrid = styled(Container, grid)
 export default function LayoutGrid({ children }: BaseProps) {
   return (
     <GlobalContainer>
-      <GlobalGrid>
-        <Balancer>{children}</Balancer>
-      </GlobalGrid>
+      <GlobalGrid>{children}</GlobalGrid>
     </GlobalContainer>
   )
 }

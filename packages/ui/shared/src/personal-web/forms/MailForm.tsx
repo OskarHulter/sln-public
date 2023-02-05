@@ -1,14 +1,12 @@
-import { Button, Container, Loading, Text } from '@nextui-org/react'
+import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
 import { MailFormSchema } from '@sln/features-mail'
-import { useMutation } from '@tanstack/react-query'
-import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import SuperJSON from 'superjson'
 import InputField from '../atoms/inputs/InputField'
 import TextareaField from '../atoms/inputs/TextareaField'
 
 export async function submitMailOld(data: MailFormSchema) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mail`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`, {
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
@@ -20,7 +18,7 @@ export async function submitMailOld(data: MailFormSchema) {
 }
 
 export async function submitMail(data: MailFormSchema) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/mail`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`, {
     body: SuperJSON.stringify(data),
     method: 'POST',
   })
@@ -42,16 +40,24 @@ export default function MailForm() {
     reset,
   } = useForm<MailFormSchema>()
 
-  const { mutate, isSuccess, isLoading, isError } = useMutation((data: MailFormSchema) =>
-    submitMail(data)
-  )
-
-  useEffect(() => {
-    if (isSuccess && isSubmitSuccessful) reset()
-  }, [isSuccess, isSubmitSuccessful, reset])
+  // const { mutate, isSuccess, isLoading, isError } = useMutation((data: MailFormSchema) =>
+  //   submitMail(data)
+  // )
 
   return (
     <>
+      <Spacer y={2} />
+      <Text
+        h2
+        size='$6xl'
+        css={{
+          fontWeight: '$normal',
+          letterSpacing: '$tighter',
+          textAlign: 'center',
+        }}
+      >
+        Contact
+      </Text>
       <Container
         as='form'
         id='contact-form'
@@ -61,7 +67,7 @@ export default function MailForm() {
         alignItems='center'
         onSubmit={handleSubmit(submitMail)}
         css={{
-          width: 'min(30em, 80vw)',
+          width: 'min(25em, 80vw)',
           height: 'fit-content',
           marginInline: 'auto',
           textAlign: 'center',
@@ -90,7 +96,7 @@ export default function MailForm() {
 
         <Button
           type='submit'
-          disabled={isSubmitting || isLoading || isError}
+          disabled={isSubmitting}
           color='gradient'
           bordered
           size='xl'
@@ -98,14 +104,13 @@ export default function MailForm() {
             minWidth: '15ch',
           }}
         >
-          {isSubmitting ||
-            (isLoading && (
-              <Loading
-                type='points-opacity'
-                color='currentColor'
-                size='sm'
-              />
-            ))}
+          {isSubmitting && (
+            <Loading
+              type='points-opacity'
+              color='currentColor'
+              size='sm'
+            />
+          )}
           <Text
             as='div'
             size='$3xl'
@@ -117,7 +122,7 @@ export default function MailForm() {
           </Text>
         </Button>
       </Container>
-      {isSuccess && <Text>Submit Successfull!</Text>}
+      {isSubmitSuccessful && <Text>Submit Successfull!</Text>}
     </>
   )
 }

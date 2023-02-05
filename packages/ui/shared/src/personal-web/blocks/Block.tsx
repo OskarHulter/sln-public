@@ -1,7 +1,6 @@
 import { Card, Loading, Spacer, Text } from '@nextui-org/react'
 import type { ContentBlock } from '@sln/domain-shared'
 import Image from 'next/image'
-import Balancer from 'react-wrap-balancer'
 
 export default function Block(props: ContentBlock) {
   if (!props) return <Loading />
@@ -32,11 +31,11 @@ export default function Block(props: ContentBlock) {
             lineHeight: '$base',
             fontSize: 'clamp(1rem, 2vw, 1.25rem)',
             maxWidth: '50ch',
-            minWidth: 'min(40ch, 70vw)',
+            width: 'min(40ch, 70vw)',
             margin: 'auto',
           }}
         >
-          <Balancer>{props.text}</Balancer>
+          {props.text}
         </Text>
       </Card.Body>
       <Spacer y={4} />

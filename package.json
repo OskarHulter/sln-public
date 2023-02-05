@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "run-all": "nx run-many --targets=lint,test,build --all --exclude=design-tokens",
-    "lint": "nx run-many --targets=lint --all --exclude=design-tokens",
-    "fix": "nx run-many --targets=lint --fix --all --exclude=design-tokens",
-    "test": "nx run-many --targets=test --all --exclude=design-tokens",
-    "build": "nx run-many --targets=build --all  --exclude=design-tokens && pnpm ladle build",
-    "build-w": "nx run-many --targets=build --all  --exclude=design-tokens --watch",
+    "run-all": "nx run-many --targets=lint,test,build --all --exclude=design-tokens,web3-next-wallet",
+    "lint": "nx run-many --targets=lint --all --exclude=design-tokens,web3-next-wallet",
+    "fix": "nx run-many --targets=lint --fix --all --exclude=design-tokens,web3-next-wallet",
+    "test": "nx run-many --targets=test --all --exclude=design-tokens,web3-next-wallet",
+    "build": "nx run-many --targets=build --all  --exclude=design-tokens,web3-next-wallet && pnpm ladle build",
+    "build-w": "nx run-many --targets=build --all  --exclude=design-tokens,web3-next-wallet --watch",
     "build-l": "pnpm ladle build",
     "serve": "nx serve personal-web",
     "serve-l": "pnpm ladle serve",
@@ -151,6 +151,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-seo": "^5.15.0",
     "next-themes": "^0.2.1",
+    "nodemailer": "^6.9.1",
     "react": "18.2.0",
     "react-code-blocks": "0.0.9-0",
     "react-dom": "18.2.0",
@@ -169,4 +170,3 @@
     "zustand": "^4.3.2"
   }
 }
-

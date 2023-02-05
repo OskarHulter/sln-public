@@ -10,11 +10,13 @@ export default function Paragraph(props: BaseProps & TextProps) {
         letterSpacing: '$wide',
         lineHeight: '$base',
         fontWeight: '$light',
+        width: 'min(45ch, 90vw)',
+        textAlign: 'center',
         marginInline: 'auto',
       }}
       {...props}
     >
-      <Balancer style={{ width: 'min(30ch, 90vw)' }}>{props.children}</Balancer>
+      <Balancer>{props.children}</Balancer>
     </Text>
   )
 }

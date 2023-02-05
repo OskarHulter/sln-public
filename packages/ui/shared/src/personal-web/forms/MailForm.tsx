@@ -49,11 +49,12 @@ export default function MailForm() {
       <Spacer y={2} />
       <Text
         h2
-        size='$6xl'
+        size='$5xl'
         css={{
-          fontWeight: '$normal',
-          letterSpacing: '$tighter',
+          fontWeight: '$regular',
           textAlign: 'center',
+          m: 0,
+          p: 0,
         }}
       >
         Contact
@@ -115,7 +116,8 @@ export default function MailForm() {
             as='div'
             size='$3xl'
             css={{
-              letterSpacing: '$wide',
+              letterSpacing: '$tighter',
+              fontWeight: '$thin',
             }}
           >
             submit

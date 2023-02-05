@@ -1,12 +1,12 @@
-import { Container, Switch, Tooltip } from '@nextui-org/react'
+import { Container, Switch, Text, Tooltip } from '@nextui-org/react'
 import Image from 'next/image'
 
 export default function ThemeSwitch() {
   return (
     <Container css={{ width: 'fit-content', m: 0, p: 0 }}>
       <Tooltip
-        content={'coming soon 😎'}
-        placement='left'
+        content={<Text>Soon!</Text>}
+        placement='leftStart'
       >
         <Switch
           color='secondary'

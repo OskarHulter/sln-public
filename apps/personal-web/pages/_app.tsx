@@ -9,12 +9,9 @@ import type { GetStaticProps } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 // *.ts - structured logging from client, edge, or server-side files
-import { log } from 'next-axiom'
 import { DefaultSeo } from 'next-seo'
 import { useState } from 'react'
 import SEO from '../seo-default'
-
-log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
 
 export { reportWebVitals } from 'next-axiom'
 export const inter = Inter({
@@ -23,7 +20,6 @@ export const inter = Inter({
 // if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
 //   require('../mocks')
 // }
-log.debug('new sign-in challenge', { customerId: 32423, auth: 'session' })
 
 export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient({
@@ -65,12 +61,10 @@ export const MyApp = ({ Component, pageProps }: AppProps<{ dehydratedState: Dehy
                 content='viewport-fit=cover, width=device-width, initial-scale=1'
               />
             </Head>
-            <main>
-              <Component
-                className={inter.className}
-                {...pageProps}
-              />
-            </main>
+            <Component
+              className={inter.className}
+              {...pageProps}
+            />
           </WebUiProvider>
 
           <ReactQueryDevtools />

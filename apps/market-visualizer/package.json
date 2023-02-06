@@ -1,0 +1,47 @@
+{
+  "name": "market-visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@next-auth/prisma-adapter": "*",
+    "@prisma/client": "*",
+    "@tanstack/react-query": "*",
+    "@trpc/client": "*",
+    "@trpc/next": "*",
+    "@trpc/react-query": "*",
+    "@trpc/server": "*",
+    "next": "*",
+    "next-auth": "*",
+    "react": "*",
+    "react-dom": "*",
+    "superjson": "*",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/prettier": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "autoprefixer": "*",
+    "eslint": "*",
+    "eslint-config-next": "*",
+    "postcss": "*",
+    "prettier": "*",
+    "prettier-plugin-tailwindcss": "*",
+    "prisma": "*",
+    "tailwindcss": "*",
+    "typescript": "*"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.4.1"
+  }
+}

@@ -6,7 +6,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default async function (req, res) {
   const body = SuperJSON.stringify(req.body)
-  log.debug('req', { body })
+  log.debug('body', { body })
   const msg = {
     to: 'oskarhulter@gmail..com', // Change to your recipient
     from: 'oskarhulter@gmail.com', // Change to your verified sender
@@ -14,9 +14,12 @@ export default async function (req, res) {
     text: body,
     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   }
-  const result = sgMail.send(msg).catch((error) => {
+  const result = await sgMail.send(msg).catch((error) => {
     console.error(error)
+    log.debug('mail', { error })
+    res.status(result[0].statusCode).json(result)
   })
-  return result
+  log.debug('result', { result })
+  res.status(200).json(result)
   // await sendHandler(req, res)
 }

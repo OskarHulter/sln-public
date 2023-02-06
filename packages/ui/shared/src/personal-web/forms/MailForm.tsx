@@ -1,7 +1,8 @@
 import { Button, Container, Loading, Spacer, Text } from '@nextui-org/react'
 import { MailFormSchema } from '@sln/features-mail'
+import axios from 'axios'
+import { log } from 'next-axiom'
 import { useForm } from 'react-hook-form'
-import SuperJSON from 'superjson'
 import InputField from '../atoms/inputs/InputField'
 import TextareaField from '../atoms/inputs/TextareaField'
 
@@ -17,18 +18,18 @@ export async function submitMailOld(data: MailFormSchema) {
   alert(`Is this your full name: ${result.name}`)
 }
 
-export async function submitMail(data: MailFormSchema) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/mail`, {
-    body: SuperJSON.stringify(data),
-    method: 'POST',
-  })
-
-  if (!res.ok) {
-    console.log('error fetching!')
+export async function submitMail(formValues: MailFormSchema) {
+  try {
+    //: AxiosResponse<MailFormSchema>
+    const { data } = await axios({
+      url: `${process.env.NEXT_PUBLIC_API_URL}/api/mail`,
+      data: formValues,
+      method: 'POST',
+    })
+    return data
+  } catch (e) {
+    log.debug('error', { e })
   }
-  alert(`Is this your full name: ${SuperJSON.stringify(res)}`)
-  const result = await res.json()
-  return result
 }
 
 export default function MailForm() {
